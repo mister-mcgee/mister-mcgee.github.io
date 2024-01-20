@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
+import Head   from '../components/Head.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
@@ -12,7 +12,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<Head title={title} description={description} />
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -61,7 +61,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				<div class="hero-image">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div>
-				<div class="prose">
+				<div class="prose dark:prose-invert">
 					<div class="title">
 						<div class="date">
 							<FormattedDate date={pubDate} />
