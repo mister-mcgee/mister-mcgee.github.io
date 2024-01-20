@@ -5,40 +5,69 @@ pubDate: "01/19/2024"
 heroImage: "/blog-placeholder-2.jpg"
 ---
 
-## Requirements
+import { ArrowSquareOut, KeyReturn, MagnifyingGlass, WindowsLogo } from "@phosphor-icons/react"
+import { Warn } from "@/components/Warn"
+import { Separator } from "@/components/ui/separator"
 
+# Overview
+
+### What is Python?
+
+If you have never written a program before, the following sentence might seem like nonsense.
+
+> **Python** is a dynamically-weak typed, interpreted **Programming Language**.
 
 ### What is a Programming Language?
 
-<Alert>
-  <ExclamationTriangleIcon/>
-  <AlertTitle>**A Note on Installing Software**</AlertTitle>
-  <AlertDescription>
-    All software in this tutorial can be acquired via the Microsoft Store or a standalone installer. Depending on your device's administrative settings you may find that one or more options are inaccessible to you. When installing software follow ***either*** the directions for the Microsoft Store *or* the standalone installer; whichever is more readily available.
-  </AlertDescription>
-</Alert>
+You may have heard that computers speak natively in **Binary** or **Machine Language** which is unfortunate for the majority of humans who speak **Human Language**. Fortunately for those same humans, some other very clever humans have written translators that allow us to speak to machines using what often amounts to broken-english. This arcane speech is known as a **Programming Language** and these translators come in a handful of flavors, namely - **assemblers**, **compilers**, and **interpreters**.
 
-### Installing a Python Interpreter
+### What is an Interpreter?
 
-##### Using the Microsoft Store
+As mentioned earlier, **Python** is an **interpreted** language, meaning that it uses an **interpreter** to translate your program into **Machine Language**.
 
-##### Using an Installer
+
+# Requirements
+A computer with **Windows 10**<br/>*OR*<br/>A computer with **Windows 11**
+
+# Instructions
+
+<Warn warn={"A Note on Installing Software"} client:load>
+  All software in this tutorial can be acquired via the Microsoft Store or a standalone installer. Depending on your device's administrative settings you may find that one or more options are inaccessible to you. When installing software follow ***either*** the directions for the Microsoft Store *or* the standalone installer; whichever is more readily available.
+</Warn>
+
+## Installing a Python Interpreter
+
+### <a className="no-underline hover:underline" href="https://apps.microsoft.com/detail/9NCVDN91XZQP?hl=en-us&gl=US">Using the Microsoft Store <ArrowSquareOut className="inline"/></a>
+
+1. Open the Microsoft Store 
+    - Open the **Start Menu** by selecting the **Windows** in ( <WindowsLogo className="inline"/> ) on your taskbar or by pressing the *co*Windows** key <kbd> <WindowsLogo className="inline"/> </kbd> on your keyboard.
+    - Begin typing "Store" to search for the **Microsoft Store**.
+    - Select the **Microsoft Store** from the list of available options.
+2. Install a Python Interpreter
+    - Select the **Microsoft Store's** search bar, then type "Python" and select the magnifying glass ( <MagnifyingGlass className="inline"/> ) or press the **Return** key <kbd><KeyReturn className="inline"/></kbd> on your keyboard.
+    - Select the *most recent* version of **Python** from the list of available options (At the time of writing that is currently - <pre className="inline p-0">Python 3.12</pre>)
+    - Depending on your version of **Windows** you will either see an option to ***Get*** or ***Install*** the software. Select either option to install the **Python** interpreter.
+
+### Using an Installer
+
+### Check Your Installation
 
 
 ## Installing Visual Studio Code
 
 In yonder days of old, software developers relied on a variety of tools to write, test, build, and package software. Developers then necessarily had to learn the various quirks of each tool and regularly swap between them. Yuck! Thankfully, most programming today occurs in an IDE or *Integrated Development Environment*. 
 
-An IDE is a tool intended to assist in software development, by bundling the functionality of several tools into one. Most modern IDEs include a code editor with features like syntax and error highlighting, code completion, testing and debugging, and building executables.
+An IDE is a tool intended to assist in software development by bundling the functionality of several tools into one. Most modern IDEs include a code editor with features like syntax and error highlighting, code completion, testing and debugging, as well as building executables.
 
-For the purposes of this tutorial we will be using VSCode also known as *Visual Studio Code* ; however, other popular choices for programming Python include IDEs like PyCharm or IDLE.
+For the purposes of this tutorial our IDE of choice will be *Visual Studio Code* or *VSCode* for short.
 
 
 
 ### Using the Microsoft Store
 
+
+
 ### Using an Installer
 
-import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
-import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
+
 
