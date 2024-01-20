@@ -5,8 +5,9 @@ pubDate: "01/19/2024"
 heroImage: "/blog-placeholder-2.jpg"
 ---
 
-import { ArrowSquareOut, KeyReturn, MagnifyingGlass, WindowsLogo } from "@phosphor-icons/react"
+import { ArrowRight, ArrowSquareOut, CheckSquare, KeyReturn, MagnifyingGlass, Square, WindowsLogo } from "@phosphor-icons/react"
 import { Warn } from "@/components/Warn"
+import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 
 # Overview
@@ -27,7 +28,7 @@ As mentioned earlier, **Python** is an **interpreted** language, meaning that it
 
 
 # Requirements
-A computer with **Windows 10**<br/>*OR*<br/>A computer with **Windows 11**
+A computer with **Windows 10 64-bit**<br/>*OR*<br/>A computer with **Windows 11 64-bit**
 
 # Instructions
 
@@ -37,7 +38,7 @@ A computer with **Windows 10**<br/>*OR*<br/>A computer with **Windows 11**
 
 ## Installing a Python Interpreter
 
-### <a className="no-underline hover:underline" href="https://apps.microsoft.com/detail/9NCVDN91XZQP?hl=en-us&gl=US">Using the Microsoft Store <ArrowSquareOut className="inline"/></a>
+### <a className="no-underline hover:underline" href="https://apps.microsoft.com/detail/9NCVDN91XZQP?hl=en-us&gl=US" target="_blank">Using the Microsoft Store <ArrowSquareOut className="inline"/></a>
 
 1. Open the Microsoft Store 
     - Open the **Start Menu** by selecting the **Windows** in ( <WindowsLogo className="inline"/> ) on your taskbar or by pressing the *co*Windows** key <kbd> <WindowsLogo className="inline"/> </kbd> on your keyboard.
@@ -48,9 +49,20 @@ A computer with **Windows 10**<br/>*OR*<br/>A computer with **Windows 11**
     - Select the *most recent* version of **Python** from the list of available options (At the time of writing that is currently - <pre className="inline p-0">Python 3.12</pre>)
     - Depending on your version of **Windows** you will either see an option to ***Get*** or ***Install*** the software. Select either option to install the **Python** interpreter.
 
-### Using an Installer
+### <a className="no-underline hover:underline" href="https://www.python.org/downloads/" target="_blank">Using an Installer <ArrowSquareOut className="inline"/></a>
 
-### Check Your Installation
+1. Download
+    - Using your web browser, navigate to <a href="https://python.org/downloads/" target="_blank">python.org/downloads</a> and select <nobr><kbd>**Download Python 3.XX**</kbd></nobr>. Navigate the following prompt(s) and make a note of the directory where you saved the installer.
+
+2. Install
+    - Using **File Explorer** navigate to the directory where you saved the installer and double-click on the executable to run it.
+    - When prompted check that the following options match.
+        - *Uncheck this if you are **not** an administrator*.<br/><Square className="inline"/> <pre className="inline p-0">Use admin priveleges when installing py.exe</pre>
+        - <CheckSquare className="inline"/> <pre className="inline p-0">Add python.exe to PATH</pre>
+    - Select <kbd>**<ArrowRight className="inline"/> Install Now**</kbd> and navigate any remaining prompts by clicking <kbd>**Okay**</kbd> or <kbd>**Close**</kbd>.
+
+
+### Verifying Your Installation
 
 
 ## Installing Visual Studio Code
