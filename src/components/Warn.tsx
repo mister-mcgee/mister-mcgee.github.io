@@ -22,7 +22,7 @@ export function Warn({ warn, children }: Props) {
     <div
       onMouseOver={onMouseOver}
       onMouseOut ={onMouseOut }
-      className="border border-primary-foreground p-4 rounded bg-secondary"
+      className="border border-primary-foreground p-4 rounded bg-primary"
     >
       <Collapsible open={open}>
           <CollapsibleTrigger>
