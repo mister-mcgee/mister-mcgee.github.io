@@ -1,12 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 
 function Tag({tag}: {tag: React.ReactNode}) {
-  return (
-    // <div className="border border-primary text-primary rounded-full p-2">
-    //   #{tag}
-    // </div>
-    <Badge>#{tag}</Badge>
-  )
+  return <> {tag && <Badge key={tag?.toString()}>#{tag}</Badge>} </>
 }
 
 interface Props {

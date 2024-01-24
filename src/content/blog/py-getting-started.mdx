@@ -2,13 +2,12 @@
 title: "Getting Started with Python on Windows"
 description: ""
 pubDate: "01/19/2024"
-tags: [ "Tutorial", "Py", "Python", "VSCode", "Visual Studio Code" ]
+tags: [ "Tutorial", "Windows", "Py", "Python", "VSCode", "Visual Studio Code" ]
 ---
 
 import { ArrowRight, ArrowSquareOut, CheckSquare, KeyReturn, MagnifyingGlass, Square, WindowsLogo } from "@phosphor-icons/react"
 import { Warn } from "@/components/Warn"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
+import { Kbd } from "@/components/Kbd"
 
 # Overview
 
@@ -24,11 +23,12 @@ You may have heard that computers speak natively in **Binary** or **Machine Lang
 
 ### What is an Interpreter?
 
-As mentioned earlier, **Python** is an **interpreted** language, meaning that it uses an **interpreter** to translate your program into **Machine Language**.
+The primary difference between **compilers** and **interpreters** (ignoring **assemblers** for now) is that a compiler will translate a program ahead-of-time, while an interpreter will translate your program during runtime.
 
+Even though a program written in **Python** *can* be compiled and the **Python** interpreter does a fair bit of just-in-time compiling itself, **Python** is still typically considered to be an **interpreted** language.
 
 # Requirements
-A computer with **Windows 10 64-bit**<br/>*OR*<br/>A computer with **Windows 11 64-bit**
+A computer with **Windows 10** or **Windows 11**
 
 # Instructions
 
@@ -41,28 +41,39 @@ A computer with **Windows 10 64-bit**<br/>*OR*<br/>A computer with **Windows 11 
 ### <a className="no-underline hover:underline" href="https://apps.microsoft.com/detail/9NCVDN91XZQP?hl=en-us&gl=US" target="_blank">Using the Microsoft Store <ArrowSquareOut className="inline"/></a>
 
 1. Open the Microsoft Store 
-    - Open the **Start Menu** by selecting the **Windows** in ( <WindowsLogo className="inline"/> ) on your taskbar or by pressing the **Windows** key <kbd> <WindowsLogo className="inline"/> </kbd> on your keyboard.
+    - Open the **Start Menu** by selecting the **Windows** in ( <WindowsLogo className="inline" /> ) on your taskbar or by pressing the **Windows** key <Kbd> <WindowsLogo/> </Kbd> on your keyboard.
     - Begin typing "Store" to search for the **Microsoft Store**.
     - Select the **Microsoft Store** from the list of available options.
 2. Install a Python Interpreter
-    - Type "Python" in the search bar and select the magnifying glass ( <MagnifyingGlass className="inline"/> ) or press the **Return** key <kbd><KeyReturn className="inline"/></kbd> on your keyboard.
+    - Type "Python" in the search bar and select the magnifying glass ( <MagnifyingGlass className="inline"/> ) or press the **Return** key <Kbd>**<KeyReturn/>**</Kbd> on your keyboard.
     - Select the *most recent* version of **Python** from the list of available options (At the time of writing it is currently <pre className="inline p-0">Python 3.12</pre>)
-    - Depending on your version of **Windows** you will either see an option to <kbd>**Get**</kbd> or <kbd>**Install**</kbd> the software. Select either option to install the **Python** interpreter.
+    - Depending on your version of **Windows** you will either see an option to <Kbd>Get</Kbd> or <Kbd>Install</Kbd> the software. Select either option to install the **Python** interpreter.
 
 ### <a className="no-underline hover:underline" href="https://www.python.org/downloads/" target="_blank">Using an Installer <ArrowSquareOut className="inline"/></a>
 
 1. Download the Installer
-    - Using your web browser, navigate to <a href="https://python.org/downloads/" target="_blank">python.org/downloads</a> and select <nobr><kbd>**Download Python 3.XX**</kbd></nobr>. Navigate the following prompt(s) and make a note of the directory where you saved the installer.
+    - Using your web browser, navigate to <a href="https://python.org/downloads/" target="_blank">python.org/downloads</a> and select <nobr><Kbd>**Download Python 3.XX**</Kbd></nobr>. Navigate the following prompt(s) and make a note of the directory where you saved the installer.
 
 2. Run the Installer
     - Using **File Explorer** navigate to the directory where you saved the installer and double-click on the executable to run it.
     - When prompted check that the following options match.
         - *Uncheck this if you are **not** an administrator*.<br/><Square className="inline"/> <pre className="inline p-0">Use admin priveleges when installing py.exe</pre>
         - <CheckSquare className="inline"/> <pre className="inline p-0">Add python.exe to PATH</pre>
-    - Select <kbd>**<ArrowRight className="inline"/> Install Now**</kbd> and leave the defaults unchanged for any following prompts.
-
+    - Select <Kbd>**<ArrowRight/> Install Now**</Kbd> and leave the defaults unchanged for any following prompts.
 
 ### Verifying Your Installation
+
+1. Open the Windows Terminal (Command Prompt)
+    - Open the **Run Menu** by pressing **Windows** and **R** (<Kbd>**<WindowsLogo/> + R**</Kbd>) on your keyboard.
+    - Type "cmd" into the **Run Menu** and select <Kbd>Okay</Kbd> or press the **Return** key <Kbd>**<KeyReturn/>**</Kbd> on your keyboard.
+
+2. Check your Python Version
+    - Once the terminal is open type the following command -
+    ```bash
+    python --version
+    ```
+
+### Troubleshooting
 
 
 ## Installing Visual Studio Code

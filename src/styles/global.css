@@ -86,4 +86,8 @@
       height: 0;
     }
   }
+
+  kbd * {
+    display: inline;
+  }
 }
