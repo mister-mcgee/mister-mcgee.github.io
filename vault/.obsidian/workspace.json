@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Robotics & Mechatronics Pre-Introduction/Syllabus.md",
+                "file": "docs/Resources/How-To/Setup Visual Studio Code.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Robotics & Mechatronics Pre-Introduction/Syllabus.md",
+                "file": "docs/Resources/How-To/Setup Visual Studio Code.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Robotics & Mechatronics Pre-Introduction/Syllabus.md",
+                "file": "docs/Resources/How-To/Setup Visual Studio Code.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Robotics & Mechatronics Pre-Introduction/Syllabus.md"
+                "file": "docs/Resources/How-To/Setup Visual Studio Code.md"
               }
             }
           }
@@ -149,41 +149,41 @@
   },
   "active": "9e8b02db13d1ae9b",
   "lastOpenFiles": [
+    "docs/Resources/How-To/Setup Python.md",
+    "docs/Resources/How-To/Setup Visual Studio Code.md",
+    "docs/Robotics & Mechatronics Pre-Introduction/Syllabus.md",
+    "docs/Resources/How-To",
+    "docs/Resources",
     "docs/Robotics & Mechatronics IV/Syllabus.md",
     "docs/Robotics & Mechatronics III/Syllabus.md",
     "docs/Robotics & Mechatronics II/Syllabus.md",
     "docs/Robotics & Mechatronics I/Syllabus.md",
-    "docs/Definitions/Write.md",
-    "docs/Definitions/Volatile Memory.md",
-    "docs/Definitions/Syntax.md",
-    "docs/Definitions/SSD.md",
-    "docs/Definitions/Software.md",
-    "docs/Definitions/Series.md",
-    "docs/Definitions/Serial.md",
-    "docs/Definitions/Read.md",
-    "docs/Definitions/Random Access.md",
-    "docs/Definitions/RAM.md",
-    "docs/Definitions/Programming Language.md",
-    "docs/Definitions/Program.md",
-    "docs/Definitions/Persistent Storage.md",
-    "docs/Definitions/Parallel.md",
-    "docs/Definitions/ODD.md",
-    "docs/Definitions/Octal.md",
-    "docs/Definitions/Memory.md",
-    "docs/Definitions/Memory Address.md",
-    "docs/Definitions/Hexadecimal.md",
-    "docs/Definitions/HDD.md",
-    "docs/Definitions/Hardware.md",
-    "docs/Definitions/Grammar.md",
-    "docs/Definitions",
+    "docs/Resources/Definitions/Write.md",
+    "docs/Resources/Definitions/Volatile Memory.md",
+    "docs/Resources/Definitions/Syntax.md",
+    "docs/Resources/Definitions/SSD.md",
+    "docs/Resources/Definitions/Software.md",
+    "docs/Resources/Definitions/Series.md",
+    "docs/Resources/Definitions/Serial.md",
+    "docs/Resources/Definitions/Read.md",
+    "docs/Resources/Definitions/Random Access.md",
+    "docs/Resources/Definitions/RAM.md",
+    "docs/Resources/Definitions/Programming Language.md",
+    "docs/Resources/Definitions/Program.md",
+    "docs/Resources/Definitions/Persistent Storage.md",
+    "docs/Resources/Definitions/Parallel.md",
+    "docs/Resources/Definitions/ODD.md",
+    "docs/Resources/Definitions/Octal.md",
+    "docs/Resources/Definitions/Memory.md",
+    "docs/Resources/Definitions/Memory Address.md",
+    "docs/Resources/Definitions/Hexadecimal.md",
+    "docs/Resources/Definitions",
     "docs/Robotics & Mechatronics I/Standards A & B (01-2024).pdf",
     "docs/Robotics & Mechatronics IV",
     "docs/Robotics & Mechatronics III",
     "docs/Robotics & Mechatronics II",
     "docs/Robotics & Mechatronics Pre-Introduction",
     "docs/Robotics & Mechatronics I",
-    "docs",
-    "docs/Definitions",
-    "assets"
+    "docs"
   ]
 }

@@ -1,0 +1,1 @@
+**RAM** - RAM or *[random access](docs/Resources/Definitions/Random%20Access.md) [memory](docs/Resources/Definitions/Memory.md)* is a kind of [volatile memory](docs/Resources/Definitions/Volatile%20Memory.md) that stores information via electric switches. Because there are no moving parts or magnetic switches, RAM is incredibly fast.

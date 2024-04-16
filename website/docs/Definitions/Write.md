@@ -1,1 +1,0 @@
-**Write** - In programming, writing refers to the process of copying a value from the [CPU](/docs/Definitions/CPU) to [memory](docs/Definitions/Memory.md).
