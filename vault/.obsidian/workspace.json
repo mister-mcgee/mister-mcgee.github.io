@@ -4,37 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "eb3906696e6f5cb8",
+        "id": "693ee301d35cd8a4",
         "type": "tabs",
         "children": [
           {
-            "id": "4d9a3873c524a3ad",
+            "id": "3dab4c8528c47b03",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/Python/Operators.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "81d8f13f587fa519",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "9e8b02db13d1ae9b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Resources/Python/Control Flow.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -103,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Resources/Python/Operators.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Resources/Python/Operators.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "docs/Resources/Python/Operators.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -165,13 +139,13 @@
       "obsidiosaurus:Obsidiosaurus": false
     }
   },
-  "active": "4d9a3873c524a3ad",
+  "active": "b745e9916e4f6a51",
   "lastOpenFiles": [
-    "Robotics Review Guide.md",
     "docs/Resources/Python/Control Flow.md",
+    "docs/Resources/Python/Operators.md",
+    "Robotics Review Guide.md",
     "docs/Resources/Python/Functions.md",
     "docs/Resources/Python/Truth Tables.md",
-    "docs/Resources/Python/Operators.md",
     "docs/Resources/Python/Standard Input & Output.md",
     "docs/Resources/Python/Data Types.md",
     "docs/Resources/Python/Variables.md",
@@ -188,16 +162,16 @@
     "docs/Robotics & Mechatronics III/Syllabus.md",
     "docs/Robotics & Mechatronics II/Syllabus.md",
     "docs/Robotics & Mechatronics I/Syllabus.md",
-    "docs/Resources/Definitions/Write.md",
-    "docs/Resources/Definitions/Volatile Memory.md",
-    "docs/Resources/Definitions/Syntax.md",
-    "docs/Resources/Definitions/SSD.md",
-    "docs/Resources/Definitions/Software.md",
-    "docs/Resources/Definitions/Series.md",
-    "docs/Resources/Definitions/Serial.md",
-    "docs/Resources/Definitions/Read.md",
-    "docs/Resources/Definitions/Random Access.md",
-    "docs/Resources/Definitions",
+    "docs/Resources/Glossary/Write.md",
+    "docs/Resources/Glossary/Volatile Memory.md",
+    "docs/Resources/Glossary/Syntax.md",
+    "docs/Resources/Glossary/SSD.md",
+    "docs/Resources/Glossary/Software.md",
+    "docs/Resources/Glossary/Series.md",
+    "docs/Resources/Glossary/Serial.md",
+    "docs/Resources/Glossary/Read.md",
+    "docs/Resources/Glossary/Random Access.md",
+    "docs/Resources/Glossary",
     "docs/Robotics & Mechatronics I/Standards A & B (01-2024).pdf",
     "docs/Robotics & Mechatronics IV",
     "docs/Robotics & Mechatronics III",

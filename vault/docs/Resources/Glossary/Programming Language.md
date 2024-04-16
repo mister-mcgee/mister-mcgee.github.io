@@ -1,0 +1,1 @@
+**Programming Language** - A programming language is a set of [grammar](docs/Resources/Glossary/Grammar.md) and [syntax](docs/Resources/Glossary/Syntax.md) used to write [programs](docs/Resources/Glossary/Program.md).

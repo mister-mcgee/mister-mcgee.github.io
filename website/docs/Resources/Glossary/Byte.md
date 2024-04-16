@@ -1,0 +1,1 @@
+**Byte** - A byte consists of eight [bits](/docs/Resources/Glossary/Bit) and is the smallest [addressable](docs/Resources/Glossary/Memory%20Address.md) unit of [memory](docs/Resources/Glossary/Memory.md) in a modern computer.
