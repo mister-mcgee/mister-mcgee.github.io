@@ -1,4 +1,3 @@
-# Syllabus
 # Robotics & Mechatronics IV
 > *Robotics & Mechatronics Technology*
 

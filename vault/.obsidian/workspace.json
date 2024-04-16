@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Robotics & Mechatronics IV/Syllabus.md",
+                "file": "docs/Robotics & Mechatronics Pre-Introduction/Syllabus.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Robotics & Mechatronics IV/Syllabus.md",
+                "file": "docs/Robotics & Mechatronics Pre-Introduction/Syllabus.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Robotics & Mechatronics IV/Syllabus.md",
+                "file": "docs/Robotics & Mechatronics Pre-Introduction/Syllabus.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Robotics & Mechatronics IV/Syllabus.md"
+                "file": "docs/Robotics & Mechatronics Pre-Introduction/Syllabus.md"
               }
             }
           }
@@ -147,8 +147,12 @@
       "obsidiosaurus:Obsidiosaurus": false
     }
   },
-  "active": "b745e9916e4f6a51",
+  "active": "9e8b02db13d1ae9b",
   "lastOpenFiles": [
+    "docs/Robotics & Mechatronics IV/Syllabus.md",
+    "docs/Robotics & Mechatronics III/Syllabus.md",
+    "docs/Robotics & Mechatronics II/Syllabus.md",
+    "docs/Robotics & Mechatronics I/Syllabus.md",
     "docs/Definitions/Write.md",
     "docs/Definitions/Volatile Memory.md",
     "docs/Definitions/Syntax.md",
@@ -171,10 +175,6 @@
     "docs/Definitions/HDD.md",
     "docs/Definitions/Hardware.md",
     "docs/Definitions/Grammar.md",
-    "docs/Definitions/GPU.md",
-    "docs/Definitions/Decimal.md",
-    "docs/Definitions/CPU.md",
-    "docs/Definitions/Concurrent.md",
     "docs/Definitions",
     "docs/Robotics & Mechatronics I/Standards A & B (01-2024).pdf",
     "docs/Robotics & Mechatronics IV",

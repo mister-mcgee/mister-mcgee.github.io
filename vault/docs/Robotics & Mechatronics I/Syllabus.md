@@ -1,4 +1,3 @@
-# Syllabus
 # Robotics & Mechatronics I
 > *Computer Science Foundations*
 

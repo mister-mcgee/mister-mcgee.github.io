@@ -1,4 +1,3 @@
-# Syllabus
 # Robotics & Mechatronics II
 > *Robotics & Automated Systems*
 

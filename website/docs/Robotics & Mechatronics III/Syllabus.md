@@ -1,4 +1,3 @@
-# Syllabus
 # Robotics & Mechatronics III 
 > *DC/AC Electronics, Digital Electronics*
 
