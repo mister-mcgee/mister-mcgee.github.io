@@ -1,0 +1,1 @@
+**Read** - In programming, reading refers to the process of copying a value from [[Memory|memory]] to the [[CPU]].

@@ -1,0 +1,1 @@
+**Memory** - Memory is a term describing how computers store information, usually in the form of [[Bit|bits]] and [[definitions/Byte|bytes]].

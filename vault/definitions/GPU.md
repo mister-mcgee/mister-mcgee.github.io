@@ -1,0 +1,1 @@
+**GPU** - A GPU or *graphics processing unit* is [[Hardware|hardware]] optimized to execute instructions in [[Parallel|parallel]].

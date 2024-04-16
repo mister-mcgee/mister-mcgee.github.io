@@ -1,0 +1,1 @@
+**Hardware** - Hardware are the physical components that comprise a computer.
