@@ -38,10 +38,9 @@ Binary Arithmetic Operators
 
 :::warning A Note on Assignment and Equality
 
-A common pitfall when checking for equality `==` is to accidentally use assignment `=`. In most cases this will be interpreted without an error, but will result in undefined or unexpected behavior.
+A common pitfall when checking for equality `==` is to accidentally use the assignment operator `=`. In some cases this will be interpreted without an error, but will result in undefined or unexpected behavior.
+# Boolean Operators
 :::
-
-### Boolean Operators
 
 Boolean operators are used to join **boolean** expressions and values.
 
