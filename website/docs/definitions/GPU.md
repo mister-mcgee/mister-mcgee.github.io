@@ -1,1 +1,1 @@
-**GPU** - A GPU or *graphics processing unit* is [hardware](/docs/Definitions/Hardware) optimized to execute instructions in [parallel](docs/Definitions/Parallel.md).
+**GPU** - A GPU or *graphics processing unit* is [hardware](/docs/definitions/Hardware) optimized to execute instructions in [parallel](docs/definitions/Parallel.md).

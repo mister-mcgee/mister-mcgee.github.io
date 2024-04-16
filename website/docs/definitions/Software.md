@@ -1,1 +1,1 @@
-**Software** - Software are the [programs](/docs/Definitions/Program) that a computer executes.
+**Software** - Software are the [programs](/docs/definitions/Program) that a computer executes.
