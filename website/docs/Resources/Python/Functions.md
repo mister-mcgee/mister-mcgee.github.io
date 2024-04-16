@@ -5,8 +5,8 @@
 ```py
 # define the function named "hello" with the parameters "name" and "age"
 def hello(name, age):
-	# this function returns a string
-	return "Hello, my name is " + name + ", and I am " + str(age) + "years old!"
+  # this function returns a string
+  return "Hello, my name is " + name + ", and I am " + str(age) + "years old!"
 
 # call the function named "hello" with the arguments "Gandalf" and "24000"
 # call the function named "print" using the output from "hello" as an argument

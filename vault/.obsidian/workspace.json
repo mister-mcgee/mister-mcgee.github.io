@@ -11,8 +11,12 @@
             "id": "3dab4c8528c47b03",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "docs/Resources/Python/Functions.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "docs/Resources/Python/Functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "docs/Resources/Python/Functions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "docs/Resources/Python/Functions.md"
+              }
             }
           }
         ]
@@ -139,15 +147,15 @@
       "obsidiosaurus:Obsidiosaurus": false
     }
   },
-  "active": "b745e9916e4f6a51",
+  "active": "3dab4c8528c47b03",
   "lastOpenFiles": [
+    "docs/Resources/Python/Data Types.md",
     "docs/Resources/Python/Control Flow.md",
     "docs/Resources/Python/Operators.md",
     "Robotics Review Guide.md",
     "docs/Resources/Python/Functions.md",
     "docs/Resources/Python/Truth Tables.md",
     "docs/Resources/Python/Standard Input & Output.md",
-    "docs/Resources/Python/Data Types.md",
     "docs/Resources/Python/Variables.md",
     "docs/Resources/Python/Comments.md",
     "docs/Resources/Python/Untitled",
