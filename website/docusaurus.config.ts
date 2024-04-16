@@ -58,6 +58,12 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
+          sidebarId: 'directory',
+          position: 'left',
+          label: 'Directory',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'robotics0',
           position: 'left',
           label: 'Pre-Intro',
@@ -86,12 +92,6 @@ const config: Config = {
           position: 'left',
           label: 'Robotics IV',
         },
-        {
-          type: 'docSidebar',
-          sidebarId: 'directory',
-          position: 'left',
-          label: 'Directory',
-        }
       ],
     },
     footer: {
