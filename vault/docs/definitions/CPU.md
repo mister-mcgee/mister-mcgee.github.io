@@ -1,0 +1,1 @@
+**CPU** - A CPU or *central processing unit* is [hardware](docs/definitions/Hardware.md) optimized to execute instructions in [series](docs/definitions/Series.md)

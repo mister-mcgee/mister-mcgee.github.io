@@ -1,1 +1,0 @@
-**Persistent Storage** - Persistent storage is a kind of [[Memory|memory]] that *does not* require active power to store information, meaning that persistent memory *can* survive a power cycle. Persistent memory is usually slower than [[Volatile Memory|volatile memory]].

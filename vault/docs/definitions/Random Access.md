@@ -1,0 +1,1 @@
+**Random Access** - Random access means that [read](docs/definitions/Read.md) operations take the same time regardless of their [location](docs/definitions/Memory%20Address.md) in [memory](docs/definitions/Memory.md).

@@ -1,0 +1,1 @@
+**Volatile Memory** - Volatile memory is a kind of [memory](/docs/definitions/Memory) that requires active power to store information, meaning that volatile memory *cannot* survive a power cycle. Volatile memory is typically faster to [read](docs/definitions/Read.md) than [persistent storage](docs/definitions/Persistent%20Storage.md).

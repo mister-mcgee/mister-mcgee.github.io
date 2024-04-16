@@ -1,1 +1,0 @@
-**Software** - Software are the [[Program|programs]] that a computer executes.

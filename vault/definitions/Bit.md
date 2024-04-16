@@ -1,1 +1,0 @@
-**Bit** - A bit is a [[Binary|binary]] digit, which is the smallest unit of information. A bit may only occupy one of two states at a time. A bit can either be zero or one, low or high, off or on, false or true respectively.

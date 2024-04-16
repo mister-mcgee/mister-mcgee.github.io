@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "44f9d585d0387fb0",
+            "id": "9e8b02db13d1ae9b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -22,22 +22,35 @@
         ]
       },
       {
-        "id": "fcb6cb8f86c57c62",
+        "id": "5d7a0c4d9fce501f",
         "type": "tabs",
         "children": [
           {
-            "id": "60a86ad0f50db98e",
+            "id": "44f9d585d0387fb0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "definitions/Write.md",
+                "file": "docs/definitions/Volatile Memory.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "643978dfbe8bb679",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/definitions/Grammar.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -103,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "definitions/Write.md",
+                "file": "docs/definitions/Grammar.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "definitions/Write.md",
+                "file": "docs/definitions/Grammar.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "definitions/Write.md"
+                "file": "docs/definitions/Grammar.md"
               }
             }
           }
@@ -165,31 +178,36 @@
       "obsidiosaurus:Obsidiosaurus": false
     }
   },
-  "active": "60a86ad0f50db98e",
+  "active": "643978dfbe8bb679",
   "lastOpenFiles": [
+    "docs/definitions/Programming Language.md",
+    "docs/definitions/Grammar.md",
+    "docs/definitions/Syntax.md",
     "Robotics Review Guide.md",
-    "definitions/Write.md",
-    "definitions/Read.md",
-    "definitions/CPU.md",
-    "definitions/GPU.md",
-    "definitions/Volatile Memory.md",
-    "definitions/Concurrent.md",
-    "definitions/Parallel.md",
-    "definitions/Hardware.md",
-    "definitions/Serial.md",
-    "definitions/Series.md",
-    "definitions/Software.md",
-    "definitions/Program.md",
-    "definitions/Persistent Storage.md",
-    "definitions/Memory.md",
-    "definitions/Byte.md",
-    "definitions/Octal.md",
-    "definitions/Memory Address.md",
-    "definitions/Bit.md",
-    "definitions/Hexadecimal.md",
-    "definitions/Decimal.md",
-    "definitions/Binary.md",
-    "definitions",
+    "docs/definitions/ODD.md",
+    "docs/definitions/SSD.md",
+    "docs/definitions/HDD.md",
+    "docs/definitions/RAM.md",
+    "docs/definitions/Random Access.md",
+    "docs/definitions/Volatile Memory.md",
+    "docs/definitions/Persistent Storage.md",
+    "docs/definitions/Write.md",
+    "docs/definitions/Software.md",
+    "docs/definitions/Series.md",
+    "docs/definitions/Serial.md",
+    "docs/definitions/Read.md",
+    "docs/definitions/Program.md",
+    "docs/definitions/Parallel.md",
+    "docs/definitions/Octal.md",
+    "docs/definitions/Memory Address.md",
+    "docs/definitions/Byte.md",
+    "docs/definitions/Memory.md",
+    "docs/definitions/Bit.md",
+    "docs/definitions/Hexadecimal.md",
+    "docs/definitions/Hardware.md",
+    "docs/definitions/GPU.md",
+    "docs",
+    "docs/definitions",
     "assets"
   ]
 }

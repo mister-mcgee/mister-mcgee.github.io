@@ -1,1 +1,0 @@
-**CPU** - A CPU or *central processing unit* is [[Hardware|hardware]] optimized to execute instructions in [[Series|series]].
