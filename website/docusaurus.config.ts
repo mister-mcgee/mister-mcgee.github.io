@@ -86,6 +86,12 @@ const config: Config = {
           position: 'left',
           label: 'Robotics IV',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'directory',
+          position: 'left',
+          label: 'Directory',
+        }
       ],
     },
     footer: {
