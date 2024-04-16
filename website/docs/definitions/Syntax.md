@@ -1,1 +1,1 @@
-**Syntax** - In programming, syntax refers to the symbols that comprise a [programming language](/docs/definitions/Programming%20Language). A syntax error occurs when a symbol is unrecognized or used incorrectly.
+**Syntax** - In programming, syntax refers to the symbols that comprise a [programming language](/docs/Definitions/Programming%20Language). A syntax error occurs when a symbol is unrecognized or used incorrectly.

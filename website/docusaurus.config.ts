@@ -3,20 +3,20 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Mister McGee',
+  tagline: 'Robotics & Mechatronics',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://mister-mcgee.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'mister-mcgee', // Usually your GitHub org/user name.
+  projectName: 'mister-mcgee.github.io', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -50,7 +50,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'Mister McGee',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -58,14 +58,33 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'definitions',
+          sidebarId: 'robotics0',
           position: 'left',
-          label: 'Definitions',
+          label: 'Pre-Intro',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
+          type: 'docSidebar',
+          sidebarId: 'robotics1',
+          position: 'left',
+          label: 'Robotics I',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'robotics2',
+          position: 'left',
+          label: 'Robotics II',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'robotics3',
+          position: 'left',
+          label: 'Robotics III',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'robotics4',
+          position: 'left',
+          label: 'Robotics IV',
         },
       ],
     },
@@ -106,6 +125,8 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  plugins: [require.resolve('docusaurus-lunr-search')],
 };
 
 export default config;

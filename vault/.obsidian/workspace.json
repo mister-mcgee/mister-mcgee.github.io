@@ -13,44 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Robotics Review Guide.md",
+                "file": "docs/Robotics & Mechatronics IV/Syllabus.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ]
-      },
-      {
-        "id": "5d7a0c4d9fce501f",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "44f9d585d0387fb0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/definitions/Volatile Memory.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "643978dfbe8bb679",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/definitions/Grammar.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ],
-        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -100,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 333.5
   },
   "right": {
     "id": "327d77e70519e668",
@@ -116,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/definitions/Grammar.md",
+                "file": "docs/Robotics & Mechatronics IV/Syllabus.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/definitions/Grammar.md",
+                "file": "docs/Robotics & Mechatronics IV/Syllabus.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/definitions/Grammar.md"
+                "file": "docs/Robotics & Mechatronics IV/Syllabus.md"
               }
             }
           }
@@ -178,36 +147,41 @@
       "obsidiosaurus:Obsidiosaurus": false
     }
   },
-  "active": "643978dfbe8bb679",
+  "active": "9e8b02db13d1ae9b",
   "lastOpenFiles": [
-    "docs/definitions/Programming Language.md",
-    "docs/definitions/Grammar.md",
-    "docs/definitions/Syntax.md",
+    "docs/Robotics & Mechatronics III/Syllabus.md",
+    "docs/Robotics & Mechatronics II/Syllabus.md",
+    "docs/Robotics & Mechatronics I/Syllabus.md",
+    "docs/Robotics & Mechatronics Pre-Introduction/Syllabus.md",
+    "docs/Robotics & Mechatronics IV/Syllabus.md",
+    "docs/Robotics & Mechatronics I/Standards A & B (01-2024).pdf",
     "Robotics Review Guide.md",
-    "docs/definitions/ODD.md",
-    "docs/definitions/SSD.md",
-    "docs/definitions/HDD.md",
-    "docs/definitions/RAM.md",
-    "docs/definitions/Random Access.md",
-    "docs/definitions/Volatile Memory.md",
-    "docs/definitions/Persistent Storage.md",
-    "docs/definitions/Write.md",
-    "docs/definitions/Software.md",
-    "docs/definitions/Series.md",
-    "docs/definitions/Serial.md",
-    "docs/definitions/Read.md",
-    "docs/definitions/Program.md",
-    "docs/definitions/Parallel.md",
-    "docs/definitions/Octal.md",
-    "docs/definitions/Memory Address.md",
-    "docs/definitions/Byte.md",
-    "docs/definitions/Memory.md",
-    "docs/definitions/Bit.md",
-    "docs/definitions/Hexadecimal.md",
-    "docs/definitions/Hardware.md",
-    "docs/definitions/GPU.md",
+    "docs/Robotics & Mechatronics IV",
+    "docs/Robotics & Mechatronics III",
+    "docs/Definitions/Binary.md",
+    "docs/Definitions/Grammar.md",
+    "docs/Robotics & Mechatronics II",
+    "docs/Robotics & Mechatronics Pre-Introduction",
+    "docs/Robotics & Mechatronics I",
+    "docs/Definitions/Programming Language.md",
+    "docs/Definitions/Syntax.md",
+    "docs/Definitions/ODD.md",
+    "docs/Definitions/SSD.md",
+    "docs/Definitions/HDD.md",
+    "docs/Definitions/RAM.md",
+    "docs/Definitions/Random Access.md",
+    "docs/Definitions/Volatile Memory.md",
+    "docs/Definitions/Persistent Storage.md",
+    "docs/Definitions/Write.md",
+    "docs/Definitions/Software.md",
+    "docs/Definitions/Series.md",
+    "docs/Definitions/Serial.md",
+    "docs/Definitions/Read.md",
+    "docs/Definitions/Program.md",
+    "docs/Definitions/Parallel.md",
+    "docs/Definitions/Octal.md",
     "docs",
-    "docs/definitions",
+    "docs/Definitions",
     "assets"
   ]
 }
