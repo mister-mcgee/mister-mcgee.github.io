@@ -4,6 +4,24 @@
     "type": "split",
     "children": [
       {
+        "id": "eb3906696e6f5cb8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4d9a3873c524a3ad",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Robotics Review Guide.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
         "id": "81d8f13f587fa519",
         "type": "tabs",
         "children": [
@@ -13,7 +31,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Resources/How-To/Setup Visual Studio Code.md",
+                "file": "docs/Resources/Python/Control Flow.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 333.5
+    "width": 454.5
   },
   "right": {
     "id": "327d77e70519e668",
@@ -85,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Resources/How-To/Setup Visual Studio Code.md",
+                "file": "docs/Resources/Python/Control Flow.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Resources/How-To/Setup Visual Studio Code.md",
+                "file": "docs/Resources/Python/Control Flow.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Resources/How-To/Setup Visual Studio Code.md"
+                "file": "docs/Resources/Python/Control Flow.md"
               }
             }
           }
@@ -149,8 +167,20 @@
   },
   "active": "9e8b02db13d1ae9b",
   "lastOpenFiles": [
-    "docs/Resources/How-To/Setup Python.md",
-    "docs/Resources/How-To/Setup Visual Studio Code.md",
+    "Robotics Review Guide.md",
+    "docs/Resources/Python/Control Flow.md",
+    "docs/Resources/Python/Functions.md",
+    "docs/Resources/Python/Truth Tables.md",
+    "docs/Resources/Python/Operators.md",
+    "docs/Resources/Python/Standard Input & Output.md",
+    "docs/Resources/Python/Data Types.md",
+    "docs/Resources/Python/Variables.md",
+    "docs/Resources/Python/Comments.md",
+    "docs/Resources/Python/Untitled",
+    "docs/Resources/How-To/Getting Started with Python.md",
+    "docs/Resources/Python",
+    "docs/Resources/How-To/Getting Started with Visual Studio Code.md",
+    "docs/Resources/How-To/Getting Started with LEGO EV3 and Micropython.md",
     "docs/Robotics & Mechatronics Pre-Introduction/Syllabus.md",
     "docs/Resources/How-To",
     "docs/Resources",
@@ -167,23 +197,11 @@
     "docs/Resources/Definitions/Serial.md",
     "docs/Resources/Definitions/Read.md",
     "docs/Resources/Definitions/Random Access.md",
-    "docs/Resources/Definitions/RAM.md",
-    "docs/Resources/Definitions/Programming Language.md",
-    "docs/Resources/Definitions/Program.md",
-    "docs/Resources/Definitions/Persistent Storage.md",
-    "docs/Resources/Definitions/Parallel.md",
-    "docs/Resources/Definitions/ODD.md",
-    "docs/Resources/Definitions/Octal.md",
-    "docs/Resources/Definitions/Memory.md",
-    "docs/Resources/Definitions/Memory Address.md",
-    "docs/Resources/Definitions/Hexadecimal.md",
     "docs/Resources/Definitions",
     "docs/Robotics & Mechatronics I/Standards A & B (01-2024).pdf",
     "docs/Robotics & Mechatronics IV",
     "docs/Robotics & Mechatronics III",
     "docs/Robotics & Mechatronics II",
-    "docs/Robotics & Mechatronics Pre-Introduction",
-    "docs/Robotics & Mechatronics I",
-    "docs"
+    "docs/Robotics & Mechatronics Pre-Introduction"
   ]
 }
