@@ -114,12 +114,12 @@ const config: Config = {
           title: 'Made Using',
           items: [
             {
-              label: 'Docusaurus',
-              href: 'https://docusaurus.io/',
-            },
-            {
               label: 'Obsidian',
               href: 'https://obsidian.md/',
+            },
+            {
+              label: 'Docusaurus',
+              href: 'https://docusaurus.io/',
             },
             {
               label: 'Obsidiosaurus',
