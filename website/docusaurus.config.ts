@@ -47,14 +47,9 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo.png',
     navbar: {
       title: 'Mister McGee',
-      logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
-      },
       items: [
         {
           type: 'docSidebar',
@@ -92,39 +87,49 @@ const config: Config = {
           position: 'left',
           label: 'Robotics IV',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'glossary',
+          position: 'left',
+          label: 'Glossary',
+        }
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Community',
+          title: 'Links',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'GitHub',
+              href: 'https://github.com/mister-mcgee',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'LinkedIn',
+              href: 'https://linkedin.com/in/shawn-maurice-mcgee/',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Made Using',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Obsidian',
+              href: 'https://obsidian.md/',
             },
+            {
+              label: 'Docusaurus',
+              href: 'https://docusaurus.io/',
+            },
+            {
+              label: 'Obsidiosaurus',
+              href: 'https://cimsta.github.io/obsidiosaurus-docs/',
+            }
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Mister McGee.`,
     },
     prism: {
       theme: prismThemes.github,

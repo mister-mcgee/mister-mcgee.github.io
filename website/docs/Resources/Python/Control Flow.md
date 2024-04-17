@@ -8,7 +8,7 @@ The `if` keyword indicates a block of code should run when its **condition** is 
 An example `if` statement might look like - 
 ```py
 if number <  0:
-	print("Number is less than zero!")
+  print("Number is less than zero!")
 ```
 
 ### `else`
@@ -17,9 +17,9 @@ The `else` keyword indicates a block of code should run when the **condition** a
 An example `if`, `else` chain might look like -
 ```py
 if number == 7:
-	print("Number is Seven!")
+  print("Number is Seven!")
 else:
-	print("Number is NOT Seven!")
+  print("Number is NOT Seven!")
 ```
 
 ### `elif`
@@ -28,11 +28,11 @@ The `elif` keyword indicates a block of code should run when the **condition** a
 An example `if`, `elif`, `else` chain might look like -
 ```py
 if   number < 0:
-	print("Number is negative!")
+  print("Number is negative!")
 elif number > 0:
-	print("Number is positive!")
+  print("Number is positive!")
 else:
-	print("Number is zero!")
+  print("Number is zero!")
 ```
 ### Looping
 A loop is a block of code that is run repeatedly (none or more times).
@@ -43,8 +43,8 @@ An example `while` loop might look like -
 ```py
 number = 0
 while number < 10:
-	print("I love Robotics!")
-	number = number + 1
+  print("I love Robotics!")
+  number = number + 1
 ```
 
 ### `for ... in`
@@ -58,5 +58,5 @@ A `for ... in` statement requires a **variable** and an **iterable**. Each itera
 # this program will count from 0 to 9
 
 for n in range(10):
-	print(n)
+  print(n)
 ```
