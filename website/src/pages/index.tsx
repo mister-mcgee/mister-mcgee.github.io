@@ -16,7 +16,6 @@ function HomepageHeader() {
         </Heading>        
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <NutsAndBolts />
-        {/* <img src="img/logo.png" width={128} style={{borderRadius: "1em"}} className="item shadow--tl"/> */}
       </div>
     </header>
   );
@@ -26,12 +25,9 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`Hello`}
+      description="Robotics & Mechatronics at Power Technical">
       <HomepageHeader />
-      <main>
-        {/* <HomepageFeatures /> */}
-      </main>
     </Layout>
   );
 }
