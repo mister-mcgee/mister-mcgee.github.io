@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Resources/Python/Truth Tables.md",
+                "file": "docs/Resources/Python/Data Types.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Resources/Python/Truth Tables.md",
+                "file": "docs/Resources/Python/Data Types.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Resources/Python/Truth Tables.md",
+                "file": "docs/Resources/Python/Data Types.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Resources/Python/Truth Tables.md"
+                "file": "docs/Resources/Python/Data Types.md"
               }
             }
           }
@@ -149,8 +149,8 @@
   },
   "active": "3dab4c8528c47b03",
   "lastOpenFiles": [
-    "docs/Resources/Python/Variables.md",
     "docs/Resources/Python/Truth Tables.md",
+    "docs/Resources/Python/Variables.md",
     "docs/Resources/Python/Standard Input & Output.md",
     "docs/Resources/Python/Operators.md",
     "docs/Resources/Python/Functions.md",

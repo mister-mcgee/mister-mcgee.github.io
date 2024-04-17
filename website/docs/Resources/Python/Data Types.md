@@ -1,8 +1,32 @@
 # Data Types
 
-In a modern computer all data exists as a simple **binary** sequence which is meaningless without context. This is why data types are useful.
+In a modern computer all data exists in the form of a [binary](/docs/Resources/Glossary/Binary) sequence. Take the following string of [bytes](docs/Resources/Glossary/Byte.md) as an example -
 
-Data types describe how certain data should be handled by your program. Different values can have the same binary representation yet mean different things depending on their data type. A good example of this is the 32-bit hexadecimal value `0x3f800000` which represents the integer `1065353216`, meanwhile that same value represents the floating-point decimal `1.0`.
+`01101000 01100101 01101100 01101100 01101111 01110111 01101111 01110010 01101100 01100100` 
+
+If I were to ask you to determine the meaning of the binary string above, then you might be confused and rightfully so. Without context, the several billions of bits that comprise your computer's [memory](/docs/Resources/Glossary/Memory) are meaningless to a human reader, so how does your program know what to do with them?
+
+This the purpose of data types, which describe how certain data should be handled by your program. In the earlier example, the binary sequence is actually an [ASCII](https://en.wikipedia.org/wiki/ASCII) encoded string of characters, which means that each [byte](docs/Resources/Glossary/Byte.md) corresponds to one of 256 symbols indicated by the standard. Referencing the following section of the ASCII standard we can see that our string of [bytes](docs/Resources/Glossary/Byte.md) actually decodes to the text `helloworld`.
+
+| **Symbol** | **Binary** | **Symbol** | Binary     |
+| ---------- | ---------- | ---------- | ---------- |
+| `a`        | `01100001` | `n`        | `01101110` |
+| `b`        | `01100010` | `o`        | `01101111` |
+| `c`        | `01100011` | `p`        | `01110000` |
+| `d`        | `01100100` | `q`        | `01110001` |
+| `e`        | `01100101` | `r`        | `01110010` |
+| `f`        | `01100110` | `s`        | `01110011` |
+| `g`        | `01100111` | `t`        | `01110100` |
+| `h`        | `01101000` | `u`        | `01110101` |
+| `i`        | `01101001` | `v`        | `01110110` |
+| `j`        | `01101010` | `w`        | `01110111` |
+| `k`        | `01101011` | `x`        | `01111000` |
+| `l`        | `01101100` | `y`        | `01111001` |
+| `m`        | `01101101` | `z`        | `01111010` |
+
+Standards are important to the world of computing and ASCII is just one such example. Most modern text is encoded using the ubiquitous [UTF-8](https://en.wikipedia.org/wiki/UTF-8) standard which includes the same 256 characters as its ASCII predecessor, while also making room for an additional 1.1 million symbols. Beside character encodings, another common standard is [IEEE-754](https://en.wikipedia.org/wiki/IEEE_754) which describes how to encode a wide range of numbers in binary.
+
+One of the interesting consequences of contextual data types is that different values can have the same underlying binary representation in [memory](/docs/Resources/Glossary/Memory). Take, for example, the 32-bit binary sequence `00111111 10000000 00000000 00000000` which represents the integer number `1065353216`, meanwhile that same sequence represents the IEEE-754 floating-point number `1.0`.
 
 In Python some important data types include -
 
