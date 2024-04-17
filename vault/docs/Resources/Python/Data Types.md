@@ -1,12 +1,12 @@
 # Data Types
 
-In a modern computer all data exists in the form of a [binary](docs/Resources/Glossary/Binary.md) sequence. Take the following string of [bytes](docs/Resources/Glossary/Byte.md) as an example -
+In a modern computer all data exists in the form of a [binary](docs/Glossary/Binary.md) sequence. Take the following string of [bytes](docs/Glossary/Byte.md) as an example -
 
 `01101000 01100101 01101100 01101100 01101111 01110111 01101111 01110010 01101100 01100100` 
 
-If I were to ask you to determine the meaning of the binary string above, then you might be confused and rightfully so. Without context, the several billions of bits that comprise your computer's [memory](docs/Resources/Glossary/Memory.md) are meaningless to a human reader, so how does your program know what to do with them?
+If I were to ask you to determine the meaning of the binary string above, then you might be confused and rightfully so. Without context, the several billions of bits that comprise your computer's [memory](docs/Glossary/Memory.md) are meaningless to a human reader, so how does your program know what to do with them?
 
-This the purpose of data types, which describe how certain data should be handled by your program. In the earlier example, the binary sequence is actually an [ASCII](https://en.wikipedia.org/wiki/ASCII) encoded string of characters, which means that each [byte](docs/Resources/Glossary/Byte.md) corresponds to one of 256 symbols indicated by the standard. Referencing the following section of the ASCII standard we can see that our string of [bytes](docs/Resources/Glossary/Byte.md) actually decodes to the text `helloworld`.
+This the purpose of data types, which describe how certain data should be handled by your program. In the earlier example, the binary sequence is actually an [ASCII](https://en.wikipedia.org/wiki/ASCII) encoded string of characters, which means that each [byte](docs/Glossary/Byte.md) corresponds to one of 256 symbols indicated by the standard. Referencing the following section of the ASCII standard we can see that our string of [bytes](docs/Glossary/Byte.md) actually decodes to the text `helloworld`.
 
 | **Symbol** | **Binary** | **Symbol** | Binary     |
 | ---------- | ---------- | ---------- | ---------- |
@@ -26,7 +26,7 @@ This the purpose of data types, which describe how certain data should be handle
 
 Standards are important to the world of computing and ASCII is just one such example. Most modern text is encoded using the ubiquitous [UTF-8](https://en.wikipedia.org/wiki/UTF-8) standard which includes the same 256 characters as its ASCII predecessor, while also making room for an additional 1.1 million symbols. Beside character encodings, another common standard is [IEEE-754](https://en.wikipedia.org/wiki/IEEE_754) which describes how to encode a wide range of numbers in binary.
 
-One of the interesting consequences of contextual data types is that different values can have the same underlying binary representation in [memory](docs/Resources/Glossary/Memory.md). Take, for example, the 32-bit binary sequence `00111111 10000000 00000000 00000000` which represents the integer number `1065353216`, meanwhile that same sequence represents the IEEE-754 floating-point number `1.0`.
+One of the interesting consequences of contextual data types is that different values can have the same underlying binary representation in [memory](docs/Glossary/Memory.md). Take, for example, the 32-bit binary sequence `00111111 10000000 00000000 00000000` which represents the integer number `1065353216`, meanwhile that same sequence represents the IEEE-754 floating-point number `1.0`.
 
 In Python some important data types include -
 

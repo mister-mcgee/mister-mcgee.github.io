@@ -87,6 +87,12 @@ const config: Config = {
           position: 'left',
           label: 'Robotics IV',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'glossary',
+          position: 'left',
+          label: 'Glossary',
+        }
       ],
     },
     footer: {

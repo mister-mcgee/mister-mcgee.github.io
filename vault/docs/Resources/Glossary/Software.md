@@ -1,1 +1,0 @@
-**Software** - Software are the [programs](docs/Resources/Glossary/Program.md) that a computer executes.
