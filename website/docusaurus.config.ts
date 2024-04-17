@@ -47,14 +47,9 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/logo.png',
     navbar: {
       title: 'Mister McGee',
-      logo: {
-        alt: 'Mister McGe Spectacles',
-        src: 'img/logo-transparent.png',
-      },
       items: [
         {
           type: 'docSidebar',

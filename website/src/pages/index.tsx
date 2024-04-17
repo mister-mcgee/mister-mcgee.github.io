@@ -4,16 +4,22 @@ import Layout from '@theme/Layout';
 import clsx from 'clsx';
 
 import styles from './index.module.css';
+import NutsAndBolts from '../components/NutsAndBolts';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
+        {/* <div style={{fontSize: "6em"}}>
+          🥸
+        </div> */}
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
-        </Heading>
+        </Heading>        
         <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <NutsAndBolts />
+        <img src="img/logo.png" width={128} style={{borderRadius: "1em"}} className="item shadow--tl"/>
       </div>
     </header>
   );
