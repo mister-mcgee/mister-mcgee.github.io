@@ -1,0 +1,1 @@
+**SSD** - An SSD or *solid state drive* is a kind of [persistent storage](/docs/Glossary/Persistent%20Storage) device that stores information via magnetic switches. Because there are no moving parts, an SSD *is* a form of [random access](docs/Glossary/Random%20Access.md) [storage](docs/Glossary/Memory.md).
