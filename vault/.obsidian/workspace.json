@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Resources/Python/Data Types.md",
+                "file": "docs/Robotics & Mechatronics IV/Syllabus.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Resources/Python/Data Types.md",
+                "file": "docs/Robotics & Mechatronics IV/Syllabus.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Resources/Python/Data Types.md",
+                "file": "docs/Robotics & Mechatronics IV/Syllabus.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Resources/Python/Data Types.md"
+                "file": "docs/Robotics & Mechatronics IV/Syllabus.md"
               }
             }
           }
@@ -147,19 +147,19 @@
       "obsidiosaurus:Obsidiosaurus": false
     }
   },
-  "active": "b745e9916e4f6a51",
+  "active": "3dab4c8528c47b03",
   "lastOpenFiles": [
+    "Robotics Review Guide.md",
+    "docs/Resources/Python/Data Types.md",
     "docs/Resources/Python/Truth Tables.md",
     "docs/Resources/Python/Variables.md",
     "docs/Resources/Python/Standard Input & Output.md",
     "docs/Resources/Python/Operators.md",
     "docs/Resources/Python/Functions.md",
-    "docs/Resources/Python/Data Types.md",
     "docs/Resources/Python/Control Flow.md",
     "docs/Resources/Python/Comments.md",
     "docs/Glossary/Binary.md",
     "docs/Glossary/RAM.md",
-    "Robotics Review Guide.md",
     "docs/Resources/Python/Untitled",
     "docs/Resources/How-To/Getting Started with Python.md",
     "docs/Resources/Python",
