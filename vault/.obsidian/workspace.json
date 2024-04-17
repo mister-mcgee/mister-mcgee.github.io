@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Resources/Python/Functions.md",
+                "file": "docs/Resources/Python/Operators.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Resources/Python/Functions.md",
+                "file": "docs/Resources/Python/Operators.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Resources/Python/Functions.md",
+                "file": "docs/Resources/Python/Operators.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Resources/Python/Functions.md"
+                "file": "docs/Resources/Python/Operators.md"
               }
             }
           }
@@ -150,10 +150,12 @@
   "active": "3dab4c8528c47b03",
   "lastOpenFiles": [
     "docs/Resources/Python/Data Types.md",
+    "docs/Resources/Glossary/Binary.md",
+    "docs/Resources/Glossary/RAM.md",
+    "docs/Resources/Python/Functions.md",
     "docs/Resources/Python/Control Flow.md",
     "docs/Resources/Python/Operators.md",
     "Robotics Review Guide.md",
-    "docs/Resources/Python/Functions.md",
     "docs/Resources/Python/Truth Tables.md",
     "docs/Resources/Python/Standard Input & Output.md",
     "docs/Resources/Python/Variables.md",
@@ -177,8 +179,6 @@
     "docs/Resources/Glossary/Software.md",
     "docs/Resources/Glossary/Series.md",
     "docs/Resources/Glossary/Serial.md",
-    "docs/Resources/Glossary/Read.md",
-    "docs/Resources/Glossary/Random Access.md",
     "docs/Resources/Glossary",
     "docs/Robotics & Mechatronics I/Standards A & B (01-2024).pdf",
     "docs/Robotics & Mechatronics IV",
