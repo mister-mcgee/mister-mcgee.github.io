@@ -1,3 +1,26 @@
 .nuts-and-bolts {
+  --offset-x: 0px;
+  --offset-y: 0px;
+  position: relative;
+  top  : var(--offset-y);
+  left : var(--offset-x);
   font-size: 6em;
+
+  user-select: none;
+  text-align: center;
+}
+
+.particle {
+  --offset-x: 0px;
+  --offset-y: 0px;
+  --scale:    1;
+
+  position: absolute;
+  top : var(--offset-y);
+  left: var(--offset-x);
+  user-select: none;
+
+  font-size: calc(3em * var(--scale));
+
+  text-align  : center;
 }

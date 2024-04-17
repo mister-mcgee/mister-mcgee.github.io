@@ -11,15 +11,12 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        {/* <div style={{fontSize: "6em"}}>
-          🥸
-        </div> */}
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>        
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <NutsAndBolts />
-        <img src="img/logo.png" width={128} style={{borderRadius: "1em"}} className="item shadow--tl"/>
+        {/* <img src="img/logo.png" width={128} style={{borderRadius: "1em"}} className="item shadow--tl"/> */}
       </div>
     </header>
   );
