@@ -2,8 +2,23 @@
 
 import dynamic from "next/dynamic";
 
-export default function Content({ slug }: { slug: Array<string> }) {
+export default function Content({ 
+  slug, mdx, md 
+}: { 
+  slug: Array<string>
+  mdx : boolean
+  md  : boolean
+}) {
 
-  const Content = dynamic(() => import(`/a/${slug.join('/')}.mdx`))
-  return <Content/>
+  if(mdx) {
+    const Content = dynamic(() => import(`/a/${slug.join('/')}.mdx`), { ssr: false })
+    return <Content/>
+  }
+
+  if(md) {
+    const Content = dynamic(() => import(`/a/${slug.join('/')}.md` ), { ssr: false })
+    return <Content/>
+  }
+
+  return <></>
 }

@@ -4,7 +4,13 @@ import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 
 /** @type {import('rehype-expressive-code').RehypeExpressiveCodeOptions} */
 const rehypeExpressiveCodeOptions = {
+  themes: ["github-dark", "github-light"],
   plugins: [pluginLineNumbers()],
+  defaultProps: {
+    showLineNumbers: false,
+  },
+  useDarkModeMediaQuery: false,
+  themeCssSelector: (theme) => `.${theme.type}`,
 }
  
 /** @type {import('next').NextConfig} */
