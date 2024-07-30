@@ -1,1 +1,0 @@
-**Program** - A program is a sequence of instructions written to be executed by a computer.

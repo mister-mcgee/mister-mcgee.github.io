@@ -1,1 +1,0 @@
-**Hexadecimal** - Hexadecimal comes from the Latin *hex*- meaning *six* and *deci-* meaning *tenth*. Hexadecimal refers to the base-16 number system which consists of the numeric digits zero through 9 and an additional six alphabetic digits; A, B, C, D, E, F.
