@@ -9,7 +9,6 @@ export default function Content({
   mdx : boolean
   md  : boolean
 }) {
-
   if(mdx) {
     const Content = dynamic(() => import(`/a/${slug.join('/')}.mdx`), { ssr: true  })
     return <Content/>
@@ -20,5 +19,5 @@ export default function Content({
     return <Content/>
   }
 
-  return <></>
+  return null
 }
