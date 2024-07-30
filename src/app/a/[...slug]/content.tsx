@@ -11,7 +11,7 @@ export default function Content({
 }) {
 
   if(mdx) {
-    const Content = dynamic(() => import(`/a/${slug.join('/')}.mdx`), { ssr: false })
+    const Content = dynamic(() => import(`/a/${slug.join('/')}.mdx`), { ssr: true  })
     return <Content/>
   }
 
