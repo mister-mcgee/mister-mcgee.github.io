@@ -1,4 +1,5 @@
 import createMDX from '@next/mdx'
+import remarkGfm from 'remark-gfm'
 import rehypeExpressiveCode from 'rehype-expressive-code'
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 
@@ -18,15 +19,14 @@ const nextConfig = {
   // Configure `pageExtensions`` to include MDX files
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   // Optionally, add any other Next.js config below
-  reactStrictMode: true,
-  output: "export"
+  reactStrictMode: true
 }
  
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   // Add markdown plugins here, as desired
   options: {
-    remarkPlugins: [                                                     ],
+    remarkPlugins: [ remarkGfm ],
     rehypePlugins: [[ rehypeExpressiveCode, rehypeExpressiveCodeOptions ]],
   }
 })

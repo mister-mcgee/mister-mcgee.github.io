@@ -10,12 +10,12 @@ export default function Content({
   md  : boolean
 }) {
   if(mdx) {
-    const Content = dynamic(() => import(`/a/${slug.join('/')}.mdx`), { ssr: true  })
+    const Content = dynamic(() => import(`/idea/${slug.join('/')}.mdx`), { ssr: true  })
     return <Content/>
   }
 
   if(md) {
-    const Content = dynamic(() => import(`/a/${slug.join('/')}.md` ), { ssr: false })
+    const Content = dynamic(() => import(`/idea/${slug.join('/')}.md` ), { ssr: false })
     return <Content/>
   }
 
