@@ -18,5 +18,6 @@
   width : 64px;
   user-select: none;
   position: absolute;
-  transform: translate(var(--offset-x), var(--offset-y));
+  pointer-events: none;
+  transform: translate(var(--offset-x), var(--offset-y)) scale(var(--scale));
 }

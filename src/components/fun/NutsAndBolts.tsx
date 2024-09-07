@@ -3,7 +3,7 @@
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import "./NutsAndBolts.css"
 
-const PARTICLES = [
+const NUTS_AND_BOLTS = [
   "/emoji/ms-hammer.png",
   "/emoji/ms-pick.png",
   "/emoji/ms-carpentry-saw.png",
@@ -19,6 +19,8 @@ const PARTICLES = [
   "/emoji/ms-battery.png",
   "/emoji/ms-low-battery.png",
   "/emoji/ms-toolbox.png",
+  "/emoji/ms-floppy-disk.png",
+  "/emoji/ms-computer-disk.png",
 ]
 
 const MINIMUM_SPRING_FORCE = 100
@@ -30,7 +32,7 @@ const SPRING_DAMPER = .9
 
 const DELTA_THRESHOLD = .5 // seconds
 
-const PARTICLE_LIFETIME = 3 // seconds
+const PARTICLE_LIFETIME = 2 // seconds
 const PARTICLE_GRAVITY  = 1000
 const MINIMUM_LINEAR_VELOCITY = 350
 const MAXIMUM_LINEAR_VELOCITY = 350
@@ -111,7 +113,7 @@ export default function NutsAndBolts() {
         particle_magnitude = Math.random() * (MAXIMUM_LINEAR_VELOCITY - MINIMUM_LINEAR_VELOCITY) + MINIMUM_LINEAR_VELOCITY,
         particle_direction = Math.random() * 2 * Math.PI;
       particles.current.push({
-        image: PARTICLES[Math.floor(Math.random() * PARTICLES.length)],
+        image: NUTS_AND_BOLTS[Math.floor(Math.random() * NUTS_AND_BOLTS.length)],
         timer: 0,
         x : 0,
         y : 0,
