@@ -1,5 +1,6 @@
+"use client"
+
 import { CSSProperties, useEffect, useRef, useState } from "react";
-import Image from "next/image"
 import "./NutsAndBolts.css"
 
 const PARTICLES = [
@@ -25,7 +26,7 @@ const MAXIMUM_SPRING_FORCE = 1000
 
 const SPRING_RADIUS = 256
 const SPRING_FACTOR = 1000
-const SPRING_DAMPER = .95
+const SPRING_DAMPER = .9
 
 const DELTA_THRESHOLD = .5 // seconds
 
@@ -47,7 +48,7 @@ interface Particle {
 }
 
 function Particle({ image, x, y, scale }: Particle) {
-  return <Image alt={image} src={image} className="particle" style={{
+  return <img src={image} className="particle" style={{
     "--offset-x": `${x}px`,
     "--offset-y": `${y}px`,
     "--scale": `${scale}`,
@@ -128,7 +129,7 @@ export default function NutsAndBolts() {
 
   return <>
     <div className="relative flex flex-col items-center">
-      <Image alt="robot" src="/emoji/robot.png" onClick={onClick} className="nuts-and-bolts" style={{
+      <img src="/emoji/robot.png" onClick={onClick} className="nuts-and-bolts" style={{
         "--offset-x": `${x.current}px`,
         "--offset-y": `${y.current}px`,
       } as React.CSSProperties}/>

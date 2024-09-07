@@ -19,8 +19,6 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer"
 
-import Image from "next/image"
-
 export default function Home() {
 
   return (<div className="flex flex-col justify-center w-dvw h-dvh items-center overflow-hidden bg-card">
@@ -66,8 +64,8 @@ export default function Home() {
           <a href="https://github.com/mister-mcgee">
             <span className="flex flex-row w-full gap-1 p-2 hover:bg-secondary justify-between items-center text-xl">
               GitHub
-              <Image src="/gh-black.svg" alt="GitHub Logo" className="w-6 h-6 block dark:hidden" />
-              <Image src="/gh-white.svg" alt="GitHub Logo" className="w-6 h-6 hidden dark:block" />
+              <img src="/gh-black.svg" className="w-6 h-6 block dark:hidden" />
+              <img src="/gh-white.svg" className="w-6 h-6 hidden dark:block" />
             </span>
           </a>
         </DrawerContent>
