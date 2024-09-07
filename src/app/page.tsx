@@ -39,7 +39,7 @@ export default function Home() {
         <DrawerContent className="fixed bottom-0 left-0 w-[240px] h-full">
           <DrawerHeader>
             <DrawerTitle>
-              <h1 className="text-2xl font-mono">/goto</h1>
+              <span className="text-2xl font-mono">/goto</span>
             </DrawerTitle>
           </DrawerHeader>
 
