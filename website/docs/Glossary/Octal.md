@@ -1,1 +1,0 @@
-**Octal** - Octal comes from the Latin *oct-*, meaning *eight*. Octal refers to the base-8 number system which consists of the digits zero through seven.

@@ -1,1 +1,0 @@
-**Binary** - Binary comes from the Latin *bini-*, meaning *having two parts*. In programming, binary often refers to the base-2 number system which consists of only the digits zero and one.

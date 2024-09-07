@@ -1,1 +1,0 @@
-**Parallel / Concurrent** - In programming, parallel refers to the processing of data *simultaneously*, meaning at the same time.

@@ -1,1 +1,0 @@
-**Decimal** - Decimal comes from the Latin *deci-*, meaning *tenth*. Decimal refers to the base-10 number system which consists of the digits zero through nine.
