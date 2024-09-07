@@ -1,4 +1,5 @@
 import { CSSProperties, useEffect, useRef, useState } from "react";
+import Image from "next/image"
 import "./NutsAndBolts.css"
 
 const PARTICLES = [
@@ -46,7 +47,7 @@ interface Particle {
 }
 
 function Particle({ image, x, y, scale }: Particle) {
-  return <img src={image} className="particle" style={{
+  return <Image alt={image} src={image} className="particle" style={{
     "--offset-x": `${x}px`,
     "--offset-y": `${y}px`,
     "--scale": `${scale}`,
@@ -127,7 +128,7 @@ export default function NutsAndBolts() {
 
   return <>
     <div className="relative flex flex-col items-center">
-      <img src="/emoji/robot.png" onClick={onClick} className="nuts-and-bolts" style={{
+      <Image alt="robot" src="/emoji/robot.png" onClick={onClick} className="nuts-and-bolts" style={{
         "--offset-x": `${x.current}px`,
         "--offset-y": `${y.current}px`,
       } as React.CSSProperties}/>
