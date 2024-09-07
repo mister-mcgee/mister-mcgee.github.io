@@ -2,6 +2,7 @@
 
 import NutsAndBolts from "@/components/fun/NutsAndBolts"
 import Navigation   from "@/components/navigation"
+import ThemeToggle  from "@/components/theme-toggle"
 
 export default function Home() {
   return <>
@@ -14,7 +15,8 @@ export default function Home() {
         <h1 className="text-3xl font-bold text-primary">Mister McGee</h1>
         <h2 className="text-xl italic">Robotics & Computer Science</h2>
 
-        <Navigation />
+        <Navigation  />
+        <ThemeToggle />
       </div>
     </div>
   </>
