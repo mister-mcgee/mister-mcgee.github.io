@@ -1,7 +1,7 @@
 "use client"
 
 import { CSSProperties, useEffect, useRef, useState } from "react";
-import "./NutsAndBolts.css"
+import "./nuts-and-bolts.css"
 
 const NUTS_AND_BOLTS = [
   "/emoji/ms-hammer.png",
@@ -127,7 +127,7 @@ export default function NutsAndBolts() {
   useEffect(() => {
     requestAnimationFrame(animate)
     return () => cancelAnimationFrame(frame)
-  }, [])
+  }, [ ])
 
   return <>
     <div className="relative flex flex-col items-center">

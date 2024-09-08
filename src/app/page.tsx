@@ -3,7 +3,7 @@
 import SiteDrawer from "@/components/site/site-drawer"
 import SiteTheme  from "@/components/site/site-theme"
 
-import NutsAndBolts from "@/components/fun/NutsAndBolts"
+import NutsAndBolts from "@/components/fun/nuts-and-bolts"
 
 export default function Home() {
   return <>
