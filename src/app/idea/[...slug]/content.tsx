@@ -3,8 +3,12 @@
 import dynamic from "next/dynamic";
 
 export default function Content(
-  { slug }: { slug: Array<string> }
+  { slug, className }: { slug: Array<string>, className?: string }
 ) {
   const Content = dynamic(() => import(`/idea/${slug.join('/')}.mdx`), { ssr: true  })
-  return <Content/>
+  return <>
+    <article className={className}>
+      <Content/>
+    </article>
+  </>
 }
