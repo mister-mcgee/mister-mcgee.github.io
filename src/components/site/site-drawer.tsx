@@ -47,8 +47,8 @@ export default function SiteDrawer() {
         <a href="https://github.com/mister-mcgee" target="_blank">
           <span className="flex flex-row w-full gap-1 p-2 hover:bg-secondary justify-between items-center text-xl">
             GitHub
-            <img src="/gh-black.svg" className="w-6 h-6 block dark:hidden" />
-            <img src="/gh-white.svg" className="w-6 h-6 hidden dark:block" />
+            <img src="/logo/gh-black.svg" className="w-6 h-6 block dark:hidden" />
+            <img src="/logo/gh-white.svg" className="w-6 h-6 hidden dark:block" />
           </span>
         </a>
       </DrawerContent>
