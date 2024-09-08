@@ -1,5 +1,3 @@
-import { SquareArrowOutUpRight } from "lucide-react";
-
 export default function Hero({
   src, 
   alt, 
@@ -20,7 +18,7 @@ export default function Hero({
 
       <div className="absolute w-full h-full flex flex-row justify-end items-end">
         <a href={byLink} target="_blank" className="cursor-pointer text-white/75 no-underline hover:underline underline-offset-2">
-          <span className="flex flex-row items-center gap-1 py-1 px-2 text-xs">{ byName || byLink }<SquareArrowOutUpRight size={12} /></span>
+          <span className="flex flex-row items-center py-1 px-2 text-xs">{ byName || byLink }</span>
         </a>
       </div>
     </div>
