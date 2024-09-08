@@ -1,9 +1,13 @@
 "use client"
 
-import { Fragment } from "react"
+import { Fragment, useEffect, useState } from "react"
 
 export default function SiteCrumbs() {
-  const crumbs = location.pathname.split("/").slice(1)
+  const [crumbs, setCrumbs] = useState<Array<string>>([ ])
+
+  useEffect(() => {
+    setCrumbs(location.pathname.split("/").slice(1))
+  }, [ ])
 
   return <>
     <div className="flex flex-row gap-2 text-2xl select-none collapse sm:visible">
