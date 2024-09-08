@@ -7,7 +7,7 @@ import NutsAndBolts from "@/components/fun/NutsAndBolts"
 
 export default function Home() {
   return <>
-    <div className="flex flex-col justify-center w-dvw h-dvh items-center overflow-hidden bg-card">
+    <div className="flex flex-col justify-center w-dvw h-dvh items-center overflow-hidden">
       <SiteDrawer />
       <SiteTheme  />
       <div className="flex flex-col w-full items-center">

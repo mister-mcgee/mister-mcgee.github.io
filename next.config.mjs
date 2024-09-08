@@ -1,9 +1,10 @@
 import createMDX from '@next/mdx'
 
-import remarkGfm from 'remark-gfm'
-import remarkGemoji from 'remark-gemoji'
-import remarkFrontmatter    from "remark-frontmatter"
-import remarkMdxFrontmatter from "remark-mdx-frontmatter"
+import remarkGfm            from 'remark-gfm'
+import remarkGemoji         from 'remark-gemoji'
+import remarkBreaks         from 'remark-breaks'
+import remarkFrontmatter    from 'remark-frontmatter'
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 
 import rehypeCallouts from 'rehype-callouts'
 import rehypeExpressiveCode from 'rehype-expressive-code'
@@ -12,7 +13,7 @@ import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 
 /** @type {import('rehype-expressive-code').RehypeExpressiveCodeOptions} */
 const rehypeExpressiveCodeOptions = {
-  themes: ["github-dark", "github-light"],
+  themes: ['github-dark', 'github-light'],
   plugins: [ pluginLineNumbers() ],
   defaultProps: { showLineNumbers: false },
   useDarkModeMediaQuery: false,
@@ -25,7 +26,7 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   // Optionally, add any other Next.js config below
   reactStrictMode: true,
-  output: "export",
+  output: 'export',
   images: {
     unoptimized: true
   }
@@ -38,15 +39,16 @@ const withMDX = createMDX({
     remarkPlugins: [
       remarkGfm,
       remarkGemoji,
-      remarkFrontmatter, 
+      remarkBreaks,
+      remarkFrontmatter,
       remarkMdxFrontmatter,
     ],
     rehypePlugins: [
+      rehypeCallouts,
       [ 
         rehypeExpressiveCode,
         rehypeExpressiveCodeOptions 
       ],
-      rehypeCallouts
     ],
   }
 })
