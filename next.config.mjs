@@ -25,7 +25,10 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   // Optionally, add any other Next.js config below
   reactStrictMode: true,
-  output: "export"
+  output: "export",
+  images: {
+    unoptimized: true
+  }
 }
  
 const withMDX = createMDX({
