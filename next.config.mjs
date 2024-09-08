@@ -1,15 +1,20 @@
 import createMDX from '@next/mdx'
+
 import remarkGfm from 'remark-gfm'
+import remarkGemoji from 'remark-gemoji'
+import remarkFrontmatter    from "remark-frontmatter"
+import remarkMdxFrontmatter from "remark-mdx-frontmatter"
+
+import rehypeCallouts from 'rehype-callouts'
 import rehypeExpressiveCode from 'rehype-expressive-code'
+
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 
 /** @type {import('rehype-expressive-code').RehypeExpressiveCodeOptions} */
 const rehypeExpressiveCodeOptions = {
   themes: ["github-dark", "github-light"],
-  plugins: [pluginLineNumbers()],
-  defaultProps: {
-    showLineNumbers: false,
-  },
+  plugins: [ pluginLineNumbers() ],
+  defaultProps: { showLineNumbers: false },
   useDarkModeMediaQuery: false,
   themeCssSelector: (theme) => `.${theme.type}`,
 }
@@ -27,8 +32,19 @@ const withMDX = createMDX({
   extension: /\.mdx?$/,
   // Add markdown plugins here, as desired
   options: {
-    remarkPlugins: [ remarkGfm ],
-    rehypePlugins: [[ rehypeExpressiveCode, rehypeExpressiveCodeOptions ]],
+    remarkPlugins: [
+      remarkGfm,
+      remarkGemoji,
+      remarkFrontmatter, 
+      remarkMdxFrontmatter,
+    ],
+    rehypePlugins: [
+      [ 
+        rehypeExpressiveCode,
+        rehypeExpressiveCodeOptions 
+      ],
+      rehypeCallouts
+    ],
   }
 })
  
