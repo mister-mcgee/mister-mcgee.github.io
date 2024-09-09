@@ -27,23 +27,25 @@ export default function Page({ params }: { params: { slug: Array<string> } }) {
   const tags : Array<string>  = frontmatter.data.tags  ?? [                ]
 
   return <>
-    <SiteHeader/>
-    <div className="w-full flex flex-col items-center">
-      <div className="w-full md:max-w-[768px] border-l border-r shadow-xl">
-        <div className="max-w-none px-4 prose prose-xs sm:prose-lg lg:prose-xl dark:prose-invert prose-noquote prose-table:max-w-fit prose-headings:m-0 prose-headings:py-4 bg-card">
-          <h1 className="text-center">{title}</h1>
-          <div className="flex flex-row justify-center gap-1">
-            {tags.map((tag, i) => {
-              return <Fragment key={i}>
-                <Badge variant={"outline"} className="text-xs sm:text-lg lg:text-xl">
-                  # {tag}
-                </Badge>
-              </Fragment>
-            })}
+    <div className="w-full min-h-dvh flex flex-col">
+      <SiteHeader/>
+      <div className="w-full grow flex flex-col items-center">
+        <div className="w-full grow md:max-w-[768px] border-l border-r shadow-xl">
+          <div className="max-w-none px-4 prose prose-xs sm:prose-lg lg:prose-xl dark:prose-invert prose-noquote prose-table:max-w-fit prose-headings:m-0 prose-headings:py-4 bg-card">
+            <h1 className="text-center">{title}</h1>
+            <div className="flex flex-row justify-center gap-1">
+              {tags.map((tag, i) => {
+                return <Fragment key={i}>
+                  <Badge variant={"outline"} className="text-xs sm:text-lg lg:text-xl">
+                    # {tag}
+                  </Badge>
+                </Fragment>
+              })}
+            </div>
+            <div className="h-4"></div>
+            <Content slug={params.slug}/>
+            <div className="h-4"></div>
           </div>
-          <div className="h-4"></div>
-          <Content slug={params.slug}/>
-          <div className="h-4"></div>
         </div>
       </div>
     </div>

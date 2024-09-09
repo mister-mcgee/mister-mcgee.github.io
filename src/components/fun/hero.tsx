@@ -12,13 +12,11 @@ export default function Hero({
     byName = typeof by === "string" ? by : by?.[1] ?? "";
 
   return <>
-    <div className="relative w-full aspect-[2/1] md:aspect-[7/2] rounded-lg flex flex-row items-center overflow-hidden">
+    <div className="relative w-full aspect-[2/1] md:aspect-[7/2] rounded flex flex-row items-center overflow-hidden shadow-2xl">
       <img src={src} alt={alt} className="absolute"></img>
-      <div className="absolute w-full h-full shadow-[0_0_32px_32px_rgba(0,0,0,0.2)_inset]"></div>
-
-      <div className="absolute w-full h-full flex flex-row justify-end items-end">
-        <a href={byLink} target="_blank" className="cursor-pointer text-white/75 no-underline hover:underline underline-offset-2">
-          <span className="flex flex-row items-center py-1 px-2 text-xs">{ byName || byLink }</span>
+      <div className="absolute w-full h-full flex flex-col items-end justify-end bg-gradient-to-t from-black/65 to-black/0">
+        <a href={byLink} target="_blank" className="px-2 py-1 cursor-pointer text-white/85 no-underline hover:underline underline-offset-2">
+          <span className="flex flex-row items-center text-xs">{ byName || byLink }</span>
         </a>
       </div>
     </div>
