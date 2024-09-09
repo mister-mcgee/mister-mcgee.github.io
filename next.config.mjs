@@ -16,7 +16,7 @@ const rehypeExpressiveCodeOptions = {
   themes: ['github-dark', 'github-light'],
   plugins: [ pluginLineNumbers() ],
   defaultProps: { showLineNumbers: false },
-  useDarkModeMediaQuery: false,
+  useDarkModeMediaQuery: false,  
   themeCssSelector: (theme) => `.${theme.type}`,
 }
  

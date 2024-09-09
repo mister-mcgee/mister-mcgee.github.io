@@ -1,12 +1,14 @@
 import type { Config } from "tailwindcss"
 
 const config = {
+  important: true,
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
+    './idea/**/*.{ts,tsx,mdx}',
 	],
   prefix: "",
   theme: {
@@ -22,7 +24,9 @@ const config = {
         noquote: {
           css: {
             'blockquote p:first-of-type::before': { content: 'none' },
-            'blockquote p:first-of-type::after': { content: 'none' },
+            'blockquote p:first-of-type::after' : { content: 'none' },
+            'code::before': { content: 'none' },
+            'code::after' : { content: 'none' }
           },
         },
       },
