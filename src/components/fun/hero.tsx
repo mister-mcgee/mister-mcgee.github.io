@@ -12,7 +12,7 @@ export default function Hero({
     byName = typeof by === "string" ? by : by?.[1] ?? "";
 
   return <>
-    <div className="relative w-full aspect-[2/1] md:aspect-[4/1] rounded-lg flex flex-row items-center overflow-hidden">
+    <div className="relative w-full aspect-[2/1] md:aspect-[7/2] rounded-lg flex flex-row items-center overflow-hidden">
       <img src={src} alt={alt} className="absolute"></img>
       <div className="absolute w-full h-full shadow-[0_0_32px_32px_rgba(0,0,0,0.2)_inset]"></div>
 
