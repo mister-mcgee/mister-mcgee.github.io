@@ -52,10 +52,17 @@ export default function Page({ params }: { params: { slug: Array<string> } }) {
   </>
 }
 
+function isDraft(path: string) {
+  const raw = fs.readFileSync(`./idea/${path}`)
+  const frontmatter = matter(raw)
+  return !!frontmatter.data.draft
+}
+
 export async function generateStaticParams() {
   return fs.readdirSync("./idea", { recursive: true })
     .map   (path => String(path))
     .filter(path => path.match  (/\.mdx?$/    ))
+    .filter(path => !isDraft(path))
     .map   (path => path.replace(/\.mdx?$/, ""))
     .map   (path => ({ slug: path.split("/") }));
 }
