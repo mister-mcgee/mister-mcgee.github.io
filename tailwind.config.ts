@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss"
 
 const config = {
+  important: true,
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
@@ -18,14 +19,26 @@ const config = {
         "2xl": "1400px",
       },
     },
-    extend: {   
+    extend: {
       typography: {
         noquote: {
           css: {
+            'kbd': {
+              display: 'inline-block',
+            },
             'blockquote p:first-of-type::before': { content: 'none' },
             'blockquote p:first-of-type::after' : { content: 'none' },
             'code::before': { content: 'none' },
-            'code::after' : { content: 'none' }
+            'code::after' : { content: 'none' },
+            'code': {
+              backgroundColor: 'hsl(var(--secondary))',
+              color          : 'hsl(var(--secondary-foreground))',
+              fontFamily: 'theme(fontFamily.mono)',
+              fontWeight: 'theme(fontWeight.medium)',
+              boxShadow: 'theme(boxShadow.DEFAULT)',
+              padding: '0 theme(spacing.1) 0 theme(spacing.1)',
+              borderRadius: 'theme(borderRadius.DEFAULT)',              
+            }
           },
         },
       },
