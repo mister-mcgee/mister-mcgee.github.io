@@ -1,29 +1,22 @@
 import { Badge } from "@/components/ui/badge";
 import fs from "fs";
-import path from "node:path"
 import matter from "gray-matter";
 import { Fragment } from "react";
-import Article from "./article";
+import Content from "./file-content";
 
 
 export async function generateMetadata({ params }: { params: { slug: Array<string> } }) {
-  const raw = fs.readFileSync(`./idea/${params.slug.join('/')}.mdx`)
+  const fm = matter(fs.readFileSync(`./idea/${params.slug.join('/')}.mdx`))
+  const title:       string   = fm.data.title ?? params.slug.at(-1)
+  const tags : Array<string>  = fm.data.tags  ?? [                ]
 
-  const frontmatter = matter(raw)
-  const title:       string   = frontmatter.data.title ?? params.slug.at(-1)
-  const tags : Array<string>  = frontmatter.data.tags  ?? [                ]
-
-  return {
-    title
-  }
+  return { title }
 }
 
-export default function ArticleView(
-  { slug }: { slug: Array<string> }
-) {
-  const frontmatter = matter(fs.readFileSync(`./idea/${slug.join(path.sep)}.mdx`))
-  const title: string         = frontmatter.data.title ?? slug.at(-1)
-  const tags : Array<string>  = frontmatter.data.tags  ?? [         ] 
+export default function FileView({ slug }: { slug: Array<string> }) {
+  const fm = matter(fs.readFileSync(`./idea/${slug.join("/")}.mdx`))
+  const title: string         = fm.data.title ?? slug.at(-1)
+  const tags : Array<string>  = fm.data.tags  ?? [         ]
   
   return <>
     <div className="w-full grow flex flex-col items-center">
@@ -40,7 +33,7 @@ export default function ArticleView(
             })}
           </div>
           <div className="h-4"></div>
-            <Article slug={slug}/>
+            <Content slug={slug}/>
           <div className="h-4"></div>
         </div>
       </div>
