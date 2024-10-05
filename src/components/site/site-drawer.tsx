@@ -34,7 +34,7 @@ export default function SiteDrawer() {
 
         <a href="/idea">
           <span className="flex flex-row w-full gap-1 p-2 hover:bg-secondary justify-between items-center text-xl">
-            Docs <BookOpen size={24} />
+            Read <BookOpen size={24} />
           </span>
         </a>
 
