@@ -1,68 +1,41 @@
-import fs from "fs"
-import matter from "gray-matter"
+import fs   from "fs"
+import path from "path"
 
-import Content from "./content"
-
-import { Badge } from "@/components/ui/badge"
 import SiteHeader from "@/components/site/site-header"
-import { Fragment } from "react"
 
-export async function generateMetadata({ params }: { params: { slug: Array<string> } }) {
-  const raw = fs.readFileSync(`./idea/${params.slug.join('/')}.mdx`)
-
-  const frontmatter = matter(raw)
-  const title: string         = frontmatter.data.title ?? params.slug.at(-1)
-  const tags : Array<string>  = frontmatter.data.tags  ?? [                ]
-
-  return {
-    title
-  }
-}
+import ArticleView   from "./article-view"
+import DirectoryView from "./directory-view"
 
 export default function Page({ params }: { params: { slug: Array<string> } }) {
-  const raw = fs.readFileSync(`./idea/${params.slug.join('/')}.mdx`)
-
-  const frontmatter = matter(raw)
-  const title: string         = frontmatter.data.title ?? params.slug.at(-1)
-  const tags : Array<string>  = frontmatter.data.tags  ?? [                ]
-
   return <>
     <div className="w-full min-h-dvh flex flex-col">
       <SiteHeader/>
-      <div className="w-full grow flex flex-col items-center">
-        <div className="w-full grow md:max-w-[768px] border-l border-r shadow-xl">
-          <div className="max-w-none px-4 prose prose-xs sm:prose-lg lg:prose-xl dark:prose-invert prose-noquote prose-table:max-w-fit prose-headings:m-0 prose-headings:py-4 bg-card">
-            <h1 className="text-center">{title}</h1>
-            <div className="flex flex-row justify-center gap-1">
-              {tags.map((tag, i) => {
-                return <Fragment key={i}>
-                  <Badge variant={"outline"} className="text-xs sm:text-lg lg:text-xl">
-                    # {tag}
-                  </Badge>
-                </Fragment>
-              })}
-            </div>
-            <div className="h-4"></div>
-            <Content slug={params.slug}/>
-            <div className="h-4"></div>
-          </div>
-        </div>
-      </div>
+      { isFile     (params.slug.join(path.sep), "./idea/", ".mdx") && <ArticleView   slug={params.slug}/> }
+      { isDirectory(params.slug.join(path.sep), "./idea/"        ) && <DirectoryView slug={params.slug}/> }
     </div>
   </>
 }
 
-function isDraft(path: string) {
-  const raw = fs.readFileSync(`./idea/${path}`)
-  const frontmatter = matter(raw)
-  return !!frontmatter.data.draft
+function isFile     (path: string, prefix="", postfix="") {
+  return fs.existsSync(`${prefix}${path}${postfix}`) && fs.lstatSync(`${prefix}${path}${postfix}`).isFile()
+}
+
+function isDirectory(path: string, prefix="", postfix="") {
+  return fs.existsSync(`${prefix}${path}${postfix}`) && fs.lstatSync(`${prefix}${path}${postfix}`).isDirectory()
 }
 
 export async function generateStaticParams() {
-  return fs.readdirSync("./idea", { recursive: true })
-    .map   (path => String(path))
-    .filter(path => path.match  (/\.mdx?$/    ))
-    .filter(path => !isDraft(path))
-    .map   (path => path.replace(/\.mdx?$/, ""))
-    .map   (path => ({ slug: path.split("/") }));
+  const articles = fs.readdirSync("./idea", { recursive: true })
+    .map   (file => String(file))
+    .filter(file => isFile(file, "./idea/"))
+    .filter(file => file.match  (/\.mdx?$/    ))
+    .map   (file => file.replace(/\.mdx?$/, ""))
+    .map   (file => ({ slug: file.split(path.sep) }));
+
+  const directories = fs.readdirSync("./idea", { recursive: true })
+    .map   (directory => String(directory))
+    .filter(directory => isDirectory(directory, "./idea/"))
+    .map   (directory => ({ slug: directory.split(path.sep) }));
+
+  return ["", ...directories, ...articles]
 }
