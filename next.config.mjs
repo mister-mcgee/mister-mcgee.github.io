@@ -6,8 +6,12 @@ import remarkBreaks         from 'remark-breaks'
 import remarkFrontmatter    from 'remark-frontmatter'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 
-import rehypeCallouts from 'rehype-callouts'
+import rehypeParse          from 'rehype-parse'
+import rehypeSlug           from 'rehype-slug'
+import rehypeTOC            from '@jsdevtools/rehype-toc'
+import rehypeCallouts       from 'rehype-callouts'
 import rehypeExpressiveCode from 'rehype-expressive-code'
+import rehypeStringify      from 'rehype-stringify'
 
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 
@@ -44,11 +48,15 @@ const withMDX = createMDX({
       remarkMdxFrontmatter,
     ],
     rehypePlugins: [
+      // rehypeParse,
+      rehypeSlug,
+      rehypeTOC,
       rehypeCallouts,
       [ 
         rehypeExpressiveCode,
         rehypeExpressiveCodeOptions 
       ],
+      // rehypeStringify
     ],
   }
 })
