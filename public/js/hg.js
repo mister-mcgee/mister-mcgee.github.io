@@ -1,4 +1,4 @@
-// Mercury 0.1.2
+// Mercury 0.1.3
 const hg = {
 
   get VERSION(){
@@ -8,7 +8,7 @@ const hg = {
       moniker: "Mercury",
       major: 0,
       minor: 1,
-      patch: 2
+      patch: 3
     })
   },
 
@@ -342,7 +342,7 @@ const hg = {
     
       stage.logicalCanvasContext.drawImage(stage.virtualCanvasElement, 0, 0)
 
-      if(stage.configureDebug) {
+      if(stage.configureDebug && stage.configureDebug !== "print") {
         stage.logicalCanvasContext.resetTransform()
 
         stage.logicalCanvasContext.fillStyle = "#000"
@@ -451,11 +451,13 @@ const hg = {
 
           stage.oneSecondAccumulator -= 1
 
-          console.log("*** DEBUG ***")
-          console.log(frameInfo (stage))
-          console.log(updateInfo(stage))
-          console.log(renderInfo(stage))
-          console.log(canvasInfo(stage))
+          if(stage.configureDebug !== "paint") {
+            console.log("*** DEBUG ***")
+            console.log(frameInfo (stage))
+            console.log(updateInfo(stage))
+            console.log(renderInfo(stage))
+            console.log(canvasInfo(stage))
+          }
         }
       }
 
