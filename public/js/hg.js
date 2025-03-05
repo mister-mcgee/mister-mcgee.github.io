@@ -1,5 +1,16 @@
-// Mercury 0.1.0
+// Mercury 0.1.1
 const hg = {
+
+  get VERSION(){
+    delete this.VERSION
+
+    return this.VERSION = hg.Version({
+      moniker: "Mercury",
+      major: 0,
+      minor: 1,
+      patch: 1
+    })
+  },
 
   get Version() {
     delete this.Version
@@ -240,6 +251,36 @@ const hg = {
         eventTree: hg.EventTree(),        
         input    : undefined,
         scene    : undefined,
+
+        framesPerSecond: 0,
+
+        averageFrameMilliseconds : 0,
+        averageUpdateMilliseconds: 0,
+        averageRenderMilliseconds: 0,
+
+        minimumFrameMilliseconds : 0,
+        minimumUpdateMilliseconds: 0,
+        minimumRenderMilliseconds: 0,
+
+        maximumFrameMilliseconds : 0,
+        maximumUpdateMilliseconds: 0,
+        maximumRenderMilliseconds: 0,
+
+        framesPerSecondAccumulator: 0,
+
+        averageFrameMillisecondsAccumulator : 0,
+        averageUpdateMillisecondsAccumulator: 0,
+        averageRenderMillisecondsAccumulator: 0,
+
+        minimumFrameMillisecondsAccumulator : Number.MAX_SAFE_INTEGER,
+        minimumUpdateMillisecondsAccumulator: Number.MAX_SAFE_INTEGER,
+        minimumRenderMillisecondsAccumulator: Number.MAX_SAFE_INTEGER,
+
+        maximumFrameMillisecondsAccumulator : 0,
+        maximumUpdateMillisecondsAccumulator: 0,
+        maximumRenderMillisecondsAccumulator: 0,
+
+        oneSecondAccumulator: 0,
       }
 
       stage.input = hg.Input(stage)
@@ -300,14 +341,119 @@ const hg = {
         stage.scene.onRender({stage, t, dt, input: stage.input, g: stage.virtualCanvasContext})
     
       stage.logicalCanvasContext.drawImage(stage.virtualCanvasElement, 0, 0)
+
+      if(stage.configureDebug) {
+        stage.logicalCanvasContext.resetTransform()
+
+        stage.logicalCanvasContext.fillStyle = "#000"
+        stage.logicalCanvasContext.globalAlpha = 0.75
+        stage.logicalCanvasContext.fillRect(
+          0, 0, stage.logicalCanvasElement.width, 72
+        )
+
+        stage.logicalCanvasContext.fillStyle = "#fff"
+        stage.logicalCanvasContext.font = "16px monospace"
+        stage.logicalCanvasContext.globalAlpha = 1
+
+        stage.logicalCanvasContext.fillText(frameInfo (stage), 8, 20)
+        stage.logicalCanvasContext.fillText(updateInfo(stage), 8, 36)
+        stage.logicalCanvasContext.fillText(renderInfo(stage), 8, 52)
+        stage.logicalCanvasContext.fillText(canvasInfo(stage), 8, 68)
+
+      }
+    }
+
+    function frameInfo(stage) {
+      return `FRAME ${stage.framesPerSecond.toFixed(0).padStart(3)} hz ~ ${stage.averageFrameMilliseconds.toFixed(2).padStart(5)} ms [${stage.minimumFrameMilliseconds.toFixed(2).padStart(5)}, ${stage.maximumFrameMilliseconds.toFixed(2).padStart(5)}]`
+    }
+
+    function updateInfo(stage) {
+      return `UPDATE         ${stage.averageUpdateMilliseconds.toFixed(2).padStart(5)} ms [${stage.minimumUpdateMilliseconds.toFixed(2).padStart(5)}, ${stage.maximumUpdateMilliseconds.toFixed(2).padStart(5)}] (${(stage.averageUpdateMilliseconds / stage.averageFrameMilliseconds * 100).toFixed(0).padStart(3)}%)`
+    }
+
+    function renderInfo(stage) {
+      return `RENDER         ${stage.averageRenderMilliseconds.toFixed(2).padStart(5)} ms [${stage.minimumRenderMilliseconds.toFixed(2).padStart(5)}, ${stage.maximumRenderMilliseconds.toFixed(2).padStart(5)}] (${(stage.averageRenderMilliseconds / stage.averageFrameMilliseconds * 100).toFixed(0).padStart(3)}%)`
+    }
+
+    function canvasInfo(stage) {
+      const
+        [logicalW, logicalH] = Stage.getLogicalSize (stage),
+        [virtualW, virtualH] = Stage.getVirtualSize (stage),
+        virtualScale         = Stage.getVirtualScale(stage);
+
+      return `CANVAS ${logicalW}x${logicalH} ${virtualW}x${virtualH} ${(virtualScale*100).toFixed(0)}%`
     }
 
     function animate(stage, t0, t1, t2) {
       const
         t  = (t2 - t0) / 1000,
         dt = (t2 - t1) / 1000;
+      const a = performance.now()
       onUpdate(stage, t, dt)
+      const b = performance.now()
       onRender(stage, t, dt)
+      const c = performance.now()
+
+      if(stage.configureDebug) {
+        const
+          frameMilliseconds  = c - a,
+          updateMilliseconds = b - a,
+          renderMilliseconds = c - b;
+
+        stage.framesPerSecondAccumulator += 1
+
+        stage.averageFrameMillisecondsAccumulator  += frameMilliseconds
+        stage.averageUpdateMillisecondsAccumulator += updateMilliseconds
+        stage.averageRenderMillisecondsAccumulator += renderMilliseconds
+
+        stage.minimumFrameMillisecondsAccumulator  = Math.min(stage.minimumFrameMillisecondsAccumulator, frameMilliseconds)
+        stage.minimumUpdateMillisecondsAccumulator = Math.min(stage.minimumUpdateMillisecondsAccumulator, updateMilliseconds)
+        stage.minimumRenderMillisecondsAccumulator = Math.min(stage.minimumRenderMillisecondsAccumulator, renderMilliseconds)
+
+        stage.maximumFrameMillisecondsAccumulator  = Math.max(stage.maximumFrameMillisecondsAccumulator, frameMilliseconds)
+        stage.maximumUpdateMillisecondsAccumulator = Math.max(stage.maximumUpdateMillisecondsAccumulator, updateMilliseconds)
+        stage.maximumRenderMillisecondsAccumulator = Math.max(stage.maximumRenderMillisecondsAccumulator, renderMilliseconds)
+
+        stage.oneSecondAccumulator += dt
+
+        if(stage.oneSecondAccumulator >= 1) {
+          stage.framesPerSecond = stage.framesPerSecondAccumulator
+
+          stage.averageFrameMilliseconds  = stage.averageFrameMillisecondsAccumulator  / stage.framesPerSecondAccumulator
+          stage.averageUpdateMilliseconds = stage.averageUpdateMillisecondsAccumulator / stage.framesPerSecondAccumulator
+          stage.averageRenderMilliseconds = stage.averageRenderMillisecondsAccumulator / stage.framesPerSecondAccumulator
+
+          stage.minimumFrameMilliseconds  = stage.minimumFrameMillisecondsAccumulator
+          stage.minimumUpdateMilliseconds = stage.minimumUpdateMillisecondsAccumulator
+          stage.minimumRenderMilliseconds = stage.minimumRenderMillisecondsAccumulator
+
+          stage.maximumFrameMilliseconds  = stage.maximumFrameMillisecondsAccumulator
+          stage.maximumUpdateMilliseconds = stage.maximumUpdateMillisecondsAccumulator
+          stage.maximumRenderMilliseconds = stage.maximumRenderMillisecondsAccumulator
+
+          stage.framesPerSecondAccumulator = 0
+
+          stage.averageFrameMillisecondsAccumulator  = 0
+          stage.averageUpdateMillisecondsAccumulator = 0
+          stage.averageRenderMillisecondsAccumulator = 0
+
+          stage.minimumFrameMillisecondsAccumulator  = Number.MAX_SAFE_INTEGER
+          stage.minimumUpdateMillisecondsAccumulator = Number.MAX_SAFE_INTEGER
+          stage.minimumRenderMillisecondsAccumulator = Number.MAX_SAFE_INTEGER
+
+          stage.maximumFrameMillisecondsAccumulator  = 0
+          stage.maximumUpdateMillisecondsAccumulator = 0
+          stage.maximumRenderMillisecondsAccumulator = 0
+
+          stage.oneSecondAccumulator -= 1
+
+          console.log("*** DEBUG ***")
+          console.log(frameInfo (stage))
+          console.log(updateInfo(stage))
+          console.log(renderInfo(stage))
+          console.log(canvasInfo(stage))
+        }
+      }
 
       requestAnimationFrame(t3 => animate(stage, t0, t2, t3))
     }    
@@ -976,18 +1122,7 @@ const hg = {
     }
 
     return this.Vector4 = Vector4
-  },  
-  
-  get VERSION(){
-    delete this.VERSION
-
-    return this.VERSION = hg.Version({
-      moniker: "Mercury",
-      major: 0,
-      minor: 1,
-      patch: 0
-    })
-  },
+  }, 
 
   get STAGE() {
     delete this.STAGE
@@ -1078,5 +1213,7 @@ const hg = {
     })
   }
 }
+
+console.log(hg.Version.toString(hg.VERSION))
 
 window.hg = hg
