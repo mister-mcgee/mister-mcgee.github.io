@@ -1,4 +1,4 @@
-// Mercury 0.1.1
+// Mercury 0.1.2
 const hg = {
 
   get VERSION(){
@@ -8,7 +8,7 @@ const hg = {
       moniker: "Mercury",
       major: 0,
       minor: 1,
-      patch: 1
+      patch: 2
     })
   },
 
@@ -348,19 +348,23 @@ const hg = {
         stage.logicalCanvasContext.fillStyle = "#000"
         stage.logicalCanvasContext.globalAlpha = 0.75
         stage.logicalCanvasContext.fillRect(
-          0, 0, stage.logicalCanvasElement.width, 72
+          0, 0, stage.logicalCanvasElement.width, 88
         )
 
         stage.logicalCanvasContext.fillStyle = "#fff"
         stage.logicalCanvasContext.font = "16px monospace"
         stage.logicalCanvasContext.globalAlpha = 1
 
-        stage.logicalCanvasContext.fillText(frameInfo (stage), 8, 20)
-        stage.logicalCanvasContext.fillText(updateInfo(stage), 8, 36)
-        stage.logicalCanvasContext.fillText(renderInfo(stage), 8, 52)
-        stage.logicalCanvasContext.fillText(canvasInfo(stage), 8, 68)
-
+        stage.logicalCanvasContext.fillText(versionInfo(), 8, 20)
+        stage.logicalCanvasContext.fillText(frameInfo (stage), 8, 36)
+        stage.logicalCanvasContext.fillText(updateInfo(stage), 8, 52)
+        stage.logicalCanvasContext.fillText(renderInfo(stage), 8, 68)
+        stage.logicalCanvasContext.fillText(canvasInfo(stage), 8, 84)
       }
+    }
+
+    function versionInfo() {
+      return hg.Version.toString(hg.VERSION)
     }
 
     function frameInfo(stage) {
@@ -467,11 +471,8 @@ const hg = {
     }
 
     function onResize(stage) {
-      
-
       stage.logicalCanvasElement.width  = stage.logicalCanvasElement.getBoundingClientRect().width
       stage.logicalCanvasElement.height = stage.logicalCanvasElement.getBoundingClientRect().height
-
 
       const w = stage.configureW || stage.logicalCanvasElement.width
       const h = stage.configureH || stage.logicalCanvasElement.height
