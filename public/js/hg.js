@@ -1,4 +1,4 @@
-// Mercury 0.1.4
+// Mercury 0.1.5
 const hg = {
 
   get VERSION(){
@@ -8,7 +8,7 @@ const hg = {
       moniker: "Mercury",
       major: 0,
       minor: 1,
-      patch: 4
+      patch: 5
     })
   },
 
@@ -958,6 +958,11 @@ const hg = {
       )
     }
 
+    Atlas.fromCache = function(cache, assetOrId, cols=1, rows=1) {
+      const image = hg.Cache.getImage(cache, assetOrId)
+      return hg.Atlas(image, cols, rows)
+    }
+
     return this.Atlas = Atlas
   },
 
@@ -968,13 +973,21 @@ const hg = {
     const LOOPING = "__LOOPING__"
     const STOPPED = "__STOPPED__"
 
-    function Sprite(atlas, n) {
+    function Sprite(atlas, frames) {
+
+      if(!Array.isArray(frames)) {
+        let n = frames ?? atlas.rows * atlas.cols
+        frames = [ ]
+        for(let i = 0; i < n; i++)
+          frames.push(i)
+      }
+
       return {
         atlas,
         frame: 0,
         speed: 0,
         mode : STOPPED,
-        frames: n ?? atlas.rows * atlas.cols
+        frames
       }
     }
 
@@ -1000,25 +1013,25 @@ const hg = {
 
         case PLAYING: {
           sprite.frame += sprite.speed * context.dt
-          if(sprite.frame >= sprite.frames)
-            Sprite.stop(sprite, sprite.frames - 1)
+          if(sprite.frame >= sprite.frames.length)
+            Sprite.stop(sprite, sprite.frames.length - 1)
           if(sprite.frame < 0)
-            Sprite.stop(sprite,                 0)
+            Sprite.stop(sprite,                        0)
         } break;
 
         case LOOPING: {
           sprite.frame += sprite.speed * context.dt
-          while(sprite.frame >= sprite.frames)
-            sprite.frame -= sprite.frames
+          while(sprite.frame >= sprite.frames.length)
+            sprite.frame -= sprite.frames.length
           while(sprite.frame < 0)
-            sprite.frame += sprite.frames
+            sprite.frame += sprite.frames.length
         } break;
 
         case STOPPED: {
           // do nothing
         } break;
       }
-      hg.Atlas.draw(context, sprite.atlas, Math.floor(sprite.frame), x, y, w, h)
+      hg.Atlas.draw(context, sprite.atlas, sprite.frames[Math.floor(sprite.frame)], x, y, w, h)
     }
 
     Sprite.fromCache = function(cache, assetOrId, cols=1, rows=1, n=undefined) {
