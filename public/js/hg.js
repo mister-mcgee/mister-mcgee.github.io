@@ -1,4 +1,4 @@
-// Mercury 0.1.3
+// Mercury 0.1.4
 const hg = {
 
   get VERSION(){
@@ -8,7 +8,7 @@ const hg = {
       moniker: "Mercury",
       major: 0,
       minor: 1,
-      patch: 3
+      patch: 4
     })
   },
 
@@ -364,19 +364,19 @@ const hg = {
     }
 
     function versionInfo() {
-      return hg.Version.toString(hg.VERSION)
+      return `*** ${hg.Version.toString(hg.VERSION)} ***`
     }
 
     function frameInfo(stage) {
-      return `FRAME ${stage.framesPerSecond.toFixed(0).padStart(3)} hz ~ ${stage.averageFrameMilliseconds.toFixed(2).padStart(5)} ms [${stage.minimumFrameMilliseconds.toFixed(2).padStart(5)}, ${stage.maximumFrameMilliseconds.toFixed(2).padStart(5)}]`
+      return `Frame ${stage.framesPerSecond.toFixed(0).padStart(3)} hz ~ ${stage.averageFrameMilliseconds.toFixed(2).padStart(5)} ms [${stage.minimumFrameMilliseconds.toFixed(2).padStart(5)}, ${stage.maximumFrameMilliseconds.toFixed(2).padStart(5)}]`
     }
 
     function updateInfo(stage) {
-      return `UPDATE         ${stage.averageUpdateMilliseconds.toFixed(2).padStart(5)} ms [${stage.minimumUpdateMilliseconds.toFixed(2).padStart(5)}, ${stage.maximumUpdateMilliseconds.toFixed(2).padStart(5)}] (${(stage.averageUpdateMilliseconds / stage.averageFrameMilliseconds * 100).toFixed(0).padStart(3)}%)`
+      return `Update         ${stage.averageUpdateMilliseconds.toFixed(2).padStart(5)} ms [${stage.minimumUpdateMilliseconds.toFixed(2).padStart(5)}, ${stage.maximumUpdateMilliseconds.toFixed(2).padStart(5)}] (${(stage.averageUpdateMilliseconds / stage.averageFrameMilliseconds * 100).toFixed(0).padStart(3)}%)`
     }
 
     function renderInfo(stage) {
-      return `RENDER         ${stage.averageRenderMilliseconds.toFixed(2).padStart(5)} ms [${stage.minimumRenderMilliseconds.toFixed(2).padStart(5)}, ${stage.maximumRenderMilliseconds.toFixed(2).padStart(5)}] (${(stage.averageRenderMilliseconds / stage.averageFrameMilliseconds * 100).toFixed(0).padStart(3)}%)`
+      return `Render         ${stage.averageRenderMilliseconds.toFixed(2).padStart(5)} ms [${stage.minimumRenderMilliseconds.toFixed(2).padStart(5)}, ${stage.maximumRenderMilliseconds.toFixed(2).padStart(5)}] (${(stage.averageRenderMilliseconds / stage.averageFrameMilliseconds * 100).toFixed(0).padStart(3)}%)`
     }
 
     function canvasInfo(stage) {
@@ -385,7 +385,7 @@ const hg = {
         [virtualW, virtualH] = Stage.getVirtualSize (stage),
         virtualScale         = Stage.getVirtualScale(stage);
 
-      return `CANVAS ${logicalW}x${logicalH} ${virtualW}x${virtualH} ${(virtualScale*100).toFixed(0)}%`
+      return `Canvas ${logicalW}x${logicalH} ${virtualW}x${virtualH} ${(virtualScale*100).toFixed(0)}%`
     }
 
     function animate(stage, t0, t1, t2) {
