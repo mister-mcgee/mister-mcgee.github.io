@@ -1,4 +1,4 @@
-// Mercury 0.1.5
+// Mercury 0.1.6
 const hg = {
 
   get VERSION(){
@@ -8,7 +8,7 @@ const hg = {
       moniker: "Mercury",
       major: 0,
       minor: 1,
-      patch: 5
+      patch: 6
     })
   },
 
@@ -976,10 +976,10 @@ const hg = {
     function Sprite(atlas, frames) {
 
       if(!Array.isArray(frames)) {
-        let n = frames ?? atlas.rows * atlas.cols
-        frames = [ ]
-        for(let i = 0; i < n; i++)
-          frames.push(i)
+        let _frames = []
+        for(let i = 0; i < frames ?? atlas.rows * atlas.cols; i++)
+          _frames.push(i)
+        frames = _frames
       }
 
       return {
@@ -1034,10 +1034,8 @@ const hg = {
       hg.Atlas.draw(context, sprite.atlas, sprite.frames[Math.floor(sprite.frame)], x, y, w, h)
     }
 
-    Sprite.fromCache = function(cache, assetOrId, cols=1, rows=1, n=undefined) {
-      const image = hg.Cache.getImage(cache, assetOrId)
-      const atlas = hg.Atlas(image, cols, rows)
-      return hg.Sprite(atlas, n)
+    Sprite.fromCache = function(cache, assetOrId, cols=1, rows=1, frames=undefined) {
+      return hg.Sprite(hg.Atlas.fromCache(cache, assetOrId, cols, rows), frames)
     }
 
     return this.Sprite = Sprite
