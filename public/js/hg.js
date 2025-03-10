@@ -1,4 +1,4 @@
-// Mercury 0.1.6
+// Mercury 0.1.7
 const hg = {
 
   get VERSION(){
@@ -8,7 +8,7 @@ const hg = {
       moniker: "Mercury",
       major: 0,
       minor: 1,
-      patch: 6
+      patch: 7
     })
   },
 
@@ -449,7 +449,7 @@ const hg = {
           stage.maximumUpdateMillisecondsAccumulator = 0
           stage.maximumRenderMillisecondsAccumulator = 0
 
-          stage.oneSecondAccumulator -= 1
+          stage.oneSecondAccumulator = 0
 
           if(stage.configureDebug !== "paint") {
             console.log("*** DEBUG ***")
@@ -1008,7 +1008,7 @@ const hg = {
       sprite.frame = frame ?? sprite.frame
     }
 
-    Sprite.draw = function(context, sprite, x=0, y=0, w=0, h=0) {
+    Sprite.tick = function(context, sprite) {
       switch(sprite.mode) {
 
         case PLAYING: {
@@ -1031,6 +1031,9 @@ const hg = {
           // do nothing
         } break;
       }
+    }
+
+    Sprite.draw = function(context, sprite, x=0, y=0, w=0, h=0) {
       hg.Atlas.draw(context, sprite.atlas, sprite.frames[Math.floor(sprite.frame)], x, y, w, h)
     }
 
