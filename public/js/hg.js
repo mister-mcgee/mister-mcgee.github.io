@@ -1,4 +1,4 @@
-// Mercury 0.1.8
+// Mercury 0.1.9
 const hg = {
   get VERSION(){
     delete this.VERSION
@@ -7,7 +7,7 @@ const hg = {
       moniker: "Mercury",
       major: 0,
       minor: 1,
-      patch: 8
+      patch: 9
     })
   },
 
@@ -944,16 +944,18 @@ const hg = {
       }
     }
 
-    Atlas.draw = function(context, atlas, i, x=0, y=0, w=0, h=0) {
+    Atlas.draw = function(context, atlas, i, dx=0, dy=0, dw=0, dh=0, flip=false, flop=false) {
+      const sx = atlas.w * Math.floor(i % atlas.cols) + (flip ? atlas.w : 0)
+      const sy = atlas.h * Math.floor(i / atlas.cols) + (flop ? atlas.h : 0)
+      const sw = flip ? -atlas.w : atlas.w
+      const sh = flop ? -atlas.h : atlas.h
       context.g.drawImage(
         atlas.image,
-        atlas.w * Math.floor(i % atlas.cols),
-        atlas.h * Math.floor(i / atlas.cols),
-        atlas.w, 
-        atlas.h,
-        x, y, 
-        w || atlas.w, 
-        h || atlas.h
+        sx, sy,
+        sw, sh,
+        dx, dy, 
+        dw || atlas.w,
+        dh || atlas.h
       )
     }
 
@@ -1051,15 +1053,7 @@ const hg = {
     }
 
     Sprite.draw = function(context, sprite, x=0, y=0, w=0, h=0) {
-      if(sprite.flipped) {
-        x = x + (w || sprite.atlas.w)
-        w =   - (w || sprite.atlas.w)
-      }
-      if(sprite.flopped) {
-        y = y + (h || sprite.atlas.h)
-        h =   - (h || sprite.atlas.h)
-      }
-      hg.Atlas.draw(context, sprite.atlas, sprite.frames[Math.floor(sprite.frame)], x, y, w, h)
+      hg.Atlas.draw(context, sprite.atlas, sprite.frames[Math.floor(sprite.frame)], x, y, w, h, sprite.flipped, sprite.flopped)
     }
 
     Sprite.fromCache = function(cache, assetOrId, cols=1, rows=1, frames=undefined) {
