@@ -1,6 +1,5 @@
-// Mercury 0.1.7
+// Mercury 0.1.8
 const hg = {
-
   get VERSION(){
     delete this.VERSION
 
@@ -8,7 +7,7 @@ const hg = {
       moniker: "Mercury",
       major: 0,
       minor: 1,
-      patch: 7
+      patch: 8
     })
   },
 
@@ -987,6 +986,8 @@ const hg = {
         frame: 0,
         speed: 0,
         mode : STOPPED,
+        flipped: false,
+        flopped: false,
         frames
       }
     }
@@ -1006,6 +1007,22 @@ const hg = {
     Sprite.stop = function(sprite, frame) {
       sprite.mode = STOPPED
       sprite.frame = frame ?? sprite.frame
+    }
+
+    Sprite.flip = function(sprite, flipped = !sprite.flipped) {
+      sprite.flipped = flipped
+    }
+
+    Sprite.flop = function(sprite, flopped = !sprite.flopped) {
+      sprite.flopped = flopped
+    }
+
+    Sprite.isFlipped = function(sprite) {
+      return sprite.flipped
+    }
+
+    Sprite.isFlopped = function(sprite) {
+      return sprite.flopped
     }
 
     Sprite.tick = function(context, sprite) {
@@ -1034,6 +1051,14 @@ const hg = {
     }
 
     Sprite.draw = function(context, sprite, x=0, y=0, w=0, h=0) {
+      if(sprite.flipped) {
+        x = x + (w || sprite.atlas.w)
+        w =   - (w || sprite.atlas.w)
+      }
+      if(sprite.flopped) {
+        y = y + (h || sprite.atlas.h)
+        h =   - (h || sprite.atlas.h)
+      }
       hg.Atlas.draw(context, sprite.atlas, sprite.frames[Math.floor(sprite.frame)], x, y, w, h)
     }
 
