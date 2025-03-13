@@ -1,4 +1,4 @@
-// Mercury 0.1.9
+// Mercury 0.1.10
 const hg = {
   get VERSION(){
     delete this.VERSION
@@ -7,7 +7,7 @@ const hg = {
       moniker: "Mercury",
       major: 0,
       minor: 1,
-      patch: 9
+      patch: 10
     })
   },
 
@@ -945,18 +945,31 @@ const hg = {
     }
 
     Atlas.draw = function(context, atlas, i, dx=0, dy=0, dw=0, dh=0, flip=false, flop=false) {
-      const sx = atlas.w * Math.floor(i % atlas.cols) + (flip ? atlas.w : 0)
-      const sy = atlas.h * Math.floor(i / atlas.cols) + (flop ? atlas.h : 0)
-      const sw = flip ? -atlas.w : atlas.w
-      const sh = flop ? -atlas.h : atlas.h
+      const sx = atlas.w * Math.floor(i % atlas.cols)
+      const sy = atlas.h * Math.floor(i / atlas.cols)
+      const sw = atlas.w
+      const sh = atlas.h
+      dx = flip ? dx + atlas.w : dx
+      dy = flop ? dy + atlas.h : dy
+
+      context.g.translate( dx,  dy)
+      context.g.scale(
+        (flip ? -1 : 1),
+        (flop ? -1 : 1)
+      )
       context.g.drawImage(
         atlas.image,
         sx, sy,
         sw, sh,
-        dx, dy, 
-        dw || atlas.w,
+        0 , 0 ,
+        dw || atlas.w, 
         dh || atlas.h
       )
+      context.g.scale(
+        (flip ? -1 : 1),
+        (flop ? -1 : 1)
+      )
+      context.g.translate(-dx, -dy)
     }
 
     Atlas.fromCache = function(cache, assetOrId, cols=1, rows=1) {
@@ -1011,12 +1024,12 @@ const hg = {
       sprite.frame = frame ?? sprite.frame
     }
 
-    Sprite.flip = function(sprite, flipped = !sprite.flipped) {
-      sprite.flipped = flipped
+    Sprite.flip = function(sprite, flip = !sprite.flipped) {
+      sprite.flipped = flip
     }
 
-    Sprite.flop = function(sprite, flopped = !sprite.flopped) {
-      sprite.flopped = flopped
+    Sprite.flop = function(sprite, flop = !sprite.flopped) {
+      sprite.flopped = flop
     }
 
     Sprite.isFlipped = function(sprite) {
