@@ -23,7 +23,7 @@
       const editor = document.getElementById("editor")
       const tokens = document.getElementById("tokens")
 
-      fetch("./program.w").then(r => r.text()).then(s => {
+      fetch("/example/program.w").then(r => r.text()).then(s => {
         editor.value = s
         updateTokens()
       })
