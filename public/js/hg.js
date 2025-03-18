@@ -1,4 +1,4 @@
-// Mercury 0.1.11
+// Mercury 0.1.12
 const hg = {
   get VERSION(){
     delete this.VERSION
@@ -7,7 +7,7 @@ const hg = {
       moniker: "Mercury",
       major: 0,
       minor: 1,
-      patch: 11
+      patch: 12
     })
   },
 
@@ -1085,7 +1085,7 @@ const hg = {
     Vector.squish = function(   a) {
       if(typeof a === "number") return a
       return a.reduce((b, c) => {
-        const d = squish(c)
+        const d = Vector.squish(c)
         if(typeof d === "number") return [...b,    d]
         else                      return [...b, ...d]
       }, new Array())
