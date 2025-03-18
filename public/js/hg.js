@@ -1,4 +1,4 @@
-// Mercury 0.1.10
+// Mercury 0.1.11
 const hg = {
   get VERSION(){
     delete this.VERSION
@@ -7,7 +7,7 @@ const hg = {
       moniker: "Mercury",
       major: 0,
       minor: 1,
-      patch: 10
+      patch: 11
     })
   },
 
@@ -1093,7 +1093,7 @@ const hg = {
     
     Vector.squash = function(...a) {
       if(a.length === 1 && typeof a[0] === "number") return a[0]
-      return squish(a)
+      return Vector.squish(a)
     }
     
     Vector.x = function(a) {
