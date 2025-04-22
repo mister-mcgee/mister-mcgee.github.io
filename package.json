@@ -9,6 +9,22 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.4"
+    "@astrojs/mdx": "^4.2.4",
+    "@astrojs/react": "^4.2.4",
+    "@lucide/astro": "^0.503.0",
+    "@tailwindcss/vite": "^4.1.4",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "astro": "^5.7.4",
+    "daisyui": "^5.0.27",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.503.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.4",
+    "theme-change": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.16"
   }
 }
