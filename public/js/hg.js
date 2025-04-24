@@ -1,4 +1,4 @@
-// Mercury 0.1.12
+// Mercury 0.1.13
 const hg = {
   get VERSION(){
     delete this.VERSION
@@ -7,7 +7,7 @@ const hg = {
       moniker: "Mercury",
       major: 0,
       minor: 1,
-      patch: 12
+      patch: 13
     })
   },
 
