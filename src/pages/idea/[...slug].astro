@@ -1,0 +1,36 @@
+---
+import Drawer from "@layouts/Drawer.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const ideas = (await getCollection("ideas"))
+
+  return ideas.map((idea: any) => {
+    const slug = idea.filePath
+      ?.replace(/^src\/idea\//, "")
+      ?.replace(/\.mdx?$/, "");
+
+    return {
+      params: { slug },
+      props : { idea },
+    }
+  });
+}
+
+const { idea    } =        Astro.props;
+const { Content } = await render(idea);
+---
+
+<Layout>
+  <Drawer>
+    <div class="flex flex-col items-center">
+      <div class="w-[960px] flex flex-col items-center">
+        
+        <article class="prose prose-lg">
+          <Content/>
+        </article>
+      </div>
+    </div>
+  </Drawer>
+</Layout>

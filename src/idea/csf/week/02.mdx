@@ -1,0 +1,45 @@
+---
+tags: ["csf", "binary", "programming"]
+---
+
+
+What is a Computer, Binary, Bits and Bytes, Programming Languages
+
+
+### What is Binary?
+
+The word *binary* comes from the latin *bini-* (meaning *two*), and *-ary* (meaning *part of*). The word *binary* describes something with two parts, but in the language of mathematics and computer science it refers to the base-2 number system where all numerals are expressed using the digits zero `0` and one `1`.
+
+It can be intimidating to approach new mathematical concepts, but before your eyes glaze over I encourage you to persevere. Understanding binary is fundamentally important in understanding modern computing.
+
+While base-2 may seem foreign, you are likely already accustomed to using the base-10 numeric system known as *decimal*. Thinking about how we interpret decimal numerals can give us some insight regarding how we interpret binary numerals.
+
+In base-10 each numeral is represented using *ten* digits, from zero `0` to nine `9`. Each digit and its *place* within a numeral decide its value. Consider the base-10 numeral `345` where we describe the digit five `5` as being in the *ones place*, the digit four `4` in the *tens place*, and the digit three `3` in the *hundreds place*. Those practiced in reading decimal numerals know this means there are five *ones* (`5`), four *tens* (`40`), and three *hundreds* (`300`). Another way to visualize this relationships is to write the numeral in its *expanded form* -
+
+```
+"345" = (300     ) + (40      ) + (5       )
+      = (3 * 100 ) + (4 * 10  ) + (5 * 1   )
+      = (3 * 10^2) + (4 * 10^1) + (5 * 10^0) = 345
+```
+
+When looking at a decimal numeral's *expanded form* it is easy to see that each *place* represents a power of ten `10`. We can use the same expanded form to describe binary numerals, but instead of each *place* representing a power of ten, each *place* now represents a power of two. Consider the binary numeral `1010`. From right to left, we would say that the digit zero `0` is in the *ones place*, the digit one `1` is in the *twos place*, the digit zero `0` is in the *fours place* and the digit one `1` is in the *eights place*. We can write the numeral in its *expanded form* as -
+
+```
+"1010" = (   8   ) + (   0   ) + (   2   ) + (   0   )
+       = ( 1 * 8 ) + ( 0 * 4 ) + ( 1 * 2 ) + ( 0 * 1 )
+       = (1 * 2^3) + (0 * 2^2) + (1 * 2^1) + (0 * 2^0) = 10
+```
+
+We can sum each part of our expanded form to see that the binary numeral `1010` is equal to the decimal numeral `10`. While it's outside the scope of this lesson, programmers often use several different bases to represent numerals in code. Most programming languages support the use of *binary* (base-2), *octal* (base-8), *decimal* (base-10), and *hexadecimal* (base-16) numerals.
+
+### Why use Binary?
+
+A computer is a "thinking" machine, meaning that it is capable of "choosing" an outcome based on some input or prior state. This is primarily accomplished by varying voltages across *switches*. In a modern electronic computer binary signals are transmitted by encoding zeroes `0` as "low" voltage and ones `1` as "high" voltage, but this wasn't always the case. Early *electromechanical* computers used many different, more exotic techniques to encode and transmit data. Some notable examples include trinary and bi-quinary encodings.
+
+To be clear, binary encoding has always been appealing to engineers and computer scientists alike because of its simplicity. Intuitively, the circuitry required to distinguish between *two* voltages is relatively simple when compared to the circuitry required to distinguish between *many* voltages; however, early electronic and electromechanical switches had significant space and power requirements. Broadly speaking this often meant that fewer, more complicated switches were more economical; therefore, more complicated encodings were used to reduce the manufacturing and operating costs of these machines.
+
+It wasn't until after the invention of the *transistor* in 1947 that binary became the dominant method of encoding and transmitting data. The transistor revolutionized computing by dramatically reducing the size and power footprint of computing devices, completely eliminating the need for vacuum tubes and other electromechanical components. This allowed for the creation of smaller, more efficient, and more powerful computers.
+
+### How do Computers use Binary?
+
+If you were presented with a seemingly endless string of binary numbers and you were asked to *interpret* them, you might be rightfully confused.
