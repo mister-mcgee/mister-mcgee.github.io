@@ -1,7 +1,11 @@
 ---
+import { Construction } from "@lucide/astro";
 import Drawer from "@layouts/Drawer.astro";
 import Layout from "@layouts/Layout.astro";
+import Tags   from "@components/article/Tags.astro";
 import { getCollection, render } from "astro:content";
+
+import Toc from "@components/article/Toc";
 
 export async function getStaticPaths() {
   const ideas = (await getCollection("ideas"))
@@ -18,18 +22,69 @@ export async function getStaticPaths() {
   });
 }
 
-const { idea    } =        Astro.props;
-const { Content } = await render(idea);
+const { idea              } =        Astro.props;
+const { Content, headings } = await render(idea);
 ---
+
+<style>
+  .caution {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--color-base-100),
+      var(--color-base-100) 20px,
+      var(--color-base-200) 20px,
+      var(--color-base-200) 40px
+    );
+  }
+</style>
 
 <Layout>
   <Drawer>
-    <div class="flex flex-col items-center">
-      <div class="w-[960px] flex flex-col items-center">
-        
-        <article class="prose prose-lg">
+    <!-- Container -->
+    <div class="flex flex-col w-full min-h-dvh items-center">
+      <!-- Spacing -->
+      <div class="h-6"></div>
+
+      <!-- Header -->
+      <div class="flex flex-col w-3xs items-center sm:w-xl">
+        <!-- Author | Date -->
+        <div class="flex flex-row w-full justify-center gap-2 text-sm sm:text-lg">
+          { idea.data.author  && <span>{idea.data.author                 }</span> }
+          { (idea.data.author && idea.data.pubDate) && "|" }
+          { idea.data.pubDate && <span>{idea.data.pubDate?.toDateString()}</span> }
+        </div>
+
+        <!-- Title -->
+        <span class="text-3xl text-center font-normal sm:text-4xl font-bungee">
+          {idea.data.title}
+        </span>        
+      </div>
+
+      <div class="h-2"></div>
+
+      <!-- Tags -->
+      <Tags tags={idea.data.tags} class="text-sm sm:text-lg"/>
+
+      <!-- Article -->
+      <div class="flex flex-col w-full flex-1 sm:max-w-3xl sm:shadow-lg">
+        { idea.data.draft && (
+          <div class="flex flex-row items-center caution px-4 py-2 rounded-t-lg">
+            <Construction class="w-10 h-10 shrink-0"/>
+            <div class="divider divider-horizontal"></div>
+            <div class="flex flex-col flex-1">
+              <span class="text-lg sm:text-xl font-bold">This Idea is Under Construction</span>
+              <span class="text-sm sm:text-base italic">
+                This article is a working draft.
+                Some or all of its content may be unfinished,
+                may be altered,
+                or may even be deleted at a future time.</span>
+            </div>
+          </div>
+        )}
+        <div class="prose prose-base sm:prose-lg break-words sm:break-normal p-4 sm:p-8">
+          <Toc headings={headings}/>
           <Content/>
-        </article>
+        </div>
       </div>
     </div>
   </Drawer>

@@ -22,6 +22,9 @@
       "@pages/*": [
         "src/pages/*"
       ],
+      "@idea/*": [
+        "src/idea/*"
+      ]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

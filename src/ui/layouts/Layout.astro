@@ -3,7 +3,7 @@ import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en" class="font-inter">
+<html lang="en" class="font-inter scroll-smooth">
 	<head>
     <script is:inline>
       let theme = localStorage.getItem("theme");
@@ -22,7 +22,7 @@ import "../styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>Mister McGee</title>
 	</head>
-	<body>
+	<body class="w-dvw h-dvh overflow-hidden">
 		<slot />
 	</body>
 </html>

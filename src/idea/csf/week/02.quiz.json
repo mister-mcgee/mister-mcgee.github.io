@@ -1,0 +1,90 @@
+[
+  {
+    "question": "What does the binary number 1011 represent in decimal?",
+    "choices": [
+      "10",
+      "11",
+      "13",
+      "7"
+    ],
+    "answer": 1,
+    "explain": "The binary 1011 is 8 + 0 + 2 + 1 = 11."
+  },
+  {
+    "question": "Why is binary used in computers?",
+    "choices": [
+      "Because it's easier for people to read",
+      "Because it uses trinary logic",
+      "Because it's simple to represent with switches (on/off)",
+      "Because it can represent any letter directly"
+    ],
+    "answer": 2,
+    "explain": "Binary is ideal for computers because it aligns with two-state systems like electrical switches."
+  },
+  {
+    "question": "What is the base of the binary number system?",
+    "choices": [
+      "2",
+      "8",
+      "10",
+      "16"
+    ],
+    "answer": 0,
+    "explain": "The binary number system is base-2, meaning it uses only two digits: 0 and 1."
+  },
+  {
+    "question": "Which of the following is a valid binary number?",
+    "choices": [
+      "1021",
+      "11012",
+      "1001101",
+      "2010"
+    ],
+    "answer": 2,
+    "explain": "A valid binary number only uses the digits 0 and 1, so 1001101 is correct."
+  },
+  {
+    "question": "Which operation can be directly performed using binary numbers?",
+    "choices": [
+      "Addition",
+      "Multiplication",
+      "Subtraction",
+      "All of the above"
+    ],
+    "answer": 3,
+    "explain": "All arithmetic operations, such as addition, multiplication, and subtraction, can be performed using binary numbers."
+  },
+  {
+    "question": "What is the binary representation of the decimal number 5?",
+    "choices": [
+      "101",
+      "1001",
+      "111",
+      "1010"
+    ],
+    "answer": 0,
+    "explain": "The binary representation of the decimal number 5 is 101."
+  },
+  {
+    "question": "What is a byte?",
+    "choices": [
+      "8 bits",
+      "4 bits",
+      "16 bits",
+      "32 bits"
+    ],
+    "answer": 0,
+    "explain": "A byte consists of 8 bits."
+  },
+  {
+    "question": "What does a 'bit' stand for?",
+    "choices": [
+      "Binary integrated transistor",
+      "Binary information technology",
+      "Binary digit",
+      "Bit is not related to binary"
+    ],
+    "answer": 2,
+    "explain": "A 'bit' stands for 'binary digit,' the smallest unit of information in computing."
+  }
+]
