@@ -2,10 +2,10 @@
 import { Construction } from "@lucide/astro";
 import Drawer from "@layouts/Drawer.astro";
 import Layout from "@layouts/Layout.astro";
-import Tags   from "@components/article/Tags.astro";
+import Tags   from "@components/idea/Tags.astro";
 import { getCollection, render } from "astro:content";
 
-import Toc from "@components/article/Toc";
+import TableOfContents from "@components/idea/TableOfContents.astro";
 
 export async function getStaticPaths() {
   const ideas = (await getCollection("ideas"))
@@ -55,15 +55,17 @@ const { Content, headings } = await render(idea);
         </div>
 
         <!-- Title -->
-        <span class="text-3xl text-center font-normal sm:text-4xl font-bungee">
+        <span class="text-3xl text-center font-bold sm:text-4xl">
           {idea.data.title}
-        </span>        
+        </span>
       </div>
 
       <div class="h-2"></div>
 
       <!-- Tags -->
       <Tags tags={idea.data.tags} class="text-sm sm:text-lg"/>
+
+      <div class="h-2"></div>
 
       <!-- Article -->
       <div class="flex flex-col w-full flex-1 sm:max-w-3xl sm:shadow-lg">
@@ -81,8 +83,8 @@ const { Content, headings } = await render(idea);
             </div>
           </div>
         )}
-        <div class="prose prose-base sm:prose-lg break-words sm:break-normal p-4 sm:p-8">
-          <Toc headings={headings}/>
+        <div class="prose prose-base sm:prose-lg break-words sm:break-normal p-4 sm:p-8 prose-headings:text-center">
+          <TableOfContents {headings}/>
           <Content/>
         </div>
       </div>

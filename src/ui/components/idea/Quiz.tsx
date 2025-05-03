@@ -43,7 +43,7 @@ export default function Quiz({ questions }: { questions: Question[] }) {
       : { label: "Unsatisfactory", color: "text-error", emoji: "😢" };
 
   return (
-    <div className="space-y-6 text-base-content">
+    <div className="relative space-y-6 text-base-content">
       {/* Sticky Progress */}
       <div className="sticky top-0 z-10 bg-base-100 rounded-md shadow-sm py-2 px-4">
         <div className="flex items-center justify-between gap-4 text-lg">
@@ -81,9 +81,9 @@ export default function Quiz({ questions }: { questions: Question[] }) {
 
         return (
           <div key={i} className="p-4 rounded-md shadow-md space-y-2">
-            <h3 className="font-semibold text-base-content">
+            <span className="text-base-content">
               {i + 1}. {q.question}
-            </h3>
+            </span>
             <div className="space-y-2">
               {q.choices.map((choice, j) => {
                 const isThisCorrect = j === q.answer;
@@ -94,9 +94,9 @@ export default function Quiz({ questions }: { questions: Question[] }) {
 
                 if (isAnswered) {
                   choiceClass += isThisCorrect
-                    ? " border-success text-success"
+                    ? " border-success text-success bg-success/10"
                     : isThisSelected
-                    ? " border-error text-error"
+                    ? " border-error text-error bg-error/10"
                     : " opacity-50 cursor-default border-base-300";
                 } else if (isThisSelected) {
                   choiceClass += " border-primary";
@@ -119,7 +119,7 @@ export default function Quiz({ questions }: { questions: Question[] }) {
             {/* Explanation */}
             {isAnswered && q.explain && (
               <div
-                className={`mt-2 p-3 rounded text-sm ${
+                className={`mt-2 p-3 rounded ${
                   isCorrect ? "text-success" : "text-error"
                 }`}
               >
@@ -132,7 +132,7 @@ export default function Quiz({ questions }: { questions: Question[] }) {
 
       
       <div className="flex justify-center">
-        <button className="btn btn-outline" onClick={handleReset}>
+        <button className="btn btn-ghost btn-sm" onClick={handleReset}>
           Reset
         </button>
       </div>

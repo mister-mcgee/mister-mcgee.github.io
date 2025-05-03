@@ -1,0 +1,11 @@
+---
+import D from "@components/idea/Define";
+export type Props = {
+  word        : string;
+  definition ?: string;
+  children   ?: any
+}
+const { word, definition, children } = Astro.props;
+---
+
+<D {word} {definition} client:only>{ children }</D>

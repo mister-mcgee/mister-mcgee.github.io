@@ -1,0 +1,61 @@
+.card {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  width : 5in;
+  height: 3in;
+  
+  user-select: none;
+
+  transform-style: preserve-3d;
+  transform:
+    rotateX(0deg)
+    rotateY(0deg);
+  transition: transform 100ms linear;
+}
+
+.card > * {
+  position: absolute;
+
+  width : 5in;
+  height: 3in;
+  
+  overflow: hidden;
+}
+
+.card:hover {
+  transform-style: preserve-3d;
+  transform:
+    perspective(1000px)
+    scale(1.1)
+    rotateX(var(--tilt-y))
+    rotateY(var(--tilt-x));
+  transition: transform 100ms linear
+}
+
+.card .face {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 300ms ease-in
+}
+
+.card .back {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: rotateY(-180deg);
+  transition: transform 300ms ease-in
+}
+
+.card.flipped .face {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  transition: transform 300ms ease-in
+}
+
+.card.flipped .back {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 300ms ease-in
+}

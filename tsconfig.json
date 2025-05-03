@@ -24,6 +24,9 @@
       ],
       "@idea/*": [
         "src/idea/*"
+      ],
+      "@glossary/*": [
+        "src/glossary/*"
       ]
     },
     "jsx": "react-jsx",

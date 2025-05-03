@@ -1,0 +1,61 @@
+---
+import Drawer from "@layouts/Drawer.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { Construction, Lightbulb, Hash } from "@lucide/astro";
+
+export async function getStaticPaths() {
+  return (await getCollection("ideas")).reduce((tags, idea) => {
+    idea.data.tags?.forEach(tag => {
+      if(!tags.includes(tag)) tags.push(tag)
+    })
+    return tags
+  }, new Array<string>()).map(tag => ({
+    params: { tag }
+  }))
+}
+
+const { tag } = Astro.params
+
+const ideas = (await getCollection("ideas"))
+  .filter(idea => idea.data.tags?.includes(tag))
+
+function slug(idea: any) {
+  return idea.filePath
+    ?.replace(/^src\/idea\//, "")
+    ?.replace(/\.mdx?$/, "");
+}
+---
+
+<Layout>
+  <Drawer>
+    <div class="flex flex-col w-full items-center">
+      <div class="h-6"></div>
+      <div class="w-full flex flex-row justify-center items-center gap-1">
+        <span class="text-4xl">Ideas About</span>
+        <span class="tooltip tooltip-bottom" data-tip="More Tags">
+          <a href="/idea/tag/" class="btn btn-circle btn-ghost btn-xl">
+            <Hash class="w-10 h-10"/>
+          </a>
+        </span>        
+        <span class="text-4xl font-bold"> 
+          {tag}
+        </span> 
+      </div>
+      
+      <div class="h-4"></div>
+      <div class="w-full flex flex-row flex-wrap max-w-xs justify-center sm:max-w-2xl lg:max-w-5xl">
+        { ideas.map(idea => (
+          <a href={`/idea/${slug(idea)}`} class="flex flex-row flex-1 max-w-xs items-center p-4 rounded-lg hover:bg-base-200">
+            { !idea.data.draft && <Lightbulb    class="w-10 h-10"/> }
+            {  idea.data.draft && <Construction class="w-10 h-10"/> }
+            <div class="divider divider-horizontal"></div>
+            <div class="flex flex-col flex-1 items-start">
+              <span class="text-lg sm:text-xl font-bold">{ idea.data.title }</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </Drawer>
+</Layout>

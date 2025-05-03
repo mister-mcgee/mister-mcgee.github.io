@@ -1,0 +1,9 @@
+---
+import G from "@components/idea/Glossary.tsx";
+export type Props = {
+  words: Array<string>
+}
+const { words } = Astro.props;
+---
+
+<G {words} client:only/>

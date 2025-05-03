@@ -1,5 +1,5 @@
 ---
-import Tag from "@components/article/Tag.astro"
+import Tag from "./Tag.astro"
 
 export type Props = {
   tags: Array<string> | undefined
@@ -8,8 +8,6 @@ export type Props = {
 
 const { tags, class: className } = Astro.props
 ---
-
-
 <div class:list={[className, "w-full flex flex-row gap-1 px-2 py-1 overflow-x-auto"]}>
-  {tags?.map(tag => <Tag {tag}/>)}
+  {tags?.map((tag: string) => <Tag {tag}/>)}
 </div>

@@ -69,7 +69,7 @@ export default function BinaryConverter() {
       {/* Reset Button */}
       <button
         onClick={reset}
-        className="btn btn-ghost mt-2"
+        className="btn btn-ghost btn-sm mt-2"
       >
         Reset
       </button>

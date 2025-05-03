@@ -4,7 +4,6 @@ export type Props = {
 }
 
 const { tag } = Astro.props
-
 ---
 <a href={`/idea/tag/${tag.toLowerCase()}`} class="first:ml-auto last:mr-auto px-2 rounded-full border-1 border-primary text-primary hover:bg-primary hover:text-primary-content text-nowrap flex-nowrap">
   # {tag.toLowerCase()}

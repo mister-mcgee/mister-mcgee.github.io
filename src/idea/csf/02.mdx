@@ -2,21 +2,18 @@
 title: Binary, Bits and Bytes
 author: Mister McGee
 tags: ["csf", "binary", "programming"]
-vocabulary: [
-  "binary",
-]
 draft: true
 ---
 
-import Definition from "@components/article/Hover";
+import Define from "@components/idea/Define.astro";
 
-### What is Binary
+## What is Binary
 
-The word <Definition term="binary"/> comes from the latin *bini-* (meaning *two*), and *-ary* (meaning *part of*). The word *binary* describes something with two parts, but in the language of mathematics and computer science it refers to the base-2 number system where all numerals are expressed using the digits zero `0` and one `1`.
+The word <Define word="binary"/> comes from the latin *bini-* (meaning *two*), and *-ary* (meaning *part of*). The word *binary* describes something with two parts, but in the language of mathematics and computer science it refers to the base-2 number system where all numerals are expressed using the digits zero `0` and one `1`.
 
 It can be intimidating to approach new mathematical concepts, but before your eyes glaze over I encourage you to persevere. Understanding binary is fundamentally important in understanding modern computing.
 
-While base-2 may seem foreign, you are likely already accustomed to using the base-10 numeric system known as *decimal*. Thinking about how we interpret decimal numerals can give us some insight regarding how we interpret binary numerals.
+While base-2 may seem foreign, you are likely already accustomed to using the base-10 numeric system known as <Define word="decimal"/>. Thinking about how we interpret decimal numerals can give us some insight regarding how we interpret binary numerals.
 
 In base-10 each numeral is represented using *ten* digits, from zero `0` to nine `9`. Each digit and its *place* within a numeral decide its value. Consider the base-10 numeral `345` where we describe the digit five `5` as being in the *ones place*, the digit four `4` in the *tens place*, and the digit three `3` in the *hundreds place*. Those practiced in reading decimal numerals know this means there are five *ones* (`5`), four *tens* (`40`), and three *hundreds* (`300`). Another way to visualize this relationships is to write the numeral in its *expanded form* -
 
@@ -34,17 +31,17 @@ When looking at a decimal numeral's *expanded form* it is easy to see that each 
        = (1 * 2^3) + (0 * 2^2) + (1 * 2^1) + (0 * 2^0) = 10
 ```
 
-We can sum each part of our expanded form to see that the binary numeral `1010` is equal to the decimal numeral `10`. While it's outside the scope of this lesson, programmers often use several different bases to represent numerals in code. Most programming languages support the use of *binary* (base-2), *octal* (base-8), *decimal* (base-10), and *hexadecimal* (base-16) numerals.
+We can sum each part of our expanded form to see that the binary numeral `1010` is equal to the decimal numeral `10`. While it's outside the scope of this lesson, programmers often use several different bases to represent numerals in code. Most programming languages support the use of <Define word="binary"/> (base-2), <Define word="octal"/> (base-8), <Define word="decimal"/> (base-10), and <Define word="hexadecimal"/> (base-16) numerals.
 
 Take some time to play with the binary to decimal converter below to get a feel for how binary counting works.
 
-<a id="widget"></a>
+<a id="binary-to-decimal"></a>
 
 import BinaryToDecimal from "@components/fun/BinaryToDecimal";
 
 <BinaryToDecimal client:only/>
 
-### Why use Binary
+## Why use Binary
 
 A computer is a "thinking" machine, meaning that it is capable of "choosing" an outcome based on some input or prior state. This is primarily accomplished by varying voltages across *switches*. In a modern electronic computer binary signals are transmitted by encoding zeroes `0` as "low" voltage and ones `1` as "high" voltage, but this wasn't always the case. Early *electromechanical* computers used many different, more exotic techniques to encode and transmit data. Some notable examples include trinary and bi-quinary encodings.
 
@@ -52,7 +49,7 @@ To be clear, binary encoding has always been appealing to engineers and computer
 
 It wasn't until after the invention of the *transistor* in 1947 that binary became the dominant method of encoding and transmitting data. The transistor revolutionized computing by dramatically reducing the size and power footprint of computing devices, completely eliminating the need for vacuum tubes and other electromechanical components. This allowed for the creation of smaller, more efficient, and more powerful computers.
 
-### Bits and Bytes
+## Bits and Bytes
 
 A *bit* (short for *binary digit*) is the smallest unit of *information*. A bit can represent one of two states - zero `0` or one `1`, *no* or *yes*, *false* or *true*, and so on. While bits are fundamental to computing, it is often not useful to talk about individual bits, but rather to think in *bytes*. Most modern computer architectures operate on groupings of 8 bits (aka *bytes*) at a time, which means a *byte* is the smallest unit of *addressable memory* in a computer.
 
@@ -65,7 +62,7 @@ Most arithmetic on computers is performed using 32-bit or 64-bit *integers*. An 
 | 64 | 8 | Yes | `-9,223,372,036,854,775,808` to `9,223,372,036,854,775,807` |
 | 64 | 8 | No | `0` to `18,446,744,073,709,551,615` |
 
-### How do Computers *Understand* Binary
+## How do Computers *Understand* Binary
 
 If you were presented with a string of binary numbers and you were asked to *interpret* them, you might be rightfully confused because binary data alone doesn't mean anything until we decide *how* to interpret it. Sometimes this is a decision a lone programmer can make in their codebase, but for the most part *standards* decide how certain binary data should be interpreted in context.
 
@@ -80,7 +77,7 @@ There are many common standards that describe varying hardware and software inte
 Standard CPU architectures like RISC-V, x86, and ARM are what tell a computer how to interpret and execute binary instructions. It is up to the CPU manufacturer to design compatible hardware, and it is up to application developers to write compatible software according to the standard.
 
 
-### What are Programming Languages
+## What are Programming Languages
 
 Computers don't understand English—or any natural language—directly. They "speak" in binary, which is far too low-level and complex for humans to write directly (though some do!). Instead, we use **programming languages**, which act as a bridge between human logic and machine instructions.
 
@@ -92,7 +89,7 @@ Programming languages:
 
 There are many different types of programming languages, each with strengths and weaknesses, but they all ultimately produce the same thing: **binary instructions the computer can follow**.
 
-### Summary
+## Summary
 
 - Computers process and store all data using binary (0s and 1s).
 - Binary is based on powers of 2, just as decimal is based on powers of 10.
@@ -102,11 +99,16 @@ There are many different types of programming languages, each with strengths and
 
 Understanding how binary works is one of the most fundamental concepts in computer science, and it's the first step toward mastering how computers "think" and operate.
 
+## Review
 
-### Review
+import Quiz      from "@components/idea/Quiz.astro";
+import questions from "@idea/csf/02/questions.json";
 
-import Quiz from "@components/article/Quiz";
-import questions from "@idea/csf/week/02.quiz.json";
+<Quiz questions={questions}/>
 
-<Quiz client:only questions={questions}/>
+## Glossary
 
+import Glossary from "@components/idea/Glossary.astro";
+import words    from "@idea/csf/02/words.json";
+
+<Glossary words={words}/>

@@ -1,0 +1,18 @@
+---
+export type Props = {
+  headings: Array<{
+    text : string;
+    slug : string;
+    depth: number;
+  }>
+}
+const { headings } = Astro.props;
+---
+<div class="flex flex-col px-4">
+  <span class="text-3xl font-bold text-center text-base-content">Table of Contents</span>
+  <ol>
+    {headings.map((heading, i) => {
+      return <li><a href={`#${heading.slug}`} class="font-normal text-lg no-underline hover:underline">{heading.text}</a></li>
+    })}
+  </ol>
+</div>

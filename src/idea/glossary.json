@@ -1,0 +1,115 @@
+[
+  {
+    "word": "binary",
+    "definition": "The word binary comes from the latin <em>bini-</em> (meaning <em>two</em>), and <em>-ary</em> (meaning <em>part of</em>). Binary refers to the base-2 number system where all numerals are expressed using the digits zero <code>0</code> and one <code>1</code>.",
+    "related": ["octal", "decimal", "hexadecimal"]
+  },
+  {
+    "word": "octal",
+    "definition": "The word octal comes from the Latin <em>oct-</em> (meaning <em>eight</em>). Octal refers to the base-8 number system which consists of the digits zero <code>0</code> through seven <code>7</code>.",
+    "related": ["binary", "decimal", "hexadecimal"]
+  },
+  {
+    "word": "decimal",
+    "definition": "The word decimal comes from the Latin <em>deci-</em> (meaning <em>tenth</em>). Decimal refers to the base-10 number system which consists of the digits zero <code>0</code> through nine <code>9</code>.",
+    "related": ["binary", "octal", "hexadecimal"]
+  },
+  {
+    "word": "hexadecimal",
+    "definition": "Hexadecimal comes from the Latin <em>hex-</em> (meaning <em>six</em>) and <em>-deci-</em> (meaning <em>tenth</em>). Hexadecimal refers to the base-16 number system which consists of the <em>numeric</em> digits zero <code>0</code> through nine <code>9</code> as well as an additional six <em>alphabetic</em> digits - <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>",
+    "related": ["binary", "octal", "decimal"]
+  },
+  {
+    "word": "bit",
+    "definition": "A bit is a <em>binary</em> digit, which is the smallest unit of information. A bit only occupies one of two states at any time, meaning a bit can either be zero <code>0</code> or one <code>1</code>, low or high, off or on, false or true respectively.",
+    "related": ["binary", "byte"]
+  },
+  {
+    "word": "memory",
+    "definition": "Memory is a term describing where computers store information, usually in the form of <em>bits</em> and <em>bytes</em>.",
+    "related": ["bit", "byte"]
+  },
+  {
+    "word": "volatile memory",
+    "definition": "Volatile memory is a kind of <em>memory</em> that requires active power to store information, meaning that volatile memory <em>cannot</em> survive a power cycle. Volatile memory is often used where speed is critical since it is typically faster than <em>persistent storage</em>.",
+    "related": ["memory", "persistent memory"]
+  },
+  {
+    "word": "persistent memory",
+    "definition": "Persistent memory is a kind of <em>memory</em> that <em>does not</em> require active power to store information, meaning that persistent memory <em>can</em> survive a power cycle. Persistent memory is usually not used in speed critical applications since it is typically slower than <em>volatile memory</em>.",
+    "related": ["memory", "volatile memory"]
+  },
+  {
+    "word": "byte",
+    "definition": "A byte is a grouping of eight <code>8</code> bits and it is the smallest <em>addressable</em> unit of <em>memory</em> in a modern computer.",
+    "related": ["memory", "bit", "memory address"]
+  },
+  {
+    "word": "memory address",
+    "definition": "A memory address is a <em>binary</em> number (usually 32-<em>bits</em> or 64-<em>bits</em>), which describes the location of a <em>byte</em> in <em>memory</em>.",
+    "related": ["binary", "bit", "byte", "memory"]
+  },
+  {
+    "word": "program",
+    "definition": "A program is a sequence of instructions written to be executed by a computer."
+  },
+  {
+    "word": "hardware",
+    "definition": "Hardware are the physical components that comprise a computer."
+  },
+  {
+    "word": "software",
+    "definition": "Software are the <em>programs</em> that a computer executes.",
+    "related": ["program"]
+  },
+  {
+    "word": ["series", "serial"],
+    "definition": "Processing data in <em>series</em> means to process the data <em>sequentially</em>, or one at a time.",
+    "related": ["parallel", "concurrent"]
+  },
+  {
+    "word": ["parallel", "concurrent"],
+    "definition": "Processing data in <em>parallel</em> means to process the data <em>simultaneously</em>, or at the same time.",
+    "related": ["series", "serial"]
+  },
+  {
+    "word": "cpu",
+    "definition": "A CPU or <em>central processing unit</em> is <em>hardware</em> optimized to execute instructions in <em>series</em>.",
+    "related": ["hardware", "series"]
+  },
+  {
+    "word": "gpu",
+    "definition": "A GPU or <em>graphics processing unit</em> is <em>hardware</em> optimized to execute instructions in <em>parallel</em>.",
+    "related": ["hardware", "parallel"]
+  },
+  {
+    "word": "read",
+    "definition": "Reading is the process of copying a value from <em>memory</em> to the <em>CPU</em>.",
+    "related": ["memory", "cpu", "write"]
+  },
+  {
+    "word": "write",
+    "definition": "Writing is the process of copying a value from the <em>CPU</em> to <em>memory</em>.",
+    "related": ["memory", "cpu", "read"]
+  },
+  {
+    "word": "mutable",
+    "definition": "Mutable means that something can change or mutate. When programming, data marked as mutable <em>can</em> be changed meaning it is both <em>readable</em> and <em>writable</em>.",
+    "related": ["read", "write", "immutable"]
+  },
+  {
+    "word": "immutable",
+    "definition": "Immutable means that something cannot change or mutate. When programming, data marked as immutable <em>cannot</em> be changed meaning it is <em>readable</em>, but not <em>writable</em>.",
+    "related": ["mutable"]
+  },
+  {
+    "word": "random access",
+    "definition": "Memory described as having random access means that <em>read</em> operations take roughly the same time regardless of their location.",
+    "related": ["read", "memory"]
+  },
+  {
+    "word": "ram",
+    "definition": "RAM or <em>random access memory</em> is a kind of <em>volatile memory</em> that stores information via electric switches. Because there are no moving parts or magnets, RAM is incredibly fast.",
+    "related": ["random access", "memory", "volatile memory"]
+  }
+]
