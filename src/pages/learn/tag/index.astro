@@ -4,13 +4,13 @@ import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { Hash } from "@lucide/astro";
 
-const tags = (await getCollection("ideas"))
-  .reduce((tags, idea) => {
-    idea.data.tags?.forEach(tag => {
+const tags = (await getCollection("lessons"))
+  .reduce((tags, lesson) => {
+    lesson.data.tags?.forEach(tag => {
       tags[tag] = (tags[tag] ?? 0) + 1
     })
     return tags
-  }, new Object())
+  }, new Object() as Record<string, number>)
 
 ---
 

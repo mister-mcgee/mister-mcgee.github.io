@@ -1,15 +1,12 @@
 ---
+import Lesson from "@learn/lesson";
 import Layout from "@layouts/Layout.astro";
 import Drawer from "@layouts/Drawer.astro";
-import { getCollection } from "astro:content";
+import { getCollection                       } from "astro:content";
 import { Construction, LibraryBig, Lightbulb } from "@lucide/astro";
 
-const ideas = (await getCollection("ideas"))
-  .sort((a, b) => (
-    (b.data.pubDate?.valueOf() ?? 0) - 
-    (a.data.pubDate?.valueOf() ?? 0)
-  ))
-
+// retrieve lessons and sort by date
+const lessons = (await getCollection("lessons")).sort(Lesson.compare)
 ---
 
 <Layout>
@@ -22,14 +19,14 @@ const ideas = (await getCollection("ideas"))
       </div>      
       <div class="h-4"></div>
       <div class="w-full flex flex-row flex-wrap max-w-xs justify-center sm:max-w-2xl lg:max-w-5xl">
-        { ideas.map(idea => (
-          <a href={`/idea/${Idea.slug(idea)}`} class="flex flex-row flex-1 max-w-xs items-center p-4 rounded-lg hover:bg-base-200">
-            { !Idea.isDraft(idea) && <Lightbulb    class="w-10 h-10"/> }
-            {  Idea.isDraft(idea) && <Construction class="w-10 h-10"/> }
+        { lessons.map(lesson => (
+          <a href={`/learn/${Lesson.slug(lesson)}`} class="flex flex-row flex-1 max-w-xs items-center p-4 rounded-lg hover:bg-base-200">
+            { !Lesson.isDraft(lesson) && <Lightbulb    class="w-10 h-10"/> }
+            {  Lesson.isDraft(lesson) && <Construction class="w-10 h-10"/> }
             <div class="divider divider-horizontal"></div>
             <div class="flex flex-col flex-1 items-start">
-              <span class="text-lg sm:text-xl font-bold">{idea.data.title }</span>
-              { idea.data.pubDate && <span class="text-sm sm:text-lg">{idea.data.pubDate?.toDateString()}</span>}
+              <span class="text-lg sm:text-xl font-bold">{lesson.data.title }</span>
+              { lesson.data.pubDate && <span class="text-sm sm:text-lg">{lesson.data.pubDate?.toDateString()}</span>}
             </div>
           </a>
         ))}

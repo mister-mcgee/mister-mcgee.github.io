@@ -1,4 +1,4 @@
-import glossary from "@idea/glossary.json";
+import glossary from "@learn/glossary.json";
 
 type GlossaryEntry = typeof glossary[number];
 

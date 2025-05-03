@@ -22,11 +22,8 @@
       "@pages/*": [
         "src/pages/*"
       ],
-      "@idea/*": [
-        "src/idea/*"
-      ],
-      "@glossary/*": [
-        "src/glossary/*"
+      "@learn/*": [
+        "src/learn/*"
       ]
     },
     "jsx": "react-jsx",

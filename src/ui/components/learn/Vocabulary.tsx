@@ -1,15 +1,15 @@
-import "./glossary.css";
+import "./vocabulary.css";
 import clsx from "clsx";
 import { useRef, useState } from "react";
-import glossary from "@idea/glossary.json";
+import glossary from "@learn/glossary.json";
 
-type GlossaryEntry = typeof glossary[number];
+type VocabularyEntry = typeof glossary[number];
 
-function w(e: GlossaryEntry | undefined) {
+function w(e: VocabularyEntry | undefined) {
   return Array.isArray(e?.word) ? e.word.join(" / ") : e?.word ?? "???";
 }
 
-function d(e: GlossaryEntry | undefined) {
+function d(e: VocabularyEntry | undefined) {
   return e?.definition ?? "¯\\_(ツ)_/¯";
 }
 
@@ -82,7 +82,7 @@ function Flashcard({ entry, onClick, flipped }: {
 
 import { AnimatePresence, motion } from "framer-motion";
 
-function Flashcards({ entries }: { entries: Array<GlossaryEntry | undefined> }) {
+function Flashcards({ entries }: { entries: Array<VocabularyEntry | undefined> }) {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [direction, setDirection] = useState(0); // -1 for prev, +1 for next
@@ -106,15 +106,13 @@ function Flashcards({ entries }: { entries: Array<GlossaryEntry | undefined> }) 
   };
 
   function gotoNext() {
-    setDirection(1);
-    setIndex((i) => (i + 1) % entries.length);
-    setFlipped(false);
+    setDirection( 1);
+    setIndex((i) => (i + 1                 ) % entries.length);
   }
 
   function gotoPrevious() {
     setDirection(-1);
     setIndex((i) => (i - 1 + entries.length) % entries.length);
-    setFlipped(false);
   }
 
   function gotoRandom() {
@@ -122,7 +120,7 @@ function Flashcards({ entries }: { entries: Array<GlossaryEntry | undefined> }) 
     while (newIndex === index && entries.length > 1) {
       newIndex = Math.floor(Math.random() * entries.length);
     }
-    setDirection(newIndex > index ? 1 : -1);
+    setDirection(Math.random() > 0.5 ? 1 : -1);
     setFlipped(Math.random() > 0.5);
     setIndex(newIndex);
   }
@@ -165,7 +163,7 @@ function Flashcards({ entries }: { entries: Array<GlossaryEntry | undefined> }) 
   );
 }
 
-function Definition({ entry }: { entry: GlossaryEntry | undefined }) {
+function Definition({ entry }: { entry: VocabularyEntry | undefined }) {
   const [checked, setChecked] = useState(true);
 
   function onChange() {
@@ -188,7 +186,7 @@ function Definition({ entry }: { entry: GlossaryEntry | undefined }) {
   </div>
 }
 
-function Definitions({ entries }: { entries: Array<GlossaryEntry | undefined> }) {
+function Definitions({ entries }: { entries: Array<VocabularyEntry | undefined> }) {
   return <div className="flex flex-col gap-2">
     {entries.map((entry, i) => (
       <Definition key={i} entry={entry} />
@@ -196,10 +194,10 @@ function Definitions({ entries }: { entries: Array<GlossaryEntry | undefined> })
   </div>
 }
 
-export default function Glossary({ words }: { words: Array<string> }) {
+export default function Vocabulary({ vocabulary }: { vocabulary: Array<string> }) {
   const [flashcards, setFlashcards] = useState(false);
 
-  const entries = words
+  const entries = vocabulary
     .map((word) => glossary.find((entry) =>
         typeof entry.word === "string"
           ? entry.word === word.toLowerCase()
@@ -219,8 +217,13 @@ export default function Glossary({ words }: { words: Array<string> }) {
 
   return <div className="flex flex-col items-center gap-4">
     <div className="w-full flex flex-row items-center justify-center gap-2">
-      <span>Flashcards</span>
-      <input type="checkbox" className="toggle" checked={flashcards}  onChange={onChange} />
+      <span className={clsx(
+         flashcards && "opacity-50"
+      )}>Definitions</span>
+      <input type="checkbox" className="toggle" checked={flashcards} onChange={onChange} />
+      <span className={clsx(
+        !flashcards && "opacity-50"
+      )}>Flashcards</span>
     </div>
     <AnimatePresence mode="wait">
       {flashcards ? (

@@ -5,7 +5,7 @@ tags: ["csf", "binary", "programming"]
 draft: true
 ---
 
-import Define from "@components/idea/Define.astro";
+import Define from "@components/learn/Define.astro";
 
 ## What is Binary
 
@@ -101,14 +101,14 @@ Understanding how binary works is one of the most fundamental concepts in comput
 
 ## Review
 
-import Quiz      from "@components/idea/Quiz.astro";
-import questions from "@idea/csf/02/questions.json";
+import Quiz from "@components/learn/Quiz.astro";
+import quiz from "@learn/csf/week/02/quiz.json";
 
-<Quiz questions={questions}/>
+<Quiz quiz={quiz}/>
 
 ## Glossary
 
-import Glossary from "@components/idea/Glossary.astro";
-import words    from "@idea/csf/02/words.json";
+import Vocabulary from "@components/learn/Vocabulary.astro";
+import vocabulary from "@learn/csf/week/02/vocabulary.json";
 
-<Glossary words={words}/>
+<Vocabulary vocabulary={vocabulary}/>

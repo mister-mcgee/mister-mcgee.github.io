@@ -1,0 +1,6 @@
+---
+import Q from "@components/learn/Quiz";
+const { quiz } = Astro.props;
+---
+
+<Q {quiz} client:only/>

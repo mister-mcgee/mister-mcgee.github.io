@@ -4,6 +4,5 @@
   "decimal",
   "hexadecimal",
   "bit",
-  "byte",
-  "mutable"
+  "byte"
 ]

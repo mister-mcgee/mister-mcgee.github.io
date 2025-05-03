@@ -1,0 +1,9 @@
+---
+import V from "@components/learn/Vocabulary.tsx";
+export type Props = {
+  vocabulary: Array<string>
+}
+const { vocabulary } = Astro.props;
+---
+
+<V {vocabulary} client:only/>

@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 import { Construction, Lightbulb, Hash } from "@lucide/astro";
 
 export async function getStaticPaths() {
-  return (await getCollection("ideas")).reduce((tags, idea) => {
+  return (await getCollection("lessons")).reduce((tags, idea) => {
     idea.data.tags?.forEach(tag => {
       if(!tags.includes(tag)) tags.push(tag)
     })
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params
 
-const ideas = (await getCollection("ideas"))
+const ideas = (await getCollection("lessons"))
   .filter(idea => idea.data.tags?.includes(tag))
 
 function slug(idea: any) {
