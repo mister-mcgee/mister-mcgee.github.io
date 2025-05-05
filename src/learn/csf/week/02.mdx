@@ -41,7 +41,7 @@ import BinaryToDecimal from "@components/fun/BinaryToDecimal";
 
 <BinaryToDecimal client:only/>
 
-## Why use Binary
+## Why Computers "Think" in Binary
 
 A computer is a "thinking" machine, meaning that it is capable of "choosing" an outcome based on some input or prior state. This is primarily accomplished by varying voltages across *switches*. In a modern electronic computer binary signals are transmitted by encoding zeroes `0` as "low" voltage and ones `1` as "high" voltage, but this wasn't always the case. Early *electromechanical* computers used many different, more exotic techniques to encode and transmit data. Some notable examples include trinary and bi-quinary encodings.
 
@@ -51,18 +51,18 @@ It wasn't until after the invention of the *transistor* in 1947 that binary beca
 
 ## Bits and Bytes
 
-A *bit* (short for *binary digit*) is the smallest unit of *information*. A bit can represent one of two states - zero `0` or one `1`, *no* or *yes*, *false* or *true*, and so on. While bits are fundamental to computing, it is often not useful to talk about individual bits, but rather to think in *bytes*. Most modern computer architectures operate on groupings of 8 bits (aka *bytes*) at a time, which means a *byte* is the smallest unit of *addressable memory* in a computer.
+A <Define word="bit"/> (short for *binary digit*) is the smallest unit of *information*. A bit can represent one of two states - zero `0` or one `1`, *no* or *yes*, *false* or *true*, and so on. While bits are important, it is often not useful to think or speak about them individually. Instead, computer scientists learn to think in *bytes*, since most modern computer architectures operate on groupings of 8 bits (aka *bytes*) at a time.
 
-Most arithmetic on computers is performed using 32-bit or 64-bit *integers*. An integer is a whole number (including zero) that can be *signed* (positive or negative) or *unsigned*. Depending on the number of bits and whether it is signed or unsigned, an integer can represent a variety of whole numbers.
+A single byte is capable of representing up to 256 different states, usually a number between `0` and `255` inclusive. In order for computers to represent larger or more complicated numbers, they must use *multiple bytes*. For example, most arithmetic on computers is performed using 32-bit (4 bytes) or 64-bit (8 bytes) *integers*. An integer is a whole number (including zero) that can be *signed* (positive or negative) or *unsigned*. Depending on the number of bits and whether it is signed or unsigned, an integer can represent a variety of whole numbers.
 
-| Bits | Bytes | Signed | Range |
+| Width | Signed | Lower | Upper |
 | --- | --- | --- | --- |
-| 32 | 4 | Yes | `-2,147,483,648` to `2,147,483,647` |
-| 32 | 4 | No | `0` to `4,294,967,295` |
-| 64 | 8 | Yes | `-9,223,372,036,854,775,808` to `9,223,372,036,854,775,807` |
-| 64 | 8 | No | `0` to `18,446,744,073,709,551,615` |
+| 32-bit (4 bytes) | Yes | $$-2^{31}=-2,147,483,648$$ | $$2^{31}-1=2,147,483,647$$ |
+| 32-bit (4 bytes) | No  | $$0$$ | $$2^{32}-1 = 4,294,967,295$$ |
+| 64-bit (8 bytes) | Yes | $$-2^{63}=-9,223,372,036,854,775,808$$ | $$2^{63}-1=9,223,372,036,854,775,807$$ |
+| 64-bit (8 bytes) | No  | $$0$$ | $$2^{64}-1=18,446,744,073,709,551,615$$ |
 
-## How do Computers *Understand* Binary
+## How Computers "Think" in Binary
 
 If you were presented with a string of binary numbers and you were asked to *interpret* them, you might be rightfully confused because binary data alone doesn't mean anything until we decide *how* to interpret it. Sometimes this is a decision a lone programmer can make in their codebase, but for the most part *standards* decide how certain binary data should be interpreted in context.
 
@@ -76,8 +76,7 @@ There are many common standards that describe varying hardware and software inte
 
 Standard CPU architectures like RISC-V, x86, and ARM are what tell a computer how to interpret and execute binary instructions. It is up to the CPU manufacturer to design compatible hardware, and it is up to application developers to write compatible software according to the standard.
 
-
-## What are Programming Languages
+## How Computers and Programmers "Communicate"
 
 Computers don't understand English—or any natural language—directly. They "speak" in binary, which is far too low-level and complex for humans to write directly (though some do!). Instead, we use **programming languages**, which act as a bridge between human logic and machine instructions.
 
@@ -97,7 +96,7 @@ There are many different types of programming languages, each with strengths and
 - Binary signals correspond to physical states, such as voltages, which are simple to build and detect.
 - Programming languages allow us to interact with computers without writing binary directly.
 
-Understanding how binary works is one of the most fundamental concepts in computer science, and it's the first step toward mastering how computers "think" and operate.
+Understanding how binary works is fundamental concepts in computer science, and it's the first step toward mastering how computers "think" and operate.
 
 ## Review
 
@@ -112,3 +111,5 @@ import Vocabulary from "@components/learn/Vocabulary.astro";
 import vocabulary from "@learn/csf/week/02/vocabulary.json";
 
 <Vocabulary vocabulary={vocabulary}/>
+
+### Project

@@ -6,6 +6,8 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import expressiveCode from 'astro-expressive-code';
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 import sitemap from "@astrojs/sitemap";
 
@@ -31,5 +33,12 @@ export default defineConfig({
     defaultProps: {
       showLineNumbers: false
     }
-  }), react(), mdx(), sitemap()],
+  }), react(), mdx({
+    remarkPlugins: [
+      remarkMath
+    ],
+    rehypePlugins: [
+      rehypeKatex
+    ]
+  }), sitemap()],
 });

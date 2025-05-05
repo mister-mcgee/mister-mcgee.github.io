@@ -21,7 +21,7 @@
   },
   {
     "word": "bit",
-    "definition": "A bit is a <em>binary</em> digit, which is the smallest unit of information. A bit only occupies one of two states at any time, meaning a bit can either be zero <code>0</code> or one <code>1</code>, low or high, off or on, false or true respectively.",
+    "definition": "A bit is a <em>binary</em> digit, which is the smallest unit of information. A bit always occupies one of two states, meaning a bit can either be zero <code>0</code> or one <code>1</code>, low or high, off or on, false or true respectively.",
     "related": ["binary", "byte"]
   },
   {
@@ -111,5 +111,109 @@
     "word": "ram",
     "definition": "RAM or <em>random access memory</em> is a kind of <em>volatile memory</em> that stores information via electric switches. Because there are no moving parts or magnets, RAM is incredibly fast.",
     "related": ["random access", "memory", "volatile memory"]
+  }, 
+  {
+    "word": "hdd",
+    "definition": "An HDD or <em>hard disk drive</em> is a kind of <em>persistent memory</em> that stores information on a spinning disk using a magnetic head. Because the disk has to be physically moved to read or write to certain locations, an HDD <em>is not</em> a form of <em>random access memory</em>.",
+    "related": ["memory", "persistent memory", "volatile memory", "random access"]
+  },
+  {
+    "word": "ssd",
+    "definition": "An SSD or <em>solid state drive</em> is a kind of <em>persistent memory</em> that stores information via magnetic switches. Because there are no moving parts, an SSD <em>is</em> a form of <em>random access memory</em>.",
+    "related": ["memory", "persistent memory", "volatile memory", "random access"]
+  },
+  {
+    "word": "odd",
+    "definition": "An ODD or <em>optical disk drive</em> is a kind of <em>persistent memory</em> that stores information on a spinning disk using a laser. Because the disk has to be physically moved to read or write to certain locations, an ODD <em>is not</em> a form of <em>random access memory</em>."
+  },
+  {
+    "word": "programming language",
+    "deinfition": "A programming language is a collection of <em>grammar</em> and <em>syntax</em> used to write programs. A programming language is the interface between a programmer and a computer that allows them to communicate.",
+    "related": ["grammar", "syntax"]
+  },
+  {
+    "word": "syntax",
+    "definition": "Syntax refers to the symbols that comprise a programming language. A <em>syntax error</em> occurs when a symbol is unrecognized or used incorrectly.",
+    "related": ["grammar", "programming language"]
+  },
+  {
+    "word": "grammar",
+    "definition": "Grammar refers to the rules which govern how the symbols of a programming language are arranged.",
+    "related": ["syntax", "programming language"]
+  },
+  {
+    "word": "reserved word",
+    "definition": "Reserved words are special symbols that cannot be used by the programmer to name functions, variables or otherwise. In JavaScript, some examples of reserved words include <code>import</code>, <code>function</code>, <code>var</code>, <code>let</code>, <code>const</code>, <code>if</code>, <code>else</code>, <code>new</code>, <code>for</code>, <code>while</code>, <code>return</code>, <code>break</code>, <code>continue</code>...",
+    "related": ["syntax", "programming language"]
+  },
+  {
+    "word": ["machine code", "machine language"],
+    "definition": "Machine code or machine language is a programming language written in binary for a specific hardware platform. Programmers rarely write machine code directly, but instead use a higher-level programming language to generate machine code.",
+    "related": ["programming language", "binary"]
+  },
+  {
+    "word": "assembly language",
+    "definition": "An assembly language is a programming language that substitutes the binary instructions of a machine language with human-readable shorthand. Assembly language is translated into machine code ahead of time by an <em>assembler</em>.",
+    "related": ["programming language", "machine code", "assembler"]
+  },
+  {
+    "word": "assembler",
+    "definition": "An assembler is a program that <em>consumes</em> an assembly language and translates it to machine code ahead of time.",
+    "related": ["programming language", "assembly language", "machine code"]
+  },
+  {
+    "word": "compiled language",
+    "definition": "A compiled language is a programming language that is translated into machine code ahead of time by a compiler. Compiled languages tend to be more abstract than an assembly language, but they are usually easier for humans to read and write. Examples of compiled languages include C, C++, Odin, Rust, and Zig.",
+    "related": ["programming language", "machine code", "compiler"]
+  },
+  {
+    "word": "compiler",
+    "definition": "A compiler is a program that consumes a compiled language and translates it into machine code ahead of time.",
+    "related": ["programming language", "compiled language", "machine code"]
+  },
+  {
+    "word": "interpreted language",
+    "definition": "An interpreted language is a programming language that is translated into machine code in realtime by an interpreter. Examples of interpreted languages include JavaScript, Ruby, and Python.",
+    "related": ["programming language", "machine code", "interpreter"]
+  },
+  {
+    "word": "interpreter",
+    "definition": "An interpreter is a program that consumes an interpreted language and translates it into machine code in realtime.",
+    "related": ["programming language", "interpreted language", "machine code"]
+  },
+  {
+    "word": "virtual machine language",
+    "definition": "A virtual machine language is a combination of both a compiled language and an interpreted language. A virtual machine language is first compiled to an intermediate language (usually known as bytecode, or virtual assembly), then it is interpreted by a virtual machine at runtime. Examples of virtual machine languages include Java, C#, and Kotlin.",
+    "related": ["programming language", "compiled language", "interpreted language", "virtual machine"]
+  },
+  {
+    "word": "virtual machine",
+    "definition": "A virtual machine is a special type of interpreter that consumes an intermediate language (usually known as bytecode, or virtual assembly) and translates it into machine code.",
+    "related": ["programming language", "virtual machine language", "machine code"]
+  },
+  {
+    "word": "ide",
+    "definition": "An IDE or <em>integrated development environment</em> is a special editor for writing and testing programs.",
+    "related": ["programming language"]
+  },
+  {
+    "word": "iterable",
+    "definition": "Something iterable can be consumed one element at a time. Think of an iterable like a deck of cards where each card is a single element.",
+    "related": ["iterator"]
+  },
+  {
+    "word": "iterator",
+    "definition": "An iterator consumes or produces one element at a time.",
+    "related": ["iterable"]
+  },
+  {
+    "word": "comment",
+    "definition": "Comments are a way to include arbitrary text in your program that isn't interpreted as code. Comments are often used to leave notes in your code for your future self or other programmers.",
+    "related": ["programming language"]
+  },
+  {
+    "word": "variable",
+    "definition": "A variable is one way to store and access data in a program. Think of a variable as a box that holds a value.",
+    "related": ["programming language"]
   }
 ]

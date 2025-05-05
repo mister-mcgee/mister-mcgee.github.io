@@ -19,7 +19,7 @@ export default function Define({ word, definition, children }: React.PropsWithCh
   }
 
   return (
-    <div className="tooltip inline border-b border-dotted">
+    <div className="tooltip inline border-b border-dotted cursor-help">
       <div className="tooltip-content flex flex-col text-justify">
         <span className="text-lg font-semibold">{w(lookup(word))}</span>
         <div dangerouslySetInnerHTML={{ __html: d(lookup(word)) }}/>
