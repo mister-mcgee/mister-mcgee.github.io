@@ -8,6 +8,7 @@ import expressiveCode from 'astro-expressive-code';
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import rehypeCallouts from 'rehype-callouts';
 
 import sitemap from "@astrojs/sitemap";
 
@@ -38,7 +39,8 @@ export default defineConfig({
       remarkMath
     ],
     rehypePlugins: [
-      rehypeKatex
+      rehypeKatex,
+      rehypeCallouts
     ]
   }), sitemap()],
 });

@@ -1,29 +1,23 @@
 ---
 import "../styles/global.css";
-import "katex/dist/katex.min.css";
+
+import ConfigureThemeChange   from "@components/theme/ConfigureThemeChange.astro";
+import SyncClassWithDataTheme from "@components/theme/SyncClassWithDataTheme.astro";
 ---
 
 <!doctype html>
 <html lang="en" class="font-inter scroll-smooth">
 	<head>
-    <script is:inline>
-      let theme = localStorage.getItem("theme");
-      if (theme === null)
-        document.documentElement.setAttribute("data-theme", "light");
-      else
-        document.documentElement.setAttribute("data-theme",  theme );
-    </script>
-    <script>
-      import { themeChange } from "theme-change";
-      themeChange();
-    </script>
-		<meta charset="UTF-8" />
+    <ConfigureThemeChange />
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Mister McGee</title>
 	</head>
 	<body class="w-dvw h-dvh overflow-hidden">
+    <SyncClassWithDataTheme className="dark"  themeName="dark" />
+    <SyncClassWithDataTheme className="light" themeName="light"/>
 		<slot />
 	</body>
 </html>

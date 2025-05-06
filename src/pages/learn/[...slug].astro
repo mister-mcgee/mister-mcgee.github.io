@@ -1,4 +1,7 @@
 ---
+import "katex/dist/katex.min.css";
+import "rehype-callouts/theme/obsidian";
+
 import { Construction } from "@lucide/astro";
 import Drawer from "@layouts/Drawer.astro";
 import Layout from "@layouts/Layout.astro";
@@ -6,6 +9,7 @@ import Tags   from "@components/learn/Tags.astro";
 import { getCollection, render } from "astro:content";
 
 import TableOfContents from "@components/learn/TableOfContents.astro";
+import VocabularyProvider from "@components/learn/VocabularyProvider.astro";
 
 export async function getStaticPaths() {
   const lessons = (await getCollection("lessons"))
@@ -83,7 +87,7 @@ const { Content, headings } = await render(lesson);
             </div>
           </div>
         )}
-        <div class="prose prose-base sm:prose-lg break-words sm:break-normal p-4 sm:p-8 prose-headings:text-center">
+        <div class="prose prose-base sm:prose-lg break-words sm:break-normal p-4 sm:p-8 prose-h1:text-center prose-h2:text-center">
           <TableOfContents {headings}/>
           <Content/>
         </div>

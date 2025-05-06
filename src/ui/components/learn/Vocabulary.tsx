@@ -1,20 +1,23 @@
 import "./vocabulary.css";
+import { $defined } from "@learn/definitions";
+import { useStore } from "@nanostores/react";
 import clsx from "clsx";
 import { useRef, useState } from "react";
-import glossary from "@learn/glossary.json";
+import definitions from "@learn/definitions.json";
+import { ArrowLeft, ArrowRight, Dices } from "lucide-react";
 
-type VocabularyEntry = typeof glossary[number];
+type Definition = typeof definitions[number];
 
-function w(e: VocabularyEntry | undefined) {
+function w(e: Definition | undefined) {
   return Array.isArray(e?.word) ? e.word.join(" / ") : e?.word ?? "???";
 }
 
-function d(e: VocabularyEntry | undefined) {
+function d(e: Definition | undefined) {
   return e?.definition ?? "¯\\_(ツ)_/¯";
 }
 
 function Flashcard({ entry, onClick, flipped }: { 
-  entry: typeof glossary[number] | undefined, 
+  entry: typeof definitions[number] | undefined, 
   onClick: () => void,
   flipped: boolean 
 }) {
@@ -82,7 +85,7 @@ function Flashcard({ entry, onClick, flipped }: {
 
 import { AnimatePresence, motion } from "framer-motion";
 
-function Flashcards({ entries }: { entries: Array<VocabularyEntry | undefined> }) {
+function Flashcards({ entries }: { entries: Array<Definition | undefined> }) {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [direction, setDirection] = useState(0); // -1 for prev, +1 for next
@@ -150,20 +153,20 @@ function Flashcards({ entries }: { entries: Array<VocabularyEntry | undefined> }
 
       <div className="flex justify-center gap-2 w-xs">
         <button className="flex-1 btn btn-ghost btn-sm" onClick={gotoPrevious}>
-          Previous
+          <ArrowLeft/>
         </button>
         <button className="flex-1 btn btn-ghost btn-sm" onClick={gotoRandom}>
-          Random
+          <Dices/>
         </button>
         <button className="flex-1 btn btn-ghost btn-sm" onClick={gotoNext}>
-          Next
+          <ArrowRight/>
         </button>
       </div>
     </div>
   );
 }
 
-function Definition({ entry }: { entry: VocabularyEntry | undefined }) {
+function Definition({ entry }: { entry: Definition | undefined }) {
   const [checked, setChecked] = useState(true);
 
   function onChange() {
@@ -186,7 +189,7 @@ function Definition({ entry }: { entry: VocabularyEntry | undefined }) {
   </div>
 }
 
-function Definitions({ entries }: { entries: Array<VocabularyEntry | undefined> }) {
+function Definitions({ entries }: { entries: Array<Definition | undefined> }) {
   return <div className="flex flex-col gap-2">
     {entries.map((entry, i) => (
       <Definition key={i} entry={entry} />
@@ -197,8 +200,10 @@ function Definitions({ entries }: { entries: Array<VocabularyEntry | undefined> 
 export default function Vocabulary({ vocabulary }: { vocabulary: Array<string> }) {
   const [flashcards, setFlashcards] = useState(false);
 
-  const entries = vocabulary
-    .map((word) => glossary.find((entry) =>
+  const defined = useStore($defined);
+
+  const entries = [...defined, ...vocabulary]
+    .map((word) => definitions.find((entry) =>
         typeof entry.word === "string"
           ? entry.word === word.toLowerCase()
           : entry.word.includes(word.toLowerCase())

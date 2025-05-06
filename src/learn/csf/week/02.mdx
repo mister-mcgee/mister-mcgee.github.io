@@ -7,7 +7,7 @@ draft: true
 
 import Define from "@components/learn/Define.astro";
 
-## What is Binary
+## What Is Binary
 
 The word <Define word="binary"/> comes from the latin *bini-* (meaning *two*), and *-ary* (meaning *part of*). The word *binary* describes something with two parts, but in the language of mathematics and computer science it refers to the base-2 number system where all numerals are expressed using the digits zero `0` and one `1`.
 
@@ -41,9 +41,9 @@ import BinaryToDecimal from "@components/fun/BinaryToDecimal";
 
 <BinaryToDecimal client:only/>
 
-## Why Computers "Think" in Binary
+## Why Use Binary
 
-A computer is a "thinking" machine, meaning that it is capable of "choosing" an outcome based on some input or prior state. This is primarily accomplished by varying voltages across *switches*. In a modern electronic computer binary signals are transmitted by encoding zeroes `0` as "low" voltage and ones `1` as "high" voltage, but this wasn't always the case. Early *electromechanical* computers used many different, more exotic techniques to encode and transmit data. Some notable examples include trinary and bi-quinary encodings.
+A computer is a "thinking" machine, meaning that it is capable of "choosing" an outcome based on some input or prior state. This is typically accomplished in <Define word="hardware"/> by varying <Define word="voltage">voltages</Define> across *switches*. In a modern electronic computer binary signals are transmitted by encoding zeroes `0` as "low" voltage and ones `1` as "high" voltage, but this wasn't always the case. Early *electromechanical* computers used many different, more exotic techniques to encode and transmit data. Some notable examples include trinary and bi-quinary encodings.
 
 To be clear, binary encoding has always been appealing to engineers and computer scientists alike because of its simplicity. Intuitively, the circuitry required to distinguish between *two* voltages is relatively simple when compared to the circuitry required to distinguish between *many* voltages; however, early electronic and electromechanical switches had significant space and power requirements. Broadly speaking this often meant that fewer, more complicated switches were more economical; therefore, more complicated encodings were used to reduce the manufacturing and operating costs of these machines.
 
@@ -62,7 +62,7 @@ A single byte is capable of representing up to 256 different states, usually a n
 | 64-bit (8 bytes) | Yes | $$-2^{63}=-9,223,372,036,854,775,808$$ | $$2^{63}-1=9,223,372,036,854,775,807$$ |
 | 64-bit (8 bytes) | No  | $$0$$ | $$2^{64}-1=18,446,744,073,709,551,615$$ |
 
-## How Computers "Think" in Binary
+## How Computers Think
 
 If you were presented with a string of binary numbers and you were asked to *interpret* them, you might be rightfully confused because binary data alone doesn't mean anything until we decide *how* to interpret it. Sometimes this is a decision a lone programmer can make in their codebase, but for the most part *standards* decide how certain binary data should be interpreted in context.
 
@@ -76,7 +76,7 @@ There are many common standards that describe varying hardware and software inte
 
 Standard CPU architectures like RISC-V, x86, and ARM are what tell a computer how to interpret and execute binary instructions. It is up to the CPU manufacturer to design compatible hardware, and it is up to application developers to write compatible software according to the standard.
 
-## How Computers and Programmers "Communicate"
+## The Language of Computing
 
 Computers don't understand English—or any natural language—directly. They "speak" in binary, which is far too low-level and complex for humans to write directly (though some do!). Instead, we use **programming languages**, which act as a bridge between human logic and machine instructions.
 
@@ -110,6 +110,6 @@ import quiz from "@learn/csf/week/02/quiz.json";
 import Vocabulary from "@components/learn/Vocabulary.astro";
 import vocabulary from "@learn/csf/week/02/vocabulary.json";
 
-<Vocabulary vocabulary={vocabulary}/>
+<Vocabulary vocabulary={[ ]}/>
 
-### Project
+## Project

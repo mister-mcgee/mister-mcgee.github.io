@@ -3,9 +3,8 @@ import D from "@components/learn/Define";
 export type Props = {
   word        : string;
   definition ?: string;
-  children   ?: any
 }
-const { word, definition, children } = Astro.props;
+const { word, definition } = Astro.props;
 ---
 
-<D {word} {definition} client:only>{ children }</D>
+<D {word} {definition} client:only><slot/></D>

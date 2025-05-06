@@ -192,7 +192,7 @@
     "related": ["programming language", "virtual machine language", "machine code"]
   },
   {
-    "word": "ide",
+    "word": ["ide", "integrated development environment"],
     "definition": "An IDE or <em>integrated development environment</em> is a special editor for writing and testing programs.",
     "related": ["programming language"]
   },
@@ -215,5 +215,45 @@
     "word": "variable",
     "definition": "A variable is one way to store and access data in a program. Think of a variable as a box that holds a value.",
     "related": ["programming language"]
-  }
+  },
+  {
+    "word": "voltage",
+    "definition": "Water is often used as an analogy for electricity. In this analogy the voltage of a circuit (measured in volts) is compared to water pressure in a pipe where more voltage corresponds to more pressure.",
+    "related": ["electricity", "volts"]
+  },
+  {
+    "word": "resistance",
+    "definition": "Water is often used as an analogy for electricity. In this analogy the resistance of a circuit (measured in ohms) is compared to the diameter of a pipe where more resistance corresponds to a smaller pipe.",
+    "related": ["electricity", "ohms"]
+  },
+  {
+    "word": "current",
+    "definition": "Water is often used as an analogy for electricity. In this analogy the current of a circuit (measured in amps) is compared to the speed of water in a pipe, where more amperage corresponds to faster water.",
+    "related": ["electricity", "amps"]
+  },
+  {
+    "word": "ampere",
+    "definition": "An ampere, often referred to simply as an amp, is the basic unit of electrical current. One ampere is equivalent to the voltage of a circuit divided by the resistance.",
+    "related": ["current", "amp", "voltage", "resistance"]
+  },
+  {
+    "word": "volt",
+    "definition": "A volt is the basic unit of electrical voltage. One volt is equivalent to one amp (current) times one ohm (resistance).",
+    "related": ["voltage", "amp", "ohm"]
+  },
+  {
+    "word": "ohm",
+    "definition": "An ohm is the basic unit of electrical resistance. One ohm is equivalent to one volt divided by one amp.",
+    "related": ["resistance", "volt", "amp"]
+  },
+  {
+    "word": ["ac", "alternating current"],
+    "definition": "Alternating Current, often referred to as simply AC, is a kind of electrical current where the voltage alternates between positive and negative at regular intervals.",
+    "related": ["direct current", "electricity", "current"]
+  },
+  {
+    "word": ["dc", "direct current"],
+    "definition": "Direct Current, often referred to as simply DC, is a kind of electrical current where the voltage remains (roughly) constant.",
+    "related": ["alternating current", "electricity", "current"]
+  }  
 ]
