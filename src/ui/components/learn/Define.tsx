@@ -12,8 +12,6 @@ export default function Define({
   children 
 }: Props) {
   const definition = lookup(term);
-
-  console.log(children);
   
   useEffect(() => {
     keep(term);

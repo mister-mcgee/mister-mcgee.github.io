@@ -5,8 +5,9 @@ export type Props = {
   html ?: string;
 }
 const { term, html } = Astro.props;
+const hasChildren = Astro.slots.default;
 ---
 
 <D {term} {html} client:only>
-  <slot/>
+  {hasChildren && <slot />}
 </D>
