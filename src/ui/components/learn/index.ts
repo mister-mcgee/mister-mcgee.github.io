@@ -17,5 +17,3 @@ export namespace Lesson {
     return a.id !== b.id ? a.id < b.id ? -1 : 1 : 0;
   }
 }
-
-export default Lesson;

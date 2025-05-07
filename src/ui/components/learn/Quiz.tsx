@@ -1,5 +1,6 @@
 import { useState } from "react";
 import clsx from "clsx";
+import "./quiz.css";
 
 export interface Question {
   question: string;
@@ -21,7 +22,7 @@ function Question({ qi, ci, question, choices, answer, explain, onSelect }: Ques
   const isAnswered = (ci !== -1);
   
   return (
-    <div className="p-4 rounded-md shadow-md flex flex-col gap-1">
+    <div className="p-4 rounded-md shadow-sm border border-base-200 flex flex-col gap-1 question">
       <span className="text-base-content font-medium">{qi + 1}. {question}</span>
       { choices.map((choice, i) => {
         const isRight    = (i  === answer);
@@ -32,22 +33,27 @@ function Question({ qi, ci, question, choices, answer, explain, onSelect }: Ques
         return <div key={i} className={clsx(
           "rounded border border-base-300 text-base-content px-4 py-2",
           isAnswered ? "cursor-default" : "cursor-pointer hover:bg-base-300",
-          (isAnswered && isRight) && "border-success text-success bg-success/10",
-          (isSelected && isWrong) && "border-error   text-error   bg-error/10",
+          (isAnswered && isRight) && "border-success text-success-content dark:text-success bg-success/10",
+          (isSelected && isWrong) && "border-error   text-error-content   dark:text-error   bg-error/10",
           isDisabled && "opacity-50",
         )} onClick={ () => { if(!isAnswered) onSelect(qi, i) }}> 
           { choice }
         </div>
       })}
 
-      <div className={clsx(
-        isRight && "text-success",
-        isWrong && "text-error",
-      )}>
+      <span className="text-sm mt-4">
         { isAnswered && isRight && "✅ " }
         { isAnswered && isWrong && "❌ " }
-        { isAnswered && explain }
-      </div>
+        <span className={
+          clsx(
+            "italic",
+            isRight && "text-success-content/75 dark:text-success/75",
+            isWrong && "text-error-content/75 dark:text-error/75",
+          )
+        }>
+          { isAnswered && explain }
+        </span>
+      </span>
     </div>
   )
 }
@@ -66,17 +72,17 @@ function Sticky({ quiz, selected }: StickyProps) {
 
   const score    = answered && Math.round((correct  / answered   ) * 100);
   const performance = (
-    answered ===   0 ? { emoji: "🥱", label: "Not Started"   , style: "border-base-300 text-base-content" } :
+    answered ===   0 ? { emoji: "🥱", label: "Not Started"   , style: "border-base-300 text-base-content bg-base-200" } :
     score    === 100 ? { emoji: "🤩", label: "Perfect"       , style: "border-primary text-primary bg-primary/10" } :
-    score    >=   85 ? { emoji: "😄", label: "Mastery"       , style: "border-success text-success bg-success/10" } :
-    score    >=   70 ? { emoji: "👍", label: "Satisfactory"  , style: "border-warning text-warning bg-warning/10" } :
-                       { emoji: "😢", label: "Unsatisfactory", style: "border-error   text-error   bg-error/10"   }
+    score    >=   85 ? { emoji: "😄", label: "Mastery"       , style: "border-success text-success-content dark:text-success bg-success/10" } :
+    score    >=   70 ? { emoji: "👍", label: "Satisfactory"  , style: "border-warning text-warning-content dark:text-warning bg-warning/10" } :
+                       { emoji: "😢", label: "Unsatisfactory", style: "border-error   text-error-content   dark:text-error   bg-error/10"   }
   )
 
   const wrongProgress = Math.round(answered / quiz.length * 100);
   const rightProgress = Math.round(correct  / quiz.length * 100);
 
-  return <div className="sticky top-0 z-10 flex items-center gap-2 bg-base-100 rounded-md shadow-sm p-4">
+  return <div className="question sticky top-0 z-10 flex items-center gap-2 bg-base-100 rounded-md border border-base-200 shadow-sm p-4">
     <span>{answered} / {quiz.length}</span>
     <div className="flex-1 h-4 relative bg-base-200 rounded-full overflow-hidden border-2 border-base-200">
       <div className="absolute bg-base-300 z-20 h-full" style={{ width: `${wrongProgress}%` }}></div>

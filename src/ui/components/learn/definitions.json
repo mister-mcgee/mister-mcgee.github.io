@@ -1,0 +1,259 @@
+[
+  {
+    "term": "binary",
+    "html": "The word binary comes from the latin <em>bini-</em> (meaning <em>two</em>), and <em>-ary</em> (meaning <em>part of</em>). Binary refers to the base-2 number system where all numerals are expressed using the digits zero <code>0</code> and one <code>1</code>.",
+    "also": ["octal", "decimal", "hexadecimal"]
+  },
+  {
+    "term": "octal",
+    "html": "The word octal comes from the Latin <em>oct-</em> (meaning <em>eight</em>). Octal refers to the base-8 number system which consists of the digits zero <code>0</code> through seven <code>7</code>.",
+    "also": ["binary", "decimal", "hexadecimal"]
+  },
+  {
+    "term": "decimal",
+    "html": "The word decimal comes from the Latin <em>deci-</em> (meaning <em>tenth</em>). Decimal refers to the base-10 number system which consists of the digits zero <code>0</code> through nine <code>9</code>.",
+    "also": ["binary", "octal", "hexadecimal"]
+  },
+  {
+    "term": "hexadecimal",
+    "html": "Hexadecimal comes from the Latin <em>hex-</em> (meaning <em>six</em>) and <em>-deci-</em> (meaning <em>tenth</em>). Hexadecimal refers to the base-16 number system which consists of the <em>numeric</em> digits zero <code>0</code> through nine <code>9</code> as well as an additional six <em>alphabetic</em> digits - <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>",
+    "also": ["binary", "octal", "decimal"]
+  },
+  {
+    "term": "bit",
+    "html": "A bit is a <em>binary</em> digit, which is the smallest unit of information. A bit always occupies one of two states, meaning a bit can either be zero <code>0</code> or one <code>1</code>, low or high, off or on, false or true respectively.",
+    "also": ["binary", "byte"]
+  },
+  {
+    "term": "memory",
+    "html": "Memory is a term describing where computers store information, usually in the form of <em>bits</em> and <em>bytes</em>.",
+    "also": ["bit", "byte"]
+  },
+  {
+    "term": "volatile memory",
+    "html": "Volatile memory is a kind of <em>memory</em> that requires active power to store information, meaning that volatile memory <em>cannot</em> survive a power cycle. Volatile memory is often used where speed is critical since it is typically faster than <em>persistent storage</em>.",
+    "also": ["memory", "persistent memory"]
+  },
+  {
+    "term": "persistent memory",
+    "html": "Persistent memory is a kind of <em>memory</em> that <em>does not</em> require active power to store information, meaning that persistent memory <em>can</em> survive a power cycle. Persistent memory is usually not used in speed critical applications since it is typically slower than <em>volatile memory</em>.",
+    "also": ["memory", "volatile memory"]
+  },
+  {
+    "term": "byte",
+    "html": "A byte is a grouping of eight <code>8</code> bits and it is the smallest <em>addressable</em> unit of <em>memory</em> in a modern computer.",
+    "also": ["memory", "bit", "memory address"]
+  },
+  {
+    "term": "memory address",
+    "html": "A memory address is a <em>binary</em> number (usually 32-<em>bits</em> or 64-<em>bits</em>), which describes the location of a <em>byte</em> in <em>memory</em>.",
+    "also": ["binary", "bit", "byte", "memory"]
+  },
+  {
+    "term": "program",
+    "html": "A program is a sequence of instructions written to be executed by a computer."
+  },
+  {
+    "term": "hardware",
+    "html": "Hardware are the physical components that comprise a computer."
+  },
+  {
+    "term": "software",
+    "html": "Software are the <em>programs</em> that a computer executes.",
+    "also": ["program"]
+  },
+  {
+    "term": ["series", "serial"],
+    "html": "Processing data in <em>series</em> means to process the data <em>sequentially</em>, or one at a time.",
+    "also": ["parallel", "concurrent"]
+  },
+  {
+    "term": ["parallel", "concurrent"],
+    "html": "Processing data in <em>parallel</em> means to process the data <em>simultaneously</em>, or at the same time.",
+    "also": ["series", "serial"]
+  },
+  {
+    "term": ["cpu", "central processing unit"],
+    "html": "A CPU or <em>central processing unit</em> is <em>hardware</em> optimized to execute instructions in <em>series</em>.",
+    "also": ["hardware", "series"]
+  },
+  {
+    "term": "gpu",
+    "html": "A GPU or <em>graphics processing unit</em> is <em>hardware</em> optimized to execute instructions in <em>parallel</em>.",
+    "also": ["hardware", "parallel"]
+  },
+  {
+    "term": "read",
+    "html": "Reading is the process of copying a value from <em>memory</em> to the <em>CPU</em>.",
+    "also": ["memory", "cpu", "write"]
+  },
+  {
+    "term": "write",
+    "html": "Writing is the process of copying a value from the <em>CPU</em> to <em>memory</em>.",
+    "also": ["memory", "cpu", "read"]
+  },
+  {
+    "term": "mutable",
+    "html": "Mutable means that something can change or mutate. When programming, data marked as mutable <em>can</em> be changed meaning it is both <em>readable</em> and <em>writable</em>.",
+    "also": ["read", "write", "immutable"]
+  },
+  {
+    "term": "immutable",
+    "html": "Immutable means that something cannot change or mutate. When programming, data marked as immutable <em>cannot</em> be changed meaning it is <em>readable</em>, but not <em>writable</em>.",
+    "also": ["mutable"]
+  },
+  {
+    "term": "random access",
+    "html": "Memory described as having random access means that <em>read</em> operations take roughly the same time regardless of their location.",
+    "also": ["read", "memory"]
+  },
+  {
+    "term": "ram",
+    "html": "RAM or <em>random access memory</em> is a kind of <em>volatile memory</em> that stores information via electric switches. Because there are no moving parts or magnets, RAM is incredibly fast.",
+    "also": ["random access", "memory", "volatile memory"]
+  }, 
+  {
+    "term": "hdd",
+    "html": "An HDD or <em>hard disk drive</em> is a kind of <em>persistent memory</em> that stores information on a spinning disk using a magnetic head. Because the disk has to be physically moved to read or write to certain locations, an HDD <em>is not</em> a form of <em>random access memory</em>.",
+    "also": ["memory", "persistent memory", "volatile memory", "random access"]
+  },
+  {
+    "term": "ssd",
+    "html": "An SSD or <em>solid state drive</em> is a kind of <em>persistent memory</em> that stores information via magnetic switches. Because there are no moving parts, an SSD <em>is</em> a form of <em>random access memory</em>.",
+    "also": ["memory", "persistent memory", "volatile memory", "random access"]
+  },
+  {
+    "term": "odd",
+    "html": "An ODD or <em>optical disk drive</em> is a kind of <em>persistent memory</em> that stores information on a spinning disk using a laser. Because the disk has to be physically moved to read or write to certain locations, an ODD <em>is not</em> a form of <em>random access memory</em>."
+  },
+  {
+    "term": "programming language",
+    "html": "A programming language is a collection of <em>grammar</em> and <em>syntax</em> used to write programs. A programming language is the interface between a programmer and a computer that allows them to communicate.",
+    "also": ["grammar", "syntax"]
+  },
+  {
+    "term": "syntax",
+    "html": "Syntax refers to the symbols that comprise a programming language. A <em>syntax error</em> occurs when a symbol is unrecognized or used incorrectly.",
+    "also": ["grammar", "programming language"]
+  },
+  {
+    "term": "grammar",
+    "html": "Grammar refers to the rules which govern how the symbols of a programming language are arranged.",
+    "also": ["syntax", "programming language"]
+  },
+  {
+    "term": "reserved word",
+    "html": "Reserved words are special symbols that cannot be used by the programmer to name functions, variables or otherwise. In JavaScript, some examples of reserved words include <code>import</code>, <code>function</code>, <code>var</code>, <code>let</code>, <code>const</code>, <code>if</code>, <code>else</code>, <code>new</code>, <code>for</code>, <code>while</code>, <code>return</code>, <code>break</code>, <code>continue</code>...",
+    "also": ["syntax", "programming language"]
+  },
+  {
+    "term": ["machine code", "machine language"],
+    "html": "Machine code or machine language is a programming language written in binary for a specific hardware platform. Programmers rarely write machine code directly, but instead use a higher-level programming language to generate machine code.",
+    "also": ["programming language", "binary"]
+  },
+  {
+    "term": "assembly language",
+    "html": "An assembly language is a programming language that substitutes the binary instructions of a machine language with human-readable shorthand. Assembly language is translated into machine code ahead of time by an <em>assembler</em>.",
+    "also": ["programming language", "machine code", "assembler"]
+  },
+  {
+    "term": "assembler",
+    "html": "An assembler is a program that <em>consumes</em> an assembly language and translates it to machine code ahead of time.",
+    "also": ["programming language", "assembly language", "machine code"]
+  },
+  {
+    "term": "compiled language",
+    "html": "A compiled language is a programming language that is translated into machine code ahead of time by a compiler. Compiled languages tend to be more abstract than an assembly language, but they are usually easier for humans to read and write. Examples of compiled languages include C, C++, Odin, Rust, and Zig.",
+    "also": ["programming language", "machine code", "compiler"]
+  },
+  {
+    "term": "compiler",
+    "html": "A compiler is a program that consumes a compiled language and translates it into machine code ahead of time.",
+    "also": ["programming language", "compiled language", "machine code"]
+  },
+  {
+    "term": "interpreted language",
+    "html": "An interpreted language is a programming language that is translated into machine code in realtime by an interpreter. Examples of interpreted languages include JavaScript, Ruby, and Python.",
+    "also": ["programming language", "machine code", "interpreter"]
+  },
+  {
+    "term": "interpreter",
+    "html": "An interpreter is a program that consumes an interpreted language and translates it into machine code in realtime.",
+    "also": ["programming language", "interpreted language", "machine code"]
+  },
+  {
+    "term": "virtual machine language",
+    "html": "A virtual machine language is a combination of both a compiled language and an interpreted language. A virtual machine language is first compiled to an intermediate language (usually known as bytecode, or virtual assembly), then it is interpreted by a virtual machine at runtime. Examples of virtual machine languages include Java, C#, and Kotlin.",
+    "also": ["programming language", "compiled language", "interpreted language", "virtual machine"]
+  },
+  {
+    "term": "virtual machine",
+    "html": "A virtual machine is a special type of interpreter that consumes an intermediate language (usually known as bytecode, or virtual assembly) and translates it into machine code.",
+    "also": ["programming language", "virtual machine language", "machine code"]
+  },
+  {
+    "term": ["ide", "integrated development environment"],
+    "html": "An IDE or <em>integrated development environment</em> is a special editor for writing and testing programs.",
+    "also": ["programming language"]
+  },
+  {
+    "term": "iterable",
+    "html": "Something iterable can be consumed one element at a time. Think of an iterable like a deck of cards where each card is a single element.",
+    "also": ["iterator"]
+  },
+  {
+    "term": "iterator",
+    "html": "An iterator consumes or produces one element at a time.",
+    "also": ["iterable"]
+  },
+  {
+    "term": "comment",
+    "html": "Comments are a way to include arbitrary text in your program that isn't interpreted as code. Comments are often used to leave notes in your code for your future self or other programmers.",
+    "also": ["programming language"]
+  },
+  {
+    "term": "variable",
+    "html": "A variable is one way to store and access data in a program. Think of a variable as a box that holds a value.",
+    "also": ["programming language"]
+  },
+  {
+    "term": "voltage",
+    "html": "Water is often used as an analogy for electricity. In this analogy the voltage of a circuit (measured in volts) is compared to water pressure in a pipe where more voltage corresponds to more pressure.",
+    "also": ["electricity", "volts"]
+  },
+  {
+    "term": "resistance",
+    "html": "Water is often used as an analogy for electricity. In this analogy the resistance of a circuit (measured in ohms) is compared to the diameter of a pipe where more resistance corresponds to a smaller pipe.",
+    "also": ["electricity", "ohms"]
+  },
+  {
+    "term": "current",
+    "html": "Water is often used as an analogy for electricity. In this analogy the current of a circuit (measured in amps) is compared to the speed of water in a pipe, where more amperage corresponds to faster water.",
+    "also": ["electricity", "amps"]
+  },
+  {
+    "term": "ampere",
+    "html": "An ampere, often referred to simply as an amp, is the basic unit of electrical current. One ampere is equivalent to the voltage of a circuit divided by the resistance.",
+    "also": ["current", "amp", "voltage", "resistance"]
+  },
+  {
+    "term": "volt",
+    "html": "A volt is the basic unit of electrical voltage. One volt is equivalent to one amp (current) times one ohm (resistance).",
+    "also": ["voltage", "amp", "ohm"]
+  },
+  {
+    "term": "ohm",
+    "html": "An ohm is the basic unit of electrical resistance. One ohm is equivalent to one volt divided by one amp.",
+    "also": ["resistance", "volt", "amp"]
+  },
+  {
+    "term": ["ac", "alternating current"],
+    "html": "Alternating Current, often referred to as simply AC, is a kind of electrical current where the voltage alternates between positive and negative at regular intervals.",
+    "also": ["direct current", "electricity", "current"]
+  },
+  {
+    "term": ["dc", "direct current"],
+    "html": "Direct Current, often referred to as simply DC, is a kind of electrical current where the voltage remains (roughly) constant.",
+    "also": ["alternating current", "electricity", "current"]
+  }  
+]

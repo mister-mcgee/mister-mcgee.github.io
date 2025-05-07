@@ -2,27 +2,27 @@
   {
     "question": "What does the binary number 1011 represent in decimal?",
     "choices": [
+      "7",
       "10",
       "11",
-      "13",
-      "7"
+      "13"
     ],
-    "answer": 1,
+    "answer": 2,
     "explain": "The binary 1011 is 8 + 0 + 2 + 1 = 11."
   },
   {
-    "question": "Why is binary used in computers?",
+    "question": "Binary is used in computing because...",
     "choices": [
-      "Because it's easier for people to read",
-      "Because it uses trinary logic",
-      "Because it's simple to represent with switches (on/off)",
-      "Because it can represent any letter directly"
+      "It is easier for humans to read and write",
+      "It can be translated into any language",
+      "It makes hardware easier to design and implement",
+      "It has always been the default and has never been changed"
     ],
     "answer": 2,
-    "explain": "Binary is ideal for computers because it aligns with two-state systems like electrical switches."
+    "explain": "Binary is ideal for computers because it aligns well with simple two-state systems like electrical switches."
   },
   {
-    "question": "What is the base of the binary number system?",
+    "question": "If the decimal number system is base-10, what is base of the binary number system?",
     "choices": [
       "2",
       "8",
@@ -58,15 +58,15 @@
     "question": "What is the binary representation of the decimal number 5?",
     "choices": [
       "101",
-      "1001",
       "111",
+      "1001",
       "1010"
     ],
     "answer": 0,
     "explain": "The binary representation of the decimal number 5 is 101."
   },
   {
-    "question": "What is a byte?",
+    "question": "How many bits are there in a byte?",
     "choices": [
       "8 bits",
       "4 bits",
@@ -77,14 +77,14 @@
     "explain": "A byte consists of 8 bits."
   },
   {
-    "question": "What does a 'bit' stand for?",
+    "question": "The word 'bit' is a portmanteau of...",
     "choices": [
       "Binary integrated transistor",
-      "Binary information technology",
       "Binary digit",
-      "Bit is not related to binary"
+      "Binary information technology",
+      "Binary instruction"
     ],
-    "answer": 2,
-    "explain": "A 'bit' stands for 'binary digit,' the smallest unit of information in computing."
+    "answer": 1,
+    "explain": "A 'bit' is short for a 'binary digit', the smallest unit of information in computing."
   }
 ]

@@ -1,23 +1,16 @@
-import "./vocabulary.css";
-import { $defined } from "@learn/definitions";
+import "./definitions.css";
+import { $kept, lookup, nameOf, htmlOf, fitb, type Definition} from "./definitions";
 import { useStore } from "@nanostores/react";
 import clsx from "clsx";
 import { useRef, useState } from "react";
-import definitions from "@learn/definitions.json";
 import { ArrowLeft, ArrowRight, Dices } from "lucide-react";
 
-type Definition = typeof definitions[number];
-
-function w(e: Definition | undefined) {
-  return Array.isArray(e?.word) ? e.word.join(" / ") : e?.word ?? "???";
-}
-
-function d(e: Definition | undefined) {
-  return e?.definition ?? "¯\\_(ツ)_/¯";
-}
-
-function Flashcard({ entry, onClick, flipped }: { 
-  entry: typeof definitions[number] | undefined, 
+function Flashcard({ 
+  definition, 
+  onClick, 
+  flipped 
+}: {
+  definition: Definition | undefined, 
   onClick: () => void,
   flipped: boolean 
 }) {
@@ -53,12 +46,6 @@ function Flashcard({ entry, onClick, flipped }: {
     setTiltY(0)
   }
 
-  function fitb(html: string, phrase: string) {
-    const blank = ` ${new Array(phrase.length).fill("__").join("")} `
-    const regex = new RegExp(`\\s?${phrase}\\s?`, "gi")
-    return html.replace(regex, blank)
-  }
-
   return <div
     ref={self}
     onMouseOver= { onMouseOver }
@@ -73,11 +60,11 @@ function Flashcard({ entry, onClick, flipped }: {
 
     className={clsx("card", flipped && "flipped")}
   >
-    <div className="face p-8 bg-base-100 rounded-lg shadow-xl flex justify-center items-center">
-      <span className="font-semibold">{w(entry)}</span>
+    <div className="face p-8 bg-base-100 rounded-lg shadow-lg border border-base-200 flex justify-center items-center">
+      <span className="font-semibold">{nameOf(definition)}</span>
     </div>
     <div className="back p-8 bg-base-100 rounded-lg shadow-xl flex justify-center items-center">
-      <span className="text-base" dangerouslySetInnerHTML={{ __html: fitb(d(entry), w(entry)) }} />
+      <span className="text-base" dangerouslySetInnerHTML={{ __html: fitb(definition) }} />
     </div>
 
   </div>
@@ -85,10 +72,14 @@ function Flashcard({ entry, onClick, flipped }: {
 
 import { AnimatePresence, motion } from "framer-motion";
 
-function Flashcards({ entries }: { entries: Array<Definition | undefined> }) {
-  const [index, setIndex] = useState(0);
-  const [flipped, setFlipped] = useState(false);
-  const [direction, setDirection] = useState(0); // -1 for prev, +1 for next
+function Flashcards({ 
+  definitions 
+}: { 
+  definitions: Array<Definition | undefined> 
+}) {
+  const [index    , setIndex    ] = useState(  0  );
+  const [flipped  , setFlipped  ] = useState(false);
+  const [direction, setDirection] = useState(  0  ); // -1 for prev, +1 for next
 
   const variants = {
     enter: (direction: number) => ({
@@ -108,24 +99,25 @@ function Flashcards({ entries }: { entries: Array<Definition | undefined> }) {
     }),
   };
 
-  function gotoNext() {
-    setDirection( 1);
-    setIndex((i) => (i + 1                 ) % entries.length);
+  function gotoPrev() {
+    setDirection(-1);
+    setIndex((i) => (i - 1 + definitions.length) % definitions.length);
   }
 
-  function gotoPrevious() {
-    setDirection(-1);
-    setIndex((i) => (i - 1 + entries.length) % entries.length);
+  function gotoNext() {
+    setDirection( 1);
+    setIndex((i) => (i + 1                     ) % definitions.length);
   }
 
   function gotoRandom() {
-    let newIndex = Math.floor(Math.random() * entries.length);
-    while (newIndex === index && entries.length > 1) {
-      newIndex = Math.floor(Math.random() * entries.length);
+    let newIndex = Math.floor(Math.random() * definitions.length);
+    while (newIndex === index && definitions.length > 1) {
+      newIndex = Math.floor(Math.random() * definitions.length);
     }
+
     setDirection(Math.random() > 0.5 ? 1 : -1);
-    setFlipped(Math.random() > 0.5);
-    setIndex(newIndex);
+    setFlipped  (Math.random() > 0.5         );
+    setIndex    (newIndex);
   }
 
   function onClick() {
@@ -146,13 +138,13 @@ function Flashcards({ entries }: { entries: Array<Definition | undefined> }) {
             transition={{ type: "spring", stiffness: 1000, damping: 50 }}
             className="absolute w-full h-full flex justify-center items-center"
           >
-            <Flashcard entry={entries[index]} flipped={flipped} onClick={onClick} />
+            <Flashcard definition={definitions[index]} flipped={flipped} onClick={onClick} />
           </motion.div>
         </AnimatePresence>
       </div>
 
       <div className="flex justify-center gap-2 w-xs">
-        <button className="flex-1 btn btn-ghost btn-sm" onClick={gotoPrevious}>
+        <button className="flex-1 btn btn-ghost btn-sm" onClick={gotoPrev}>
           <ArrowLeft/>
         </button>
         <button className="flex-1 btn btn-ghost btn-sm" onClick={gotoRandom}>
@@ -166,58 +158,65 @@ function Flashcards({ entries }: { entries: Array<Definition | undefined> }) {
   );
 }
 
-function Definition({ entry }: { entry: Definition | undefined }) {
+function Card({ 
+  definition 
+}: { 
+  definition: Definition | undefined 
+}) {
   const [checked, setChecked] = useState(true);
 
   function onChange() {
     setChecked((checked) => !checked)
   }
 
-  return <div className="collapse collapse-arrow bg-base-100 rounded-md shadow-sm">
+  return <div className="collapse collapse-arrow bg-base-100 rounded-md shadow-sm border border-base-200">
     <input type="checkbox" checked={checked} onChange={onChange} />
-    <div className="collapse-title font-semibold">{w(entry)}</div>
+    <div className="collapse-title font-semibold">{nameOf(definition)}</div>
     <div className="collapse-content flex flex-col">
-      <span dangerouslySetInnerHTML={{__html: d(entry)}}></span>
+      <span dangerouslySetInnerHTML={{__html: htmlOf(definition)}}></span>
 
       <div className="flex flex-row items-center gap-2 italic">
-        <span>*see also</span>
-        { entry?.related?.map((word, i) => (
-          <span key={i} className="badge badge-ghost">{word}</span>
+        <span className="italic text-sm">see also</span>
+        {definition?.also?.map((term, i) => (
+          <span key={i} className="badge badge-ghost">{term}</span>
         ))}
       </div>
     </div>
   </div>
 }
 
-function Definitions({ entries }: { entries: Array<Definition | undefined> }) {
+function Cards({ 
+  definitions 
+}: { 
+  definitions: Array<Definition | undefined> 
+}) {
   return <div className="flex flex-col gap-2">
-    {entries.map((entry, i) => (
-      <Definition key={i} entry={entry} />
+    {definitions.map((entry, i) => (
+      <Card key={i} definition={entry} />
     ))}
   </div>
 }
 
-export default function Vocabulary({ vocabulary }: { vocabulary: Array<string> }) {
+export default function Definitions({ 
+  definitions: also
+}: { 
+  definitions ?: Array<string>
+}) {
   const [flashcards, setFlashcards] = useState(false);
 
-  const defined = useStore($defined);
-
-  const entries = [...defined, ...vocabulary]
-    .map((word) => definitions.find((entry) =>
-        typeof entry.word === "string"
-          ? entry.word === word.toLowerCase()
-          : entry.word.includes(word.toLowerCase())
-      )
-    )
+  const definitions = [
+    ...useStore($kept),
+    ...(also ?? [   ])
+  ].toSorted().map((term) => lookup(term))
 
   function onChange() {
     setFlashcards((flashcards) => !flashcards)
   }
 
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 }
+  const variants = {
+    hidden : { opacity: 0, y:  20 },
+    visible: { opacity: 1, y:   0 },
+    exit   : { opacity: 0, y: -20 }
   };
 
   return <div className="flex flex-col items-center gap-4">
@@ -234,26 +233,26 @@ export default function Vocabulary({ vocabulary }: { vocabulary: Array<string> }
       {flashcards ? (
         <motion.div
           key="flashcards"
-          variants={sectionVariants}
+          variants={variants}
           initial="hidden"
           animate="visible"
           exit="exit"
           transition={{ duration: 0.3 }}
           className="w-full"
         >
-          <Flashcards entries={entries} />
+          <Flashcards definitions={definitions} />
         </motion.div>
       ) : (
         <motion.div
           key="definitions"
-          variants={sectionVariants}
+          variants={variants}
           initial="hidden"
           animate="visible"
           exit="exit"
           transition={{ duration: 0.3 }}
           className="w-full"
         >
-          <Definitions entries={entries} />
+          <Cards definitions={definitions} />
         </motion.div>
       )}
     </AnimatePresence>

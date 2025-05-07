@@ -1,0 +1,9 @@
+---
+import D from "@components/learn/Definitions.tsx";
+export type Props = {
+  definitions ?: Array<string>
+}
+const { definitions } = Astro.props;
+---
+
+<D {definitions} client:only/>

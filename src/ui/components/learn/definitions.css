@@ -11,6 +11,8 @@
     rotateX(0deg)
     rotateY(0deg);
   transition: transform 100ms linear;
+
+  cursor: pointer;
 }
 
 .card > * {

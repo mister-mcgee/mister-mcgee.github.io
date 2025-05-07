@@ -1,36 +1,31 @@
-import definitions from "@learn/definitions.json";
-import { define    } from "@learn/definitions";
+import { keep, lookup, nameOf, htmlOf} from "./definitions";
 import { useEffect } from "react";
 
-type Definition = typeof definitions[number];
+export interface Props extends React.PropsWithChildren {
+  term : string;
+  html?: string;
+}
 
-export default function Define({ word, definition, children }: React.PropsWithChildren<{ word: string, definition?: string }>) {
-  function lookup(word: string) {
-    return definitions.find((entry) => typeof entry.word === "string" ? 
-      entry.word   ===   word.toLowerCase(): 
-      entry.word.includes(word.toLowerCase()
-    ))
-  }
+export default function Define({ 
+  term, 
+  html, 
+  children 
+}: Props) {
+  const definition = lookup(term);
 
-  function w(e: Definition | undefined) {
-    return (Array.isArray(e?.word) ? e.word.join(" / ") : e?.word) ?? word;
-  }
-
-  function d(e: Definition | undefined) {
-    return e?.definition ?? definition ?? "¯\\_(ツ)_/¯";
-  }
-
+  console.log(children);
+  
   useEffect(() => {
-    define(word);
-  }, [word]);
+    keep(term);
+  }, [term]);
 
   return (
     <div className="tooltip border-b border-dotted cursor-help">
       <div className="tooltip-content flex flex-col text-justify">
-        <span className="text-lg font-semibold">{w(lookup(word))}</span>
-        <div dangerouslySetInnerHTML={{ __html: d(lookup(word)) }}/>
+        <span className="text-lg font-semibold">{nameOf(definition) ?? term}</span>
+        <div dangerouslySetInnerHTML={{__html : html ?? htmlOf(definition)}}/>
       </div>
-      { children ?? word }
+      { children || term }
     </div>
   );
 }

@@ -1,10 +1,12 @@
 ---
 import D from "@components/learn/Define";
 export type Props = {
-  word        : string;
-  definition ?: string;
+  term  : string;
+  html ?: string;
 }
-const { word, definition } = Astro.props;
+const { term, html } = Astro.props;
 ---
 
-<D {word} {definition} client:only><slot/></D>
+<D {term} {html} client:only>
+  <slot/>
+</D>
