@@ -72,26 +72,31 @@ function Sticky({ quiz, selected }: StickyProps) {
 
   const score    = answered && Math.round((correct  / answered   ) * 100);
   const performance = (
-    answered ===   0 ? { emoji: "🥱", label: "Not Started"   , style: "border-base-300 text-base-content bg-base-200" } :
-    score    === 100 ? { emoji: "🤩", label: "Perfect"       , style: "border-primary text-primary bg-primary/10" } :
-    score    >=   85 ? { emoji: "😄", label: "Mastery"       , style: "border-success text-success-content dark:text-success bg-success/10" } :
-    score    >=   70 ? { emoji: "👍", label: "Satisfactory"  , style: "border-warning text-warning-content dark:text-warning bg-warning/10" } :
-                       { emoji: "😢", label: "Unsatisfactory", style: "border-error   text-error-content   dark:text-error   bg-error/10"   }
+    answered ===   0 ? { emoji: "🥱", label: "Not Started"      , style: "border-base-300 text-base-content bg-base-200" } :
+    score    === 100 ? { emoji: "🤩", label: "Perfect"          , style: "border-primary text-primary bg-primary/10" } :
+    score    >=   85 ? { emoji: "😄", label: "Mastery"          , style: "border-success text-success-content dark:text-success bg-success/10" } :
+    score    >=   70 ? { emoji: "👍", label: "Proficient"       , style: "border-warning text-warning-content dark:text-warning bg-warning/10" } :
+                       { emoji: "😢", label: "Needs Improvement", style: "border-error   text-error-content   dark:text-error   bg-error/10"   }
   )
 
   const wrongProgress = Math.round(answered / quiz.length * 100);
   const rightProgress = Math.round(correct  / quiz.length * 100);
 
-  return <div className="question sticky top-0 z-10 flex items-center gap-2 bg-base-100 rounded-md border border-base-200 shadow-sm p-4">
-    <span>{answered} / {quiz.length}</span>
-    <div className="flex-1 h-4 relative bg-base-200 rounded-full overflow-hidden border-2 border-base-200">
+  return <div className="question sticky top-0 z-10 flex flex-col items-center gap-2 bg-base-100 rounded-md border border-base-200 shadow-sm p-4">
+    <div className="relative flex w-full gap-2 justify-between">
+      <span>{answered} / {quiz.length}</span>
+
+      <span className={clsx("px-2 border rounded-md font-semibold absolute left-1/2 transform -translate-x-1/2", performance.style)}>
+        {performance.label} {performance.emoji}
+      </span>
+
+      <span>{score}%</span>
+    </div>
+
+    <div className="w-full h-4 relative bg-base-200 rounded-full overflow-hidden border-2 border-base-200">
       <div className="absolute bg-base-300 z-20 h-full" style={{ width: `${wrongProgress}%` }}></div>
       <div className="absolute bg-success  z-30 h-full" style={{ width: `${rightProgress}%` }}></div>
     </div>
-    <span>{score}%</span>
-    <span className={clsx("px-2 border rounded-md font-semibold", performance.style)}>
-      {performance.label} {performance.emoji}
-    </span>
   </div>
 }
 
