@@ -9,7 +9,7 @@ export interface Criteria {
   suggest ?: string
 }
 
-function Sticky({ rubric, toggles, ratings }: { rubric: Array<Criteria>, toggles: Array<boolean>, ratings: Array<number> }) {
+function Sticky({ rubric, title, toggles, ratings }: { rubric: Array<Criteria>, title ?: string, toggles: Array<boolean>, ratings: Array<number> }) {
   const numberOfToggles      = rubric.filter(c => c.type === "toggle").length
   const numberOfRatings      = rubric.filter(c => c.type === "rating").length
   const numberOfTogglePoints = rubric.filter(c => c.type === "toggle").reduce((n, t) => n + t.points, 0)
@@ -31,7 +31,7 @@ function Sticky({ rubric, toggles, ratings }: { rubric: Array<Criteria>, toggles
 
   const score    = Math.round((numberOfPointsFromSelected  / numberOfPoints) * 100);
   const performance = (
-    score ===   0 ? { emoji: "🥱", label: "Not Started"      , style: "border-base-300 text-base-content bg-base-200" } :
+    score ===   0 ? { emoji: "🥱", label: "Not Started"      , style: "border-base-300 text-base-content/65 bg-base-200" } :
     score === 100 ? { emoji: "🤩", label: "Perfect"          , style: "border-primary text-primary bg-primary/10" } :
     score >=   85 ? { emoji: "😄", label: "Mastery"          , style: "border-success text-success-content dark:text-success bg-success/10" } :
     score >=   70 ? { emoji: "👍", label: "Proficient"       , style: "border-warning text-warning-content dark:text-warning bg-warning/10" } :
@@ -39,7 +39,10 @@ function Sticky({ rubric, toggles, ratings }: { rubric: Array<Criteria>, toggles
   )
   
   return <div className="question sticky top-0 z-10 flex flex-col items-center gap-2 bg-base-100 rounded-md border border-base-200 shadow-sm p-4">
-    
+    <span className="w-full text-xl font-semibold text-center">
+      {title}
+    </span>
+
     <div className="relative w-full flex flex-row justify-between gap-2">
       <span className="flex flex-row gap-2">
         { (numberOfToggles > 0) && <span className="flex items-center gap-2"><SquareCheckBig/> {numberOfSelectedToggles} / {numberOfToggles}</span> }
@@ -50,7 +53,7 @@ function Sticky({ rubric, toggles, ratings }: { rubric: Array<Criteria>, toggles
         {performance.label} {performance.emoji}
       </span>
 
-      <span>{score}%</span>
+      <span>{numberOfPointsFromSelected} / {numberOfPoints}</span>
     </div>
 
     <div className="w-full h-4 relative bg-base-200 rounded-full overflow-hidden border-2 border-base-200">
@@ -148,7 +151,7 @@ function Star({star, index, points, rating, setRating}: {
 
 }
 
-export default function Rubric({ rubric }: { rubric: Array<Criteria> }) {
+export default function Rubric({ rubric, title }: { rubric: Array<Criteria>, title ?: string }) {
   const [toggles, setToggles] = useState<Array<boolean>>(new Array(rubric.length).fill(false))
   const [ratings, setRatings] = useState<Array<number >>(new Array(rubric.length).fill(  0  ))
 
@@ -171,7 +174,7 @@ export default function Rubric({ rubric }: { rubric: Array<Criteria> }) {
 
   return (
     <div className="relative flex flex-col gap-2">
-      <Sticky rubric={rubric} toggles={toggles} ratings={ratings}/>
+      <Sticky rubric={rubric} title={title} toggles={toggles} ratings={ratings}/>
       {rubric.map((criteria, i) => {
         switch(criteria.type) {
           case "toggle": return <Toggle key={i} index={i} {...criteria} toggle={toggles[i]} setToggle={setToggle} />

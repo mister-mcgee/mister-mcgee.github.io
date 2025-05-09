@@ -2,8 +2,9 @@
 import R, { type Criteria } from "@components/learn/Rubric.tsx";
 interface Props {
   rubric: Array<Criteria>
+  title ?: string
 }
-const { rubric } = Astro.props;
+const { rubric, title } = Astro.props;
 ---
 
-<R rubric={rubric} client:only/>
+<R {rubric} {title} client:only/>

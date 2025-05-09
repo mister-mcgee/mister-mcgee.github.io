@@ -1,6 +1,6 @@
 ---
 import Q from "@components/learn/Quiz";
-const { quiz } = Astro.props;
+const { quiz, title } = Astro.props;
 ---
 
-<Q {quiz} client:only/>
+<Q {quiz} {title} client:only/>

@@ -103,7 +103,14 @@ Understanding how binary works is fundamental concepts in computer science, and 
 import Quiz from "@components/learn/Quiz.astro";
 import quiz from "@learn/csf/week/02/quiz.json";
 
-<Quiz quiz={quiz}/>
+<Quiz quiz={quiz} title={frontmatter.title}/>
+
+## Project
+
+import Rubric from "@components/learn/Rubric.astro";
+import rubric from "@learn/csf/week/02/rubric.json";
+
+<Rubric rubric={rubric} title="Project Rubric"/>
 
 ## Glossary
 
@@ -111,9 +118,3 @@ import Definitions from "@components/learn/Definitions.astro";
 
 <Definitions/>
 
-## Project
-
-import Rubric from "@components/learn/Rubric.astro";
-import rubric from "@learn/csf/week/02/rubric.json";
-
-<Rubric rubric={rubric}/>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import clsx from "clsx";
 import "./quiz.css";
+import { CircleHelp, SquareCheckBig } from "lucide-react";
 
 export interface Question {
   question: string;
@@ -61,10 +62,11 @@ function Question({ qi, ci, question, choices, answer, explain, onSelect }: Ques
 
 interface StickyProps {
   quiz    : Question[];
+  title  ?: string;
   selected: number  [];
 }
 
-function Sticky({ quiz, selected }: StickyProps) {
+function Sticky({ quiz, title, selected }: StickyProps) {
   const answered  = selected.filter(s => s !== -1).length;
   const correct   = selected.reduce((n, ci, i) => {
     return n + (quiz[i].answer === ci ? 1 : 0)
@@ -72,7 +74,7 @@ function Sticky({ quiz, selected }: StickyProps) {
 
   const score    = answered && Math.round((correct  / answered   ) * 100);
   const performance = (
-    answered ===   0 ? { emoji: "🥱", label: "Not Started"      , style: "border-base-300 text-base-content bg-base-200" } :
+    answered ===   0 ? { emoji: "🥱", label: "Not Started"      , style: "border-base-300 text-base-content/65 bg-base-200" } :
     score    === 100 ? { emoji: "🤩", label: "Perfect"          , style: "border-primary text-primary bg-primary/10" } :
     score    >=   85 ? { emoji: "😄", label: "Mastery"          , style: "border-success text-success-content dark:text-success bg-success/10" } :
     score    >=   70 ? { emoji: "👍", label: "Proficient"       , style: "border-warning text-warning-content dark:text-warning bg-warning/10" } :
@@ -83,14 +85,20 @@ function Sticky({ quiz, selected }: StickyProps) {
   const rightProgress = Math.round(correct  / quiz.length * 100);
 
   return <div className="question sticky top-0 z-10 flex flex-col items-center gap-2 bg-base-100 rounded-md border border-base-200 shadow-sm p-4">
+    <span className="w-full text-xl font-semibold text-center">
+      {title}
+    </span>
+
     <div className="relative flex w-full gap-2 justify-between">
-      <span>{answered} / {quiz.length}</span>
+      <span className="flex flex-row items-center gap-2">
+        <SquareCheckBig/> {answered} / {quiz.length}
+      </span>
 
       <span className={clsx("px-2 border rounded-md font-semibold absolute left-1/2 transform -translate-x-1/2", performance.style)}>
         {performance.label} {performance.emoji}
       </span>
 
-      <span>{score}%</span>
+      <span>{correct} / {answered}</span>
     </div>
 
     <div className="w-full h-4 relative bg-base-200 rounded-full overflow-hidden border-2 border-base-200">
@@ -100,7 +108,7 @@ function Sticky({ quiz, selected }: StickyProps) {
   </div>
 }
 
-export default function Quiz({ quiz }: { quiz: Question[] }) {
+export default function Quiz({ quiz, title }: { quiz: Question[], title ?: string }) {
   const [selected, setSelected] = useState<number[]>(Array(quiz.length).fill(-1));
 
   function onSelect(qi: number, ci: number) {
@@ -114,7 +122,7 @@ export default function Quiz({ quiz }: { quiz: Question[] }) {
   }
 
   return <div className="relative flex flex-col gap-2">
-    <Sticky quiz={quiz} selected={selected} />
+    <Sticky quiz={quiz} title={title} selected={selected} />
     { quiz.map((question, i) => {
       const qi =          i ;
       const ci = selected[i];
