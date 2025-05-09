@@ -1,6 +1,8 @@
 [
-  { "type": "rating" , "points": 5, "label": "Length", "suggest": "At least five paragraphs."},
-  { "type": "toggle" , "points": 2, "label": "Introduction", "suggest": "Explains the project and outlines each major point."},
-  { "type": "rating" , "points": 6, "label": "Body Paragraphs", "suggest": "At least 3 paragraphs explaining the process and/or proposing alternatives."},
-  { "type": "toggle" , "points": 2, "label": "Conclusion", "suggest": "Summarizes your essay."}
+  { "type": "rating", "points": 5 , "label": "Length", "suggest": "At least five paragraphs."},
+  { "type": "toggle", "points": 2 , "label": "Introduction", "suggest": "Explains the project and outlines each major point."},
+  { "type": "rating", "points": 6 , "label": "Body Paragraphs", "suggest": "At least 3 paragraphs explaining the process and/or proposing alternatives."},
+  { "type": "toggle", "points": 2 , "label": "Conclusion", "suggest": "Summarizes your essay."},
+  { "type": "toggle", "points": 10, "label": "Presentation"},
+  { "type": "toggle", "points": 25, "label": "Robot"}
 ]

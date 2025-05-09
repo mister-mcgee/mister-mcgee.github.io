@@ -53,7 +53,7 @@ function Sticky({ rubric, title, toggles, ratings }: { rubric: Array<Criteria>, 
         {performance.label} {performance.emoji}
       </span>
 
-      <span>{numberOfPointsFromSelected} / {numberOfPoints}</span>
+      <span>{numberOfPointsFromSelected} / {numberOfPoints} ({score}%)</span>
     </div>
 
     <div className="w-full h-4 relative bg-base-200 rounded-full overflow-hidden border-2 border-base-200">

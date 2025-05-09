@@ -98,7 +98,7 @@ function Sticky({ quiz, title, selected }: StickyProps) {
         {performance.label} {performance.emoji}
       </span>
 
-      <span>{correct} / {answered}</span>
+      <span>{correct} / {answered} ({score}%)</span>
     </div>
 
     <div className="w-full h-4 relative bg-base-200 rounded-full overflow-hidden border-2 border-base-200">
