@@ -38,7 +38,7 @@ function Sticky({ rubric, title, toggles, ratings }: { rubric: Array<Criteria>, 
                     { emoji: "😢", label: "Needs Improvement", style: "border-error   text-error-content   dark:text-error   bg-error/10"   }
   )
   
-  return <div className="question sticky top-0 z-10 flex flex-col items-center gap-2 bg-base-100 rounded-md border border-base-200 shadow-sm p-4">
+  return <div className="grow-on-hover sticky top-0 z-10 flex flex-col items-center gap-2 bg-base-100 rounded-md border border-base-200 shadow-sm p-4">
     <span className="w-full text-xl font-semibold text-center">
       {title}
     </span>
@@ -69,7 +69,7 @@ function Toggle({ index, label, points, suggest, toggle, setToggle }: Criteria &
     setToggle(index, !toggle)
   }
   
-  return <div className="question p-4 flex flex-col rounded-md border border-base-200 shadow-sm cursor-pointer" onClick={onClick}>
+  return <div className="grow-on-hover p-4 flex flex-col rounded-md border border-base-200 shadow-sm cursor-pointer" onClick={onClick}>
     <div className="text-lg flex gap-2 items-center justify-between">
       <span className="font-medium">{label}</span>
       <span className={clsx(
@@ -96,7 +96,7 @@ function Rating({ index, label, points, suggest, rating, setRating }: Criteria &
   }
   
   return (
-    <div className="question p-4 flex flex-col rounded-md border border-base-200 shadow-sm">
+    <div className="grow-on-hover p-4 flex flex-col rounded-md border border-base-200 shadow-sm">
       <div className="flex flex-row items-center justify-between gap-2">
         <span className="font-medium">{label}</span>
         <div className="flex flex-row items-center">

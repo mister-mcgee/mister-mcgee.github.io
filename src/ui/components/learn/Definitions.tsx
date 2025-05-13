@@ -169,17 +169,18 @@ function Card({
     setChecked((checked) => !checked)
   }
 
-  return <div className="collapse collapse-arrow bg-base-100 rounded-md shadow-sm border border-base-200">
-    <input type="checkbox" checked={checked} onChange={onChange} />
-    <div className="collapse-title font-semibold">{nameOf(definition)}</div>
-    <div className="collapse-content flex flex-col">
-      <span dangerouslySetInnerHTML={{__html: htmlOf(definition)}}></span>
-
-      <div className="flex flex-row items-center gap-2 italic">
-        <span className="italic text-sm">see also</span>
-        {definition?.also?.map((term, i) => (
-          <span key={i} className="badge badge-ghost">{term}</span>
-        ))}
+  return <div className="grow-on-hover">
+    <div className="collapse collapse-arrow bg-base-100 rounded-md shadow-sm border border-base-200">
+      <input type="checkbox" checked={checked} onChange={onChange} />
+      <div className="collapse-title font-semibold">{nameOf(definition)}</div>
+      <div className="collapse-content flex flex-col">
+        <span dangerouslySetInnerHTML={{__html: htmlOf(definition)}}></span>
+        <div className="flex flex-row items-center gap-2 italic">
+          <span className="italic text-sm">see also</span>
+          {definition?.also?.map((term, i) => (
+            <span key={i} className="badge badge-ghost">{term}</span>
+          ))}
+        </div>
       </div>
     </div>
   </div>

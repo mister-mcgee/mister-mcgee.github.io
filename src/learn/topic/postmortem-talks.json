@@ -1,0 +1,6 @@
+[
+  {"type": "rating", "points": 2, "label": "Length", "suggest": "Between two and four minutes (at least three slides)." },
+  {"type": "toggle", "points": 2, "label": "Overview", "suggest": "A brief overview of the project." },
+  {"type": "rating", "points": 4, "label": "Major Points", "suggest": "At least one major point from your essay." },
+  {"type": "toggle", "points": 2, "label": "Summary", "suggest": "A summary of your presentation." }
+]

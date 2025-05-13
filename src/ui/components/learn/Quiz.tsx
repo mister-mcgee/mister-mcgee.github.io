@@ -1,7 +1,6 @@
-import { useState } from "react";
 import clsx from "clsx";
-import "./quiz.css";
-import { CircleHelp, SquareCheckBig } from "lucide-react";
+import { SquareCheckBig } from "lucide-react";
+import { useState } from "react";
 
 export interface Question {
   question: string;
@@ -23,7 +22,7 @@ function Question({ qi, ci, question, choices, answer, explain, onSelect }: Ques
   const isAnswered = (ci !== -1);
   
   return (
-    <div className="p-4 rounded-md shadow-sm border border-base-200 flex flex-col gap-1 question">
+    <div className="p-4 rounded-md shadow-sm border border-base-200 flex flex-col gap-1 grow-on-hover">
       <span className="text-base-content font-medium">{qi + 1}. {question}</span>
       { choices.map((choice, i) => {
         const isRight    = (i  === answer);
@@ -84,7 +83,7 @@ function Sticky({ quiz, title, selected }: StickyProps) {
   const wrongProgress = Math.round(answered / quiz.length * 100);
   const rightProgress = Math.round(correct  / quiz.length * 100);
 
-  return <div className="question sticky top-0 z-10 flex flex-col items-center gap-2 bg-base-100 rounded-md border border-base-200 shadow-sm p-4">
+  return <div className="grow-on-hover sticky top-0 z-10 flex flex-col items-center gap-2 bg-base-100 rounded-md border border-base-200 shadow-sm p-4">
     <span className="w-full text-xl font-semibold text-center">
       {title}
     </span>

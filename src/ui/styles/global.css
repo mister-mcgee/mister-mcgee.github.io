@@ -14,3 +14,16 @@
   --font-bungee: "Bungee Shade", cursive;
   --font-courier: "Courier Prime", monospace;
 }
+
+.grow-on-hover {
+  transform-style: preserve-3d;
+  transition: transform 100ms linear;
+}
+
+.grow-on-hover:hover {
+  transform-style: preserve-3d;
+  transform:
+    perspective(1000px)
+    scale(1.03);
+  transition: transform 100ms linear
+}
