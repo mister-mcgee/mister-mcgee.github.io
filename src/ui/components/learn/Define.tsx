@@ -19,7 +19,7 @@ export default function Define({
 
   return (
     <div className="tooltip border-b border-dotted cursor-help">
-      <div className="tooltip-content flex flex-col text-justify">
+      <div className="tooltip-content flex flex-col text-left">
         <span className="text-lg font-semibold">{nameOf(definition) ?? term}</span>
         <div dangerouslySetInnerHTML={{__html : html ?? htmlOf(definition)}}/>
       </div>

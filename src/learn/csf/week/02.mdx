@@ -11,25 +11,27 @@ import Define from "@components/learn/Define.astro";
 
 The word <Define term="binary"/> comes from the latin *bini-* (meaning *two*), and *-ary* (meaning *part of*). The word *binary* describes something with two parts, but in the language of mathematics and computer science it refers to the base-2 number system where all numerals are expressed using the digits zero `0` and one `1`.
 
-It can be intimidating to approach new mathematical concepts, but before your eyes glaze over I encourage you to persevere. Understanding binary is fundamentally important in understanding modern computing.
+It can be intimidating to approach new mathematical concepts, but before your eyes glaze over I encourage you to persevere. Understanding binary is fundamental in understanding modern computing.
 
-While base-2 may seem foreign, you are likely already accustomed to using the base-10 numeric system known as <Define term="decimal"/>. Thinking about how we interpret decimal numerals can give us some insight regarding how we interpret binary numerals.
+While base-2 may seem foreign, you are likely already accustomed to using the base-10 numeric system known as <Define term="decimal"/>. Thinking about how we interpret decimal numerals can give us some insight regarding how we should interpret binary numerals.
 
-In base-10 each numeral is represented using *ten* digits, from zero `0` to nine `9`. Each digit and its *place* within a numeral decide its value. Consider the base-10 numeral `345` where we describe the digit five `5` as being in the *ones place*, the digit four `4` in the *tens place*, and the digit three `3` in the *hundreds place*. Those practiced in reading decimal numerals know this means there are five *ones* (`5`), four *tens* (`40`), and three *hundreds* (`300`). Another way to visualize this relationships is to write the numeral in its *expanded form* -
+In base-10 each numeral is represented using *ten* digits, from zero `0` to nine `9`. Each digit and its *place* within a numeral decide its value. Consider the base-10 numeral `345` where we describe (from right to left) the digit five `5` as being in the *ones place*, the digit four `4` in the *tens place*, and the digit three `3` in the *hundreds place*. Those practiced in reading decimal numerals know this means there are five *ones* (`5`), four *tens* (`40`), and three *hundreds* (`300`). Another way to visualize this relationships is to write the numeral in its *expanded form* -
 
-```
-"345" = (300     ) + (40      ) + (5       )
-      = (3 * 100 ) + (4 * 10  ) + (5 * 1   )
-      = (3 * 10^2) + (4 * 10^1) + (5 * 10^0) = 345
-```
+$$345 = (3 \times 10^2) + (4 \times 10^1) + (5 \times 10^0)$$
 
-When looking at a decimal numeral's *expanded form* it is easy to see that each *place* represents a power of ten `10`. We can use the same expanded form to describe binary numerals, but instead of each *place* representing a power of ten, each *place* now represents a power of two. Consider the binary numeral `1010`. From right to left, we would say that the digit zero `0` is in the *ones place*, the digit one `1` is in the *twos place*, the digit zero `0` is in the *fours place* and the digit one `1` is in the *eights place*. We can write the numeral in its *expanded form* as -
+$$345 = (3 \times 100 ) + (4 \times 10  ) + (5 \times 1   )$$
 
-```
-"1010" = (   8   ) + (   0   ) + (   2   ) + (   0   )
-       = ( 1 * 8 ) + ( 0 * 4 ) + ( 1 * 2 ) + ( 0 * 1 )
-       = (1 * 2^3) + (0 * 2^2) + (1 * 2^1) + (0 * 2^0) = 10
-```
+$$345 = 300 + 40 + 5$$
+
+When looking at a decimal numeral's *expanded form* it is easy to see that each *place* represents a power of ten `10`. We can use a similar expanded form to describe binary numerals, but each *place* represents a power of two `2` instead. Consider the binary numeral `1010`, (from right to left) we would say that the digit zero `0` is in the *ones place*, the digit one `1` is in the *twos place*, the digit zero `0` is in the *fours place* and the digit one `1` is in the *eights place*. We can write the numeral in its *expanded form* as -
+
+
+$$1010 = (1 \times 2^3) + (0 \times 2^2) + (1 \times 2^1) + (0 \times 2^0)$$
+
+$$1010 = ( 1 \times 8 ) + ( 0 \times 4 ) + ( 1 \times 2 ) + ( 0 \times 1 )$$
+
+$$1010 = 8 + 0 + 2 + 0$$
+
 
 We can sum each part of our expanded form to see that the binary numeral `1010` is equal to the decimal numeral `10`. While it's outside the scope of this lesson, programmers often use several different bases to represent numerals in code. Most programming languages support the use of <Define term="binary"/> (base-2), <Define term="octal"/> (base-8), <Define term="decimal"/> (base-10), and <Define term="hexadecimal"/> (base-16) numerals.
 
@@ -43,24 +45,34 @@ import BinaryToDecimal from "@components/fun/BinaryToDecimal";
 
 ## Why Use Binary
 
-A computer is a "thinking" machine, meaning that it is capable of "choosing" an outcome based on some input or prior state. This is typically accomplished in <Define term="hardware"/> by varying <Define term="voltage">voltages</Define> across *switches*. In a modern electronic computer binary signals are transmitted by encoding zeroes `0` as "low" voltage and ones `1` as "high" voltage, but this wasn't always the case. Early *electromechanical* computers used many different, more exotic techniques to encode and transmit data. Some notable examples include trinary and bi-quinary encodings.
+A computer is a "thinking" machine, meaning that it is capable of "choosing" an outcome based on some input or prior state. This is typically accomplished in <Define term="hardware"/> by varying voltages across *switches*. In a modern electronic computer, binary signals are transmitted by encoding zeroes `0` as "low" voltage and ones `1` as "high" voltage, but this wasn't always the case. Early <Define term="electromechanical"/> computers used many different, more exotic techniques to encode and transmit data. Some notable examples include trinary and bi-quinary encodings.
 
 To be clear, binary encoding has always been appealing to engineers and computer scientists alike because of its simplicity. Intuitively, the circuitry required to distinguish between *two* voltages is relatively simple when compared to the circuitry required to distinguish between *many* voltages; however, early electronic and electromechanical switches had significant space and power requirements. Broadly speaking this often meant that fewer, more complicated switches were more economical; therefore, more complicated encodings were used to reduce the manufacturing and operating costs of these machines.
 
-It wasn't until after the invention of the *transistor* in 1947 that binary became the dominant method of encoding and transmitting data. The transistor revolutionized computing by dramatically reducing the size and power footprint of computing devices, completely eliminating the need for vacuum tubes and other electromechanical components. This allowed for the creation of smaller, more efficient, and more powerful computers.
+It wasn't until after the invention of the *transistor* in 1947 that binary became the dominant method of encoding and transmitting data. The transistor revolutionized computing by dramatically reducing the size and power footprint of computing devices, completely eliminating the need for vacuum tubes and other electromechanical components. Their simplicity was an ideal match for binary.
 
 ## Bits and Bytes
 
-A <Define term="bit"/> (short for *binary digit*) is the smallest unit of *information*. A bit can represent one of two states - zero `0` or one `1`, *no* or *yes*, *false* or *true*, and so on. While bits are important, it is often not useful to think or speak about them individually. Instead, computer scientists learn to think in *bytes*, since most modern computer architectures operate on groupings of 8 bits (aka *bytes*) at a time.
+A <Define term="bit"/> (short for *binary digit*) is the smallest unit of *information*. A bit can represent one of two states - zero `0` or one `1`, *no* or *yes*, *false* or *true*, and so on. While bits are important, it is often not useful to think or speak about them individually. Instead, computer scientists learn to think in <Define term="byte">bytes</Define>, since most modern computer architectures operate on groupings of 8 bits (aka *bytes*) at a time.
+
+A single bit is capable of representing little more than "off" or "on". If we imagine for a moment, that each bit is a light switch, then we can think of 
+
+import BinaryCombinations from "@components/fun/BinaryCombinations.tsx";
+
+<BinaryCombinations client:only/>
+
+While a single bit is capable of representing little more than "yes" or "no", a *byte* is capable of representing up to 256 different states. If we imagine for a moment, that each bit is a light switch, then we can think of each *state* of a byte as some unique combination of offs and ons. E
 
 A single byte is capable of representing up to 256 different states, usually a number between `0` and `255` inclusive. In order for computers to represent larger or more complicated numbers, they must use *multiple bytes*. For example, most arithmetic on computers is performed using 32-bit (4 bytes) or 64-bit (8 bytes) *integers*. An integer is a whole number (including zero) that can be *signed* (positive or negative) or *unsigned*. Depending on the number of bits and whether it is signed or unsigned, an integer can represent a variety of whole numbers.
 
-| Width | Signed | Lower | Upper |
+<div className="text-xs">
+| Width | Signed? | Lower | Upper |
 | --- | --- | --- | --- |
 | 32-bit (4 bytes) | Yes | $$-2^{31}=-2,147,483,648$$ | $$2^{31}-1=2,147,483,647$$ |
 | 32-bit (4 bytes) | No  | $$0$$ | $$2^{32}-1 = 4,294,967,295$$ |
 | 64-bit (8 bytes) | Yes | $$-2^{63}=-9,223,372,036,854,775,808$$ | $$2^{63}-1=9,223,372,036,854,775,807$$ |
 | 64-bit (8 bytes) | No  | $$0$$ | $$2^{64}-1=18,446,744,073,709,551,615$$ |
+</div>
 
 ## How Computers Think
 

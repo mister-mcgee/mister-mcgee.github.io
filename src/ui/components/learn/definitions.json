@@ -255,5 +255,8 @@
     "term": ["dc", "direct current"],
     "html": "Direct Current, often referred to as simply DC, is a kind of electrical current where the voltage remains (roughly) constant.",
     "also": ["alternating current", "electricity", "current"]
-  }  
+  }, {
+    "term": "electromechanical",
+    "html": "The word electromechanical comes from the Latin <em>electro-</em> (meaning <em>electricity</em>) and <em>-mechanic</em> (meaning <em>machine</em> <br><br> Electromechanical <em>computers</em> use a combination of electrical and mechanical components to perform computations."
+  }
 ]
