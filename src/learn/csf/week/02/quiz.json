@@ -1,14 +1,25 @@
 [
   {
-    "question": "What does the binary number 1011 represent in decimal?",
+    "question": "What does the binary number 1010 represent in decimal",
     "choices": [
-      "7",
+      "8",
       "10",
-      "11",
-      "13"
+      "12",
+      "14"
     ],
-    "answer": 2,
-    "explain": "The binary 1011 is 8 + 0 + 2 + 1 = 11."
+    "answer": 1,
+    "explain": "1010 in binary equals (1×8) + (0×4) + (1×2) + (0×1) = 10 in decimal."
+  },
+  {
+    "question": "How many states can be represented by a single byte?",
+    "choices": [
+      "8",
+      "16",
+      "128",
+      "256"
+    ],
+    "answer": 3,
+    "explain": "A byte is 8 bits, so it can represent 2^8 = 256 different states."
   },
   {
     "question": "Binary is used in computing because...",
@@ -44,17 +55,6 @@
     "explain": "A valid binary number only uses the digits 0 and 1, so 1001101 is correct."
   },
   {
-    "question": "Which operation can be directly performed using binary numbers?",
-    "choices": [
-      "Addition",
-      "Multiplication",
-      "Subtraction",
-      "All of the above"
-    ],
-    "answer": 3,
-    "explain": "All arithmetic operations, such as addition, multiplication, and subtraction, can be performed using binary numbers."
-  },
-  {
     "question": "What is the binary representation of the decimal number 5?",
     "choices": [
       "101",
@@ -68,13 +68,13 @@
   {
     "question": "How many bits are there in a byte?",
     "choices": [
-      "8 bits",
       "4 bits",
+      "8 bits",
       "16 bits",
       "32 bits"
     ],
-    "answer": 0,
-    "explain": "A byte consists of 8 bits."
+    "answer": 1,
+    "explain": "A byte is a grouping of 8 bits."
   },
   {
     "question": "The word 'bit' is a portmanteau of...",
@@ -86,5 +86,27 @@
     ],
     "answer": 1,
     "explain": "A 'bit' is short for a 'binary digit', the smallest unit of information in computing."
+  },
+  {
+    "question": "What is the role of compilers, interpreters, and virtual machines?",
+    "choices": [
+      "Translate human-readable code into machine-readable instructions",
+      "Execute binary instructions directly without translation",
+      "Write programs automatically",
+      "Store large amounts of data efficiently"
+    ],
+    "answer": 0,
+    "explain": "These tools translate human-readable programming languages into binary instructions the computer hardware can execute."
+  },
+  {
+    "question": "Why are natural languages not suitable for programming computers?",
+    "choices": [
+      "Because they are ambiguous and can be interpreted in multiple ways",
+      "Because they don't have enough vocabulary",
+      "Because computers don't understand spoken words",
+      "Because they are too long"
+    ],
+    "answer": 0,
+    "explain": "Natural languages are inherently ambiguous, which is problematic since computers require precise and unambiguous instructions."
   }
 ]

@@ -107,7 +107,11 @@ function Sticky({ quiz, title, selected }: StickyProps) {
   </div>
 }
 
-export default function Quiz({ quiz, title }: { quiz: Question[], title ?: string }) {
+export default function Quiz({ quiz, title }: { 
+  quiz     : Question[],
+  title   ?: string ,
+  shuffle ?: boolean,
+}) {
   const [selected, setSelected] = useState<number[]>(Array(quiz.length).fill(-1));
 
   function onSelect(qi: number, ci: number) {

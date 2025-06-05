@@ -1,0 +1,10 @@
+---
+import W from "@components/learn/Wikipedia.tsx";
+
+const { term } = Astro.props;
+const hasChildren = Astro.slots.default;
+---
+
+<W {term} client:only>
+  {hasChildren && <slot />}
+</W>

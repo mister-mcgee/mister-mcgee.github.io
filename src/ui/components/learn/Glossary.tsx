@@ -1,5 +1,5 @@
 import "./definitions.css";
-import { $kept, lookup, nameOf, htmlOf, fitb, type Definition} from "./definitions";
+import { $highlights as $highlights, lookup, nameOf, htmlOf, fitb, type Definition} from "./definitions";
 import { useStore } from "@nanostores/react";
 import clsx from "clsx";
 import { useRef, useState } from "react";
@@ -158,7 +158,7 @@ function Flashcards({
   );
 }
 
-function Card({ 
+function Definition({ 
   definition 
 }: { 
   definition: Definition | undefined 
@@ -186,29 +186,31 @@ function Card({
   </div>
 }
 
-function Cards({ 
+function Definitions({ 
   definitions 
 }: { 
   definitions: Array<Definition | undefined> 
 }) {
   return <div className="flex flex-col gap-2">
     {definitions.map((entry, i) => (
-      <Card key={i} definition={entry} />
+      <Definition key={i} definition={entry} />
     ))}
   </div>
 }
 
-export default function Definitions({ 
-  definitions: also
+export default function Glossary({
+  highlights ,
+  definitions,
 }: { 
+  highlights  ?: boolean
   definitions ?: Array<string>
 }) {
   const [flashcards, setFlashcards] = useState(false);
 
-  const definitions = [
-    ...useStore($kept),
-    ...(also ?? [   ])
-  ].toSorted().map((term) => lookup(term))
+  let defined = [ ]
+  if(highlights ?? true) defined.push(...useStore($highlights))
+  if(definitions       ) defined.push(...         definitions )
+  defined = defined.toSorted().map((term) => lookup(term))
 
   function onChange() {
     setFlashcards((flashcards) => !flashcards)
@@ -241,7 +243,7 @@ export default function Definitions({
           transition={{ duration: 0.3 }}
           className="w-full"
         >
-          <Flashcards definitions={definitions} />
+          <Flashcards definitions={defined} />
         </motion.div>
       ) : (
         <motion.div
@@ -253,7 +255,7 @@ export default function Definitions({
           transition={{ duration: 0.3 }}
           className="w-full"
         >
-          <Cards definitions={definitions} />
+          <Definitions definitions={defined} />
         </motion.div>
       )}
     </AnimatePresence>

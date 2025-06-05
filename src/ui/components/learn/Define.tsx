@@ -1,20 +1,23 @@
-import { keep, lookup, nameOf, htmlOf} from "./definitions";
+import { highlight as h, lookup, nameOf, htmlOf} from "./definitions";
 import { useEffect } from "react";
 
-export interface Props extends React.PropsWithChildren {
-  term : string;
-  html?: string;
+export interface Props extends React.PropsWithChildren {  
+  term        : string ;
+  html       ?: string ;
+  highlight  ?: boolean;
 }
 
-export default function Define({ 
+export default function Define({
   term, 
-  html, 
-  children 
+  html,
+  highlight,
+  children,
 }: Props) {
   const definition = lookup(term);
-  
+
   useEffect(() => {
-    keep(term);
+    if(highlight ?? true)
+      h(term);
   }, [term]);
 
   return (
@@ -25,5 +28,5 @@ export default function Define({
       </div>
       { children || term }
     </div>
-  );
+  )
 }

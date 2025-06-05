@@ -56,8 +56,6 @@ function computeGraphData(n: number): GraphData {
   return { nodes, links }
 }
 
-
-
 function GraphViewport({ graphData }: { graphData: GraphData }) {
   const [ForceGraph, setForceGraph] = useState<React.FC<any>|null>(null);
 
@@ -67,11 +65,14 @@ function GraphViewport({ graphData }: { graphData: GraphData }) {
     });
   }, [ ]);
 
+  const container = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="w-full h-[432px] overflow-hidden">
+    <div ref={container} className="w-full h-[432px] overflow-hidden">
       { ForceGraph ? (<ForceGraph
         graphData={graphData}
-        height={432}
+        height={container.current?.clientHeight}
+        width ={container.current?.clientWidth }
         nodeCanvasObject={(node: Node, c:CanvasRenderingContext2D, scale:number) => {
           c.font = `${16 / scale}px monospace`;
           c.textAlign    = "center";
@@ -140,9 +141,11 @@ export default function BinaryCombinations() {
 
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-2">
       <GraphControls  bits={bits} setBits={setBits} />
-      <GraphViewport graphData={graphData} />
+      <div className="rounded-lg bg-base-200">
+        <GraphViewport graphData={graphData} />
+      </div>
     </div>
   )
 }

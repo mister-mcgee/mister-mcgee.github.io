@@ -8,7 +8,7 @@ import Layout from "@layouts/Layout.astro";
 import Tags   from "@components/learn/Tags.astro";
 import { getCollection, render } from "astro:content";
 
-import TableOfContents from "@components/learn/TableOfContents.astro";
+import TableOfContents    from "@components/learn/TableOfContents.astro";
 
 export async function getStaticPaths() {
   const lessons = (await getCollection("lessons"))
@@ -86,10 +86,9 @@ const { Content, headings } = await render(lesson);
             </div>
           </div>
         )}
-        <div class="prose prose-base sm:prose-lg break-words sm:break-normal p-4 sm:p-8 prose-h1:text-center prose-h2:text-center">
+        <div class="w-full prose prose-base sm:prose-lg break-words sm:break-normal p-4 sm:p-8 prose-h1:text-center prose-h2:text-center">
           <TableOfContents {headings}/>
           <Content/>
-
         </div>
 
         <div class="h-96"></div>

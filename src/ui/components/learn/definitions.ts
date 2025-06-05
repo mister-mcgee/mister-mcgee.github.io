@@ -1,13 +1,12 @@
 import definitions from "./definitions.json";
-import { atom   } from "nanostores";
-import { reduce } from "lodash";
+import { atom } from "nanostores";
 
-export const $kept = atom<Array<string>>([])
+export const $highlights = atom<Array<string>>([])
 
-export function keep(term: string) {
-  const kept = $kept.get();
-  if(!kept.includes(term))
-    $kept.set([...kept, term]);
+export function highlight(term: string) {
+  const highlights = $highlights.get();
+  if(!highlights.includes(term))
+    $highlights.set([...highlights, term]);
 }
 
 export type Definition = typeof definitions[number];
@@ -31,7 +30,7 @@ export function htmlOf(definition: Definition | undefined) {
 }
 
 export function fitb(definition: Definition | undefined) {
-  return reduce(array(definition?.term ?? ""), (html, term) => {
+  return array(definition?.term ?? "").reduce((html, term) => {
     return blank(html, term)
   }, definition?.html ?? "")
 }

@@ -26,6 +26,7 @@
     "katex": "^0.16.22",
     "lodash": "^4.17.21",
     "lucide-react": "^0.506.0",
+    "lucide-static": "^0.513.0",
     "motion": "^12.9.4",
     "nanostores": "^1.0.1",
     "react": "^19.1.0",

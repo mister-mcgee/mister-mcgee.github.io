@@ -10,7 +10,7 @@ export namespace Lesson {
   }
 
   export function isDraft(lesson: Lesson) {
-    return lesson.data.draft;
+    return !!lesson.data.draft;
   }
 
   export function compare(a: Lesson, b: Lesson) {
