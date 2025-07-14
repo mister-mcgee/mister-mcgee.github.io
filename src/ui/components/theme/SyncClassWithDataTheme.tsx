@@ -25,5 +25,5 @@ export default function SyncClassWithDataTheme({ className, themeName }: {
     });
 
     return () => observer.disconnect();
-  }, [ className, themeName]);
+  }, [className, themeName]);
 }

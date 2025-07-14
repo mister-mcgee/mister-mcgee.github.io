@@ -105,9 +105,11 @@ A programming language is a human-friendly way of writing instructions for a com
 
 You may wonder why programmers don't write software using plain English. The problem is that natural languages are inherently ambiguous — words can have multiple meanings, and sentences can be interpreted in different ways depending on context. An author's favorite cliche is double-entendre, which happens to be a programmer's worst nightmare. Computers require precise and unambiguous instructions. Thinking and writing in "computer speak" might feel awkward to a beginner, but it's important to realize that a programming language is designed to *eliminate ambiguity*, not necessarily to mirror natural language.
 
-After a developer has written a program using a programming language it must then be translated into the relevant binary instructions by specialized tools. Broadly speaking these tools fall into a few categories, including but not limited to - compilers, interpreters, and virtual machines, all of which translate human-readable code into machine-readable instructions.
+After a developer has written a program in a programming language it must then be translated into binary instructions by special tools. Broadly speaking, these tools fall into a few categories including but not limited to - *compilers*, *interpreters*, and *virtual machines*, all of which translate human-readable code into machine-readable instructions.
 
 Programming languages exist to bridge the gap between human thought and machine execution. They allow engineers and programmers to focus on solving problems, building systems, and creating experiences — without needing to think in zeros and ones.
+
+> The first compilers were written by hand using *assembly language* or even *machine code*! When developing a new programming language, it's common practice to first write a compiler using an existing language. Once there is a working compiler for the new language you can write another compiler *using the new language*. This is a process known as <Wikipedia term="Bootstrapping_(compilers)">bootstrapping</Wikipedia>.
 
 ## Summary
 
@@ -126,7 +128,7 @@ Programs written in human-friendly languages are translated into binary instruct
 ## Review
 
 import Quiz from "@components/learn/Quiz.astro";
-import quiz from "@learn/csf/week/02/quiz.json";
+import quiz from "@learn/cs/quiz-01.json";
 
 <Quiz quiz={quiz} title={frontmatter.title}/>
 
@@ -141,7 +143,7 @@ import quiz from "@learn/csf/week/02/quiz.json";
 With your partner, design a binary instruction set
 
 import Rubric from "@components/learn/Rubric.astro";
-import rubric from "@learn/csf/week/02/rubric.json";
+import rubric from "@learn/cs/rubric-01.json";
 
 <Rubric rubric={rubric} title="Thinking Like a Programmer"/>
 
