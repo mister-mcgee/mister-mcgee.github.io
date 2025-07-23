@@ -57,3 +57,8 @@
   --rc-color-light: rgb(246, 142, 117);
   --rc-color-dark : rgb(246, 142, 117);
 }
+
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none !important;
+}
