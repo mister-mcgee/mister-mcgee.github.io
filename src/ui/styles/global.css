@@ -18,13 +18,15 @@
 .grow-on-hover {
   transform-style: preserve-3d;
   transition: transform 100ms linear;
+  will-change: transform;
 }
 
 .grow-on-hover:hover {
   transform-style: preserve-3d;
-  transform:
-    perspective(1000px)
-    scale(1.03);
+  transform: 
+    perspective(1000px) 
+    scale(1.03) 
+    translateZ(0);
   transition: transform 100ms linear
 }
 
@@ -61,4 +63,14 @@
 .prose blockquote p::before,
 .prose blockquote p::after {
   content: none !important;
+}
+
+.caution {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-base-100),
+    var(--color-base-100) 20px,
+    var(--color-base-200) 20px,
+    var(--color-base-200) 40px
+  );
 }

@@ -29,18 +29,6 @@ const { lesson            } =          Astro.props;
 const { Content, headings } = await render(lesson);
 ---
 
-<style>
-  .caution {
-    background: repeating-linear-gradient(
-      45deg,
-      var(--color-base-100),
-      var(--color-base-100) 20px,
-      var(--color-base-200) 20px,
-      var(--color-base-200) 40px
-    );
-  }
-</style>
-
 <Layout>
   <Drawer>
     <!-- Container -->

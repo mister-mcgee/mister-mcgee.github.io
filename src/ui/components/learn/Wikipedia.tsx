@@ -69,7 +69,7 @@ export const Wikipedia: React.FC<Props> = ({ term, children }) => {
 
           <span className="text-white/70 italic text-xs text-center">Click to read more in a new tab</span>
         </>: <>
-          <span className="text-lg font-semibold">Fetching...</span>
+          <span className="loading loading-dots">Fetching...</span>
         </>}
         
       </div>

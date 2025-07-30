@@ -1,0 +1,13 @@
+[
+  {
+    "question": "What is your favorite color?",
+    "choices": [
+      "Red",
+      "Blue",
+      "Green",
+      "Yellow"
+    ],
+    "answer": 1,
+    "explain": "I like blue."
+  }
+]

@@ -128,9 +128,14 @@ Programs written in human-friendly languages are translated into binary instruct
 ## Review
 
 import Quiz from "@components/learn/Quiz.astro";
-import quiz from "@learn/cs/quiz-01.json";
+import questions from "@learn/cs/cs-q01.json";
 
-<Quiz quiz={quiz} title={frontmatter.title}/>
+<Quiz 
+  title={frontmatter.title} 
+  questions={questions}
+  gId={"cs" }
+  qId={"q01"}
+/>
 
 ## Project
 
@@ -143,7 +148,7 @@ import quiz from "@learn/cs/quiz-01.json";
 With your partner, design a binary instruction set
 
 import Rubric from "@components/learn/Rubric.astro";
-import rubric from "@learn/cs/rubric-01.json";
+import rubric from "@learn/cs/cs-r01.json";
 
 <Rubric rubric={rubric} title="Thinking Like a Programmer"/>
 
