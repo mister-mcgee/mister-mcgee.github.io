@@ -1,0 +1,21 @@
+.nuts-and-bolts {
+  --offset-x: 0px;
+  --offset-y: 0px;
+
+  /* width : 128px; */
+  cursor: pointer;
+  user-select: none;
+  transform: translate(var(--offset-x), var(--offset-y));
+}
+
+.particle {
+  --offset-x: 0px;
+  --offset-y: 0px;
+  --scale:    1;
+
+  /* width : 64px; */
+  user-select: none;
+  position: absolute;
+  pointer-events: none;
+  transform: translate(var(--offset-x), var(--offset-y)) scale(var(--scale));
+}
