@@ -2,23 +2,24 @@ import { type CSSProperties, useEffect, useRef, useState } from "react";
 import "./NutsAndBolts.css"
 
 const NUTS_AND_BOLTS = [
-  "🔨",// "/emoji/ms-hammer.png",
-  "⛏️",// "/emoji/ms-pick.png",
-  "🪚",// "/emoji/ms-carpentry-saw.png",
-  "🔧",// "/emoji/ms-wrench.png",
-  "🪛",// "/emoji/ms-screwdriver.png",
-  "🔩",// "/emoji/ms-nut-and-bolt.png",
-  "⚙️",// "/emoji/ms-gear.png",
-  "🦾",// "/emoji/ms-mechanical-arm.png",
-  "🦿",// "/emoji/ms-mechanical-leg.png",
-  "✨",// "/emoji/ms-sparkles.png",
-  "💡",// "/emoji/ms-light-bulb.png",
-  "⚡",// "/emoji/ms-high-voltage.png",
-  "🔋",// "/emoji/ms-battery.png",
-  "🪫",// "/emoji/ms-low-battery.png",
-  "🧰",// "/emoji/ms-toolbox.png",
-  "💾",// "/emoji/ms-floppy-disk.png",
-  "💽",// "/emoji/ms-computer-disk.png",
+  "/emoji/1F528.png", // hammer
+  "/emoji/26CF.png", // pick
+  "/emoji/E348.png", // carpentry-saw
+  "/emoji/1F527.png", // wrench
+  "/emoji/1FA9B.png", // screwdriver
+  "/emoji/1F529.png", // nut-and-bolt
+  "/emoji/2699.png", // gear
+  "/emoji/1F9BE.png", // mechanical-arm
+  "/emoji/1F9BF.png", // mechanical-leg
+  "/emoji/2728.png", // sparkles
+  "/emoji/1F4A1.png", // light-bulb
+  "/emoji/26A1.png", // high-voltage
+  "/emoji/1F50B.png", // battery
+  "/emoji/1FAAB.png", // low-battery
+  "/emoji/1F50C.png", // electric-plug
+  "/emoji/1F9F0.png", // toolbox
+  "/emoji/1F4BE.png", // floppy-disk
+  "/emoji/1F4BD.png", // computer-disk
 ]
 
 const MINIMUM_SPRING_FORCE = 100
@@ -38,7 +39,7 @@ const PARTICLES_PER_CLICK = 3
 
 
 interface Particle {
-  emoji: string
+  image: string
   timer: number
   x : number
   y : number
@@ -47,12 +48,12 @@ interface Particle {
   scale: number
 }
 
-function Particle({ emoji, x, y, scale }: Particle) {
-  return <div className="particle text-4xl" style={{
+function Particle({ image, x, y, scale }: Particle) {
+  return <img src={image} className="particle" style={{
     "--offset-x": `${x}px`,
     "--offset-y": `${y}px`,
     "--scale": `${scale}`,
-  } as CSSProperties}>{emoji}</div>
+  } as CSSProperties}/>
 }
 
 export default function NutsAndBolts() {
@@ -111,7 +112,7 @@ export default function NutsAndBolts() {
         particle_magnitude = Math.random() * (MAXIMUM_LINEAR_VELOCITY - MINIMUM_LINEAR_VELOCITY) + MINIMUM_LINEAR_VELOCITY,
         particle_direction = Math.random() * 2 * Math.PI;
       particles.current.push({
-        emoji: NUTS_AND_BOLTS[Math.floor(Math.random() * NUTS_AND_BOLTS.length)],
+        image: NUTS_AND_BOLTS[Math.floor(Math.random() * NUTS_AND_BOLTS.length)],
         timer: 0,
         x : 0,
         y : 0,
@@ -129,10 +130,10 @@ export default function NutsAndBolts() {
 
   return <>
     <div className="relative flex flex-col items-center">
-      <div onClick={onClick} className="nuts-and-bolts text-8xl" style={{
+      <img src="/emoji/1F916.png" onClick={onClick} className="nuts-and-bolts" style={{
         "--offset-x": `${x.current}px`,
         "--offset-y": `${y.current}px`,
-      } as React.CSSProperties}>🤖</div>
+      } as React.CSSProperties}/>
       {particles.current.map((part, i) => <Particle key={i} {...part} />)}
     </div>
   </>
