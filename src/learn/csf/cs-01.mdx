@@ -18,20 +18,20 @@ While base-2 may seem foreign, you are likely already accustomed to using the ba
 
 In base-10 each numeral is represented using *ten* digits, from zero `0` to nine `9`. Each digit and its *place* within a numeral decide its value. Consider the base-10 numeral `345` where we describe (from right to left) the digit five `5` as being in the *ones place*, the digit four `4` in the *tens place*, and the digit three `3` in the *hundreds place*. Those practiced in reading decimal numerals know this means there are five *ones* (`5`), four *tens* (`40`), and three *hundreds* (`300`). Another way to visualize this relationships is to write the numeral in its *expanded form* -
 
-$$\text{``345''} = (3 \times 10^2) + (4 \times 10^1) + (5 \times 10^0)$$
+$$\text{345} = (3 \times 10^2) + (4 \times 10^1) + (5 \times 10^0)$$
 
-$$\text{``345''} = (3 \times 100 ) + (4 \times 10  ) + (5 \times 1   )$$
+$$\text{345} = (3 \times 100 ) + (4 \times 10  ) + (5 \times 1   )$$
 
-$$\text{``345''} = 300 + 40 + 5 = 345$$
+$$\text{345} = 300 + 40 + 5 = 345$$
 
 When looking at a decimal numeral's *expanded form* it is easy to see that each *place* represents a power of ten `10`. We can use a similar expanded form to describe binary numerals, but each *place* represents a power of two `2` instead. Consider the binary numeral `1010`, (from right to left) we would say that the digit zero `0` is in the *ones place*, the digit one `1` is in the *twos place*, the digit zero `0` is in the *fours place* and the digit one `1` is in the *eights place*. We can write the numeral in its *expanded form* as -
 
 
-$$\text{``1010''} = (1 \times 2^3) + (0 \times 2^2) + (1 \times 2^1) + (0 \times 2^0)$$
+$$\text{1010} = (1 \times 2^3) + (0 \times 2^2) + (1 \times 2^1) + (0 \times 2^0)$$
 
-$$\text{``1010''} = ( 1 \times 8 ) + ( 0 \times 4 ) + ( 1 \times 2 ) + ( 0 \times 1 )$$
+$$\text{1010} = ( 1 \times 8 ) + ( 0 \times 4 ) + ( 1 \times 2 ) + ( 0 \times 1 )$$
 
-$$\text{``1010''} = 8 + 0 + 2 + 0 = 10$$
+$$\text{1010} = 8 + 0 + 2 + 0 = 10$$
 
 
 We can sum each part of our expanded form to see that the binary numeral `1010` is equal to the decimal numeral `10`. While it's outside the scope of this lesson, programmers often use several different bases to represent numerals in code. Most programming languages support the use of <Define term="binary"/> (base-2), <Define term="octal"/> (base-8), <Define term="decimal"/> (base-10), and <Define term="hexadecimal"/> (base-16) numerals.
@@ -128,7 +128,7 @@ Programs written in human-friendly languages are translated into binary instruct
 ## Review
 
 import Quiz from "@components/learn/Quiz.astro";
-import questions from "@learn/cs/cs-q01.json";
+import questions from "@learn/csf/cs-q01.json";
 
 <Quiz 
   title={frontmatter.title} 
@@ -148,7 +148,7 @@ import questions from "@learn/cs/cs-q01.json";
 With your partner, design a binary instruction set
 
 import Rubric from "@components/learn/Rubric.astro";
-import rubric from "@learn/cs/cs-r01.json";
+import rubric from "@learn/csf/cs-r01.json";
 
 <Rubric rubric={rubric} title="Thinking Like a Programmer"/>
 

@@ -5,9 +5,9 @@ const OUCH = [
   "/emoji/1F4A2.png", // anger-symbol
   "/emoji/1F620.png", // angry-face
   "/emoji/1F616.png", // confounded-face
-  "/emoji/2639.png", // frowning-face
+  "/emoji/2639.png" , // frowning-face
   "/emoji/1F62D.png", // loudly-crying-face
-  "/emoji/26D4.png", // no-entry
+  "/emoji/26D4.png" , // no-entry
   "/emoji/1F63E.png", // pouting-cat
   "/emoji/1F62B.png", // tired-face
 ]
