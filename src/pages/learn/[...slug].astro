@@ -5,7 +5,7 @@ import "rehype-callouts/theme/obsidian";
 import { Construction } from "@lucide/astro";
 import Drawer from "@layouts/Drawer.astro";
 import Layout from "@layouts/Layout.astro";
-import Tags   from "@components/learn/Tags.astro";
+import Tags   from "@components/learn/Tags.tsx";
 import { getCollection, render } from "astro:content";
 
 import TableOfContents    from "@components/learn/TableOfContents.astro";
@@ -54,7 +54,7 @@ const { Content, headings } = await render(lesson);
       <div class="h-2"></div>
 
       <!-- Tags -->
-      <Tags tags={lesson.data.tags} class="text-sm sm:text-lg"/>
+      <Tags tags={lesson.data.tags} client:load/>
 
       <div class="h-2"></div>
 

@@ -27,7 +27,7 @@ const tags = (await getCollection("lessons"))
         { Object.entries(tags).sort(([a,], [b,]) => {
             return a !== b ? a < b ? -1 : 1 : 0
           }).map(([tag, count]) => (
-          <a href={`/idea/tag/${tag}`} class="flex flex-row gap-1 justify-center items-center p-4 rounded-lg hover:bg-base-200">
+          <a href={`/learn/tag/${tag}`} class="flex flex-row gap-1 justify-center items-center p-4 rounded-lg hover:bg-base-200">
             <span class="text-lg sm:text-xl font-bold"># {tag}</span>
             <span class="badge badge-soft badge-primary badge-xs">{count}</span>
           </a>

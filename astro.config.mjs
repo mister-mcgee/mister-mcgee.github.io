@@ -34,7 +34,7 @@ const configureRehypeCallouts = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://shawn-mcgee.github.io",
+  site: "https://mister-mcgee.github.io",
   base: "/",
   vite: {
     plugins: [tailwindcss()]

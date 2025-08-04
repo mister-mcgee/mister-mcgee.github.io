@@ -1,9 +1,10 @@
 ---
 import { Lesson } from "@components/learn/";
+import Tags from "@components/learn/Tags.tsx";
 import Layout from "@layouts/Layout.astro";
 import Drawer from "@layouts/Drawer.astro";
 import { getCollection                       } from "astro:content";
-import { Construction, LibraryBig, Lightbulb } from "@lucide/astro";
+import { Construction, LibraryBig, Lightbulb, Notebook } from "@lucide/astro";
 
 // retrieve lessons and sort by date
 const lessons = (await getCollection("lessons")).sort(Lesson.compare)
@@ -15,20 +16,21 @@ const lessons = (await getCollection("lessons")).sort(Lesson.compare)
       <div class="h-4"></div>
       <div class="flex flex-row gap-1">
         <LibraryBig class="w-10 h-10"/>
-        <span class="text-4xl font-bold text-center">Ideas</span>
+        <span class="text-4xl font-bold text-center">Lessons</span>
       </div>      
       <div class="h-4"></div>
-      <div class="w-full flex flex-row flex-wrap max-w-xs justify-center sm:max-w-2xl lg:max-w-5xl">
+      <div class="w-full flex flex-row gap-3 flex-wrap max-w-xs justify-center bg-base-100 cursor-pointer sm:max-w-2xl lg:max-w-5xl">
         { lessons.map(lesson => (
-          <a href={`/learn/${Lesson.slug(lesson)}`} class="flex flex-row flex-1 max-w-xs items-center p-4 rounded-lg hover:bg-base-200">
-            { !Lesson.isDraft(lesson) && <Lightbulb    class="w-10 h-10"/> }
-            {  Lesson.isDraft(lesson) && <Construction class="w-10 h-10"/> }
-            <div class="divider divider-horizontal"></div>
-            <div class="flex flex-col flex-1 items-start">
-              <span class="text-lg sm:text-xl font-bold">{lesson.data.title }</span>
+          <div onclick={`window.open("/learn/${Lesson.slug(lesson)}")`} class="flex flex-row w-70 h-35 grow-on-hover items-center p-4 rounded-lg border-base-200 shadow-sm hover:bg-base-200 overflow-hidden">
+            {/* { !Lesson.isDraft(lesson) && <Notebook     class="w-10 h-10 shrink-0"/> }
+            {  Lesson.isDraft(lesson) && <Construction class="w-10 h-10 shrink-0"/> }
+            <div class="divider divider-horizontal"></div> */}
+            <div class="w-full not-last:flex flex-col flex-1 items-start">
+              <span class="text-lg sm:text-xl font-semibold">{lesson.data.title }</span>
               { lesson.data.pubDate && <span class="text-sm sm:text-lg">{lesson.data.pubDate?.toDateString()}</span>}
+              <Tags tags={lesson.data.tags} client:load/>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </div>
