@@ -17,12 +17,12 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params
 
-const ideas = (await getCollection("lessons"))
-  .filter(idea => idea.data.tags?.includes(tag))
+const lessons = (await getCollection("lessons"))
+  .filter(lesson => lesson.data.tags?.includes(tag))
 
-function slug(idea: any) {
-  return idea.filePath
-    ?.replace(/^src\/idea\//, "")
+function slug(lesson: any) {
+  return lesson.filePath
+    ?.replace(/^src\/learn\//, "")
     ?.replace(/\.mdx?$/, "");
 }
 ---
@@ -45,13 +45,13 @@ function slug(idea: any) {
       
       <div class="h-4"></div>
       <div class="w-full flex flex-row flex-wrap max-w-xs justify-center sm:max-w-2xl lg:max-w-5xl">
-        { ideas.map(idea => (
-          <a href={`/idea/${slug(idea)}`} class="flex flex-row flex-1 max-w-xs items-center p-4 rounded-lg hover:bg-base-200">
-            { !idea.data.draft && <Lightbulb    class="w-10 h-10"/> }
-            {  idea.data.draft && <Construction class="w-10 h-10"/> }
+        { lessons.map(lesson => (
+          <a href={`/learn/${slug(lesson)}`} class="flex flex-row flex-1 max-w-xs items-center p-4 rounded-lg hover:bg-base-200">
+            { !lesson.data.draft && <Lightbulb    class="w-10 h-10"/> }
+            {  lesson.data.draft && <Construction class="w-10 h-10"/> }
             <div class="divider divider-horizontal"></div>
             <div class="flex flex-col flex-1 items-start">
-              <span class="text-lg sm:text-xl font-bold">{ idea.data.title }</span>
+              <span class="text-lg sm:text-xl font-bold">{ lesson.data.title }</span>
             </div>
           </a>
         ))}
