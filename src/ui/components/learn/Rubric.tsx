@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { Square, SquareCheckBig, Star as StarFull, StarHalf, Trash } from "lucide-react"
+import { SquareCheckBig, Star as StarFull, Trash } from "lucide-react"
 import { useId, useState } from "react"
 
 export interface Criteria {
@@ -64,13 +64,13 @@ function Sticky({ rubric, title, toggles, ratings }: { rubric: Array<Criteria>, 
 
 function Toggle({ index, label, points, suggest, toggle, setToggle }: Criteria & { index: number, toggle: boolean, setToggle: (i: number, value: boolean) => void }) {
   function onClick() {
-    setToggle(index, !toggle)
+    setToggle(index, !toggle);
   }
   
   return <div className="grow-on-hover p-4 flex flex-col rounded-md border border-base-200 shadow-sm cursor-pointer" onClick={onClick}>
     <div className="text-lg flex gap-2 items-center justify-between">
       <span className="font-medium">{label}</span>
-      <input type="checkbox" checked={toggle} className="checkbox checkbox-primary bg-primary/20 border-none"/>
+      <input type="checkbox" checked={toggle} className="checkbox checkbox-primary bg-primary/20 border-none" onChange={() => { }}/>
     </div>
     <span className="text-base-content/65 italic w-1/2 text-base">
       { suggest }
@@ -89,9 +89,9 @@ function Rating({ index, label, points, suggest, rating, setRating }: Criteria &
         <span className="font-medium">{label}</span>
         <div className="rating rating-lg">
           <input type="radio" name={id} className="rating-hidden" aria-label="clear-rating" onClick={() => setRating(index, 0)}/>
-          {new Array(points).fill(0).map((_, i) => <>
-            <input key={2 * i    } type="radio" name={id} className="mask mask-star-2 bg-primary" aria-label={`${i + 1} star`} onClick={() => setRating(index, i + 1)} checked={rating === i + 1}/>
-          </>)}
+          {new Array(points).fill(0).map((_, i) => (
+            <input key={i} type="radio" name={id} className="mask mask-star-2 bg-primary" aria-label={`${i + 1} star`} onClick={() => setRating(index, i + 1)} checked={rating === i + 1} onChange={() => { }}/>
+          ))}
         </div>
       </div>
       <span className="text-base-content/65 italic w-1/2 text-base">
