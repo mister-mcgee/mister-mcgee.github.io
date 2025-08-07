@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
+  themes: light --default, dark;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-bungee: "Bungee Shade", cursive;
+  --font-courier: "Courier Prime", monospace;
+}
+
+.grow-on-hover {
+  transform-style: preserve-3d;
+  transition: transform 100ms linear;
+  will-change: transform;
+}
+
+.grow-on-hover:hover {
+  transform-style: preserve-3d;
+  transform: 
+    perspective(1000px) 
+    scale(1.03) 
+    translateZ(0);
+  transition: transform 100ms linear
+}
+
+.callout[data-callout="remember"] { 
+  --rc-color-light: rgb(130, 144, 196);
+  --rc-color-dark : rgb(130, 144, 196);
+}
+
+.callout[data-callout="understand"] { 
+  --rc-color-light: rgb(135, 193, 230);
+  --rc-color-dark : rgb(135, 193, 230);
+}
+
+.callout[data-callout="apply"] { 
+  --rc-color-light: rgb(115, 172, 129);
+  --rc-color-dark : rgb(115, 172, 129);
+}
+
+.callout[data-callout="analyze"] {
+  --rc-color-light: rgb(177, 217, 13);
+  --rc-color-dark : rgb(177, 217, 13);
+}
+
+.callout[data-callout="evaluate"] {
+  --rc-color-light: rgb(254, 224, 110);
+  --rc-color-dark : rgb(254, 224, 110);
+}
+
+.callout[data-callout="create"] {
+  --rc-color-light: rgb(246, 142, 117);
+  --rc-color-dark : rgb(246, 142, 117);
+}
+
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none !important;
+}
+
+.caution {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-base-100),
+    var(--color-base-100) 20px,
+    var(--color-base-200) 20px,
+    var(--color-base-200) 40px
+  );
+}

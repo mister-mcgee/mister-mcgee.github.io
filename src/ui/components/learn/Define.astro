@@ -1,0 +1,14 @@
+---
+import D from "@components/learn/Define.tsx";
+export type Props = {
+  term        : string;
+  html       ?: string;
+  highlight  ?: boolean;
+}
+const { term, html, highlight } = Astro.props;
+const hasChildren = Astro.slots.default;
+---
+
+<D {term} {html} {highlight} client:only>
+  {hasChildren && <slot />}
+</D>

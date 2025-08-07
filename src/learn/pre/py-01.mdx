@@ -1,0 +1,105 @@
+---
+title: "Python"
+author: "Mister McGee"
+tags: ["python", "programming"]
+draft: true
+---
+
+import Wikipedia from "@components/learn/Wikipedia.astro";
+
+## Programming Languages, Interpreters, and IDEs
+
+### What is a programming language?
+
+Computers speak only one language — and it isn't English. It's also not JavaScript, Python, or any other programming language you might recognize. Fundamentally, computers “think” in binary. Every program — whether it's a simple calculator, a web app, or a AAA video game — is ultimately a sequence of binary instructions executed by the computer's hardware.
+
+Although computers "think" in binary, writing programs in binary is both tedious and error-prone for humans. This is where programming languages fit into the picture.
+
+A programming language is a human-friendly way of writing instructions for a computer. Languages like Python or Javascript allow us to describe what we want a computer to do using words, symbols, and abstractions humans can understand. These languages are tools made *by humans for humans* — designed to make it easier to reason about and build complex software systems.
+
+You may wonder why programmers don't write software using plain English. The problem is that natural languages are inherently ambiguous — words can have multiple meanings, and sentences can be interpreted in different ways depending on context. An author's favorite cliche is double-entendre, which happens to be a programmer's worst nightmare. Computers require precise and unambiguous instructions. Thinking and writing in "computer speak" might feel awkward to a beginner, but it's important to realize that a programming language is designed to *eliminate ambiguity*, not necessarily to mirror natural language.
+
+### What is an interpreter?
+
+After a developer has written a program in a programming language it must then be translated into binary instructions by special tools. Broadly speaking, these tools fall into a few categories including but not limited to - *assemblers*, *compilers*, *interpreters*, and *virtual machines*, all of which translate human-readable code into machine-readable instructions.
+
+Compilers and interpreters are typically categorized by *when* they are used. A compiler is used to translate a program *ahead-of-time* (AOT) or *just-in-time* (JIT), while an interpreter translates a program in realtime or *on-the-fly*. 
+
+A *compiler* is a special program that translates a human-readable program into machine-readable instructions. A compiler is typically defined by its ahead-of-time translation
+
+Programming languages exist to bridge the gap between human thought and machine execution. They allow engineers and programmers to focus on solving problems, building systems, and creating experiences — without needing to think in zeros and ones.
+
+> The first compilers were written by hand using *assembly language* or even *machine code*! When developing a new programming language, it's common practice to first write a compiler using an existing language. Once there is a working compiler for the new language you can write another compiler *using the new language*. This is a process known as <Wikipedia term="Bootstrapping_(compilers)">bootstrapping</Wikipedia>.
+
+### What is an IDE?
+
+
+
+
+## Getting Started with Python
+
+### Using a dedicated installer
+
+Download the latest version of Python from the [official website](https://www.python.org/downloads/). Follow the installation instructions for your operating system.
+
+### Using the Microsoft Store
+
+If you are using Windows, then the Microsoft Store offers a straight forward way of managing your Python installation(s) on Windows. You can search for Python using the Microsoft Store App or download an installer from the [website](https://apps.microsoft.com/detail/9pnrbtzxmb4z?hl=en-US&gl=US).
+
+### Checking the Python version
+After installing Python, open a terminal and run the following command -
+
+```bash
+python --version
+```
+
+You should see something like this -
+
+```bash
+Python 3.13.5
+```
+
+If instead you see an error message, you may need to double-check your installation and/or restart your shell. *At the time of writing, the latest version of Python is* `3.13.5`
+
+## Getting Started with Visual Studio Code
+
+### Using a dedicated installer
+
+Download the latest version of Visual Studio Code from the [official website](https://code.visualstudio.com/download). Follow the installation instructions for your operating system.
+
+### Using the Microsoft Store
+
+Again, on Windows the Microsoft Store makes it easy to install and manage Visual Studio Code. You can search for Visual Studio Code using the Microsoft Store App or download an installer from the [website](https://apps.microsoft.com/detail/xp9khm4bk9fz7q?hl=en-US&gl=US).
+
+### Adding the Python extension
+
+The Python extension for Visual Studio Code (maintained by Microsoft) adds Python language support to the IDE. This includes syntax highlighting and code completion, the convenience of running Python code at the click of a button, as well as best-in-class debugging.
+
+Once you have installed Visual Studio Code, you can search for "Python" in the Extensions tab on the sidebar. Alternatively, you can use the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-python.python) to install the Python extension with a single click.
+
+## Hello World
+
+It is a long-standing computer science tradition that the first program you write in any new language is *Hello World*. This program simply displays the greeting "Hello World" somewhere on screen or in a terminal. *Hello World* looks different in every programming language, but offers a common starting point for programmers learning a new language.
+
+### Hello *Python*?
+
+to write your first Python program, open Visual Studio Code and create a new file by pressing <kbd className="kbd">Ctrl</kbd> + <kbd className="kbd">N</kbd> or selecting *File > New File* from the menu. You may be prompted to give your file a name such as `hello.py`. *Make sure to include `.py` as the file extension so that Visual Studio Code will recognize the file as a Python script.*
+
+Then type the following code in your editor, take note of the usage of parentheses and single quotes -
+
+```py title="hello.py"
+print('🐍 Hello World!')
+```
+
+When you have finished typing, press <kbd className="kbd">Ctrl</kbd> + <kbd className="kbd">S</kbd> or select *File > Save* from the menu to save your changes. Then run the program by pressing <kbd className="kbd">Ctrl</kbd> + <kbd className="kbd">F5</kbd> or selecting *Run > Start Debugging* from the menu. You should see the following output in your terminal -
+
+```bash
+🐍 Hello World!
+```
+
+Congratulations! You have written your first Python program.
+
+
+
+
+

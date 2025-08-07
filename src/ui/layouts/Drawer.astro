@@ -1,0 +1,55 @@
+---
+import { CircleHelp, Github, House, LibraryBig, Menu, Moon, Sun } from "@lucide/astro"
+---
+<div class="drawer w-full h-full">
+  <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content w-full h-full overflow-y-auto scroll-smooth">
+    <!-- Page content here -->
+     
+    <slot/>
+
+    <label for="nav-drawer" class="bg-base-100 hover:bg-base-200 absolute top-4 left-4 btn btn-xl btn-circle btn-ghost">
+      <Menu class="w-10 h-10"/>
+    </label>
+
+    <a data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" class="bg-base-100 hover:bg-base-200 absolute top-4 right-4 btn btn-xl btn-circle btn-ghost">
+      <Sun  class="w-10 h-10 block dark:hidden"/>
+      <Moon class="w-10 h-10 hidden dark:block"/>
+    </a>
+  </div>
+  <div class="drawer-side">
+    <label for="nav-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+    <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+      <!-- Sidebar content here -->
+
+      <span class="p-1 text-2xl font-bold font-[Fragment_Mono] dark:text-primary">
+        /goto
+      </span>
+
+      <!-- Home -->
+      <li><a class="flex flex-row gap-1 text-2xl" href="/">
+        <span class="flex-1">Home</span>
+        <House/>
+      </a></li>
+
+      <!-- Blog -->
+      <li><a class="flex flex-row gap-1 text-2xl" href="/learn">
+        <span class="flex-1">Learn</span>
+        <LibraryBig/>
+      </a></li>
+
+      <!-- GitHub -->
+      <li><a class="flex flex-row gap-1 text-2xl" href="https://github.com/mister-mcgee" target="_blank">
+        <span class="flex-1">GitHub</span>
+        <Github/>
+      </a></li>
+
+      <!-- About -->
+      <li><a class="flex flex-row gap-1 text-2xl" href="/about">
+        <span class="flex-1">About</span>
+        <CircleHelp/>
+      </a></li>
+
+    </ul>
+  </div>
+</div>

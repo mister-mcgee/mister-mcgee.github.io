@@ -1,0 +1,38 @@
+---
+import Drawer from "@layouts/Drawer.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { Hash } from "@lucide/astro";
+
+const tags = (await getCollection("lessons"))
+  .reduce((tags, lesson) => {
+    lesson.data.tags?.forEach(tag => {
+      tags[tag] = (tags[tag] ?? 0) + 1
+    })
+    return tags
+  }, new Object() as Record<string, number>)
+
+---
+
+<Layout>
+  <Drawer>
+    <div class="flex flex-col w-full items-center">
+      <div class="h-6"></div>
+      <div class="flex flex-row justify-center items-center gap-1">
+        <Hash class="w-10 h-10"/>
+        <span class="text-4xl font-bold">Tags</span>
+      </div>
+      <div class="h-4"></div>
+      <div class="w-full grid grid-cols-1 max-w-xs sm:grid-cols-3 sm:max-w-2xl lg:grid-cols-5 lg:max-w-5xl">
+        { Object.entries(tags).sort(([a,], [b,]) => {
+            return a !== b ? a < b ? -1 : 1 : 0
+          }).map(([tag, count]) => (
+          <a href={`/learn/tag/${tag}`} class="flex flex-row gap-1 justify-center items-center p-4 rounded-lg hover:bg-base-200">
+            <span class="text-lg sm:text-xl font-bold"># {tag}</span>
+            <span class="badge badge-soft badge-primary badge-xs">{count}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </Drawer>
+</Layout>

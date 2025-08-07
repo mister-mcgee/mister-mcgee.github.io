@@ -1,0 +1,32 @@
+---
+import "../styles/global.css";
+import ConfigureThemeChange   from "@components/theme/ConfigureThemeChange.astro";
+import SyncClassWithDataTheme from "@components/theme/SyncClassWithDataTheme.astro";
+---
+
+<!doctype html>
+<html lang="en" class="font-inter scroll-smooth">
+	<head>
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Mister McGee</title>
+	</head>
+	<body class="w-dvw h-dvh overflow-hidden">
+    <ConfigureThemeChange />
+    <SyncClassWithDataTheme className="dark"  themeName="dark" />
+    <SyncClassWithDataTheme className="light" themeName="light"/>
+		<slot />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>

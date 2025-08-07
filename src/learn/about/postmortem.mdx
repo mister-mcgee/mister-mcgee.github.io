@@ -1,0 +1,88 @@
+---
+title: A Post on Postmortems
+author: Mister McGee
+tags: ["pre", "csf", "ele", "gdg", "postmortem", "retrospective"]
+---
+
+## Overview
+
+### What is a Postmortem?
+A postmortem, sometimes called a retrospective, is a form of technical writing analyzing the successes and failures of a project or process. The audience of a postmortem typically consists of engineers and/or designers within adjacent fields, which means the author can expect some degree of domain-specific knowledge from the reader. A good retrospective should offer *specific* insights into a process, outlining decisions and their material impacts on a project. Should the author or audience attempt to continue the work, a postmortem should contain informed suggestions or alternatives to improve later outcomes.
+
+### Features of a Well-Written Postmortem
+*A well-written postmortem should -*
+#### Explain the Project
+- What was the project specification?
+- Did you meet the project specification?
+	- If not, in what ways were you unable to meet the requirements?
+	- If so, in what ways did you meet or exceed the requirements?
+
+#### Explain the Process
+- What decisions were made?
+- What reasoning motivated your decisions?
+- What resources did you use?
+- What mistakes were made? 
+- How did you fix the mistake(s)? 
+- Did anything unexpected happen?
+- What did you learn?
+
+#### Propose Alternatives
+- What parts of the process or outcome could be improved?
+- What are some alternative decisions or resources that could be explored?
+- What are some easy wins others should reach for?
+- What pitfalls should others be wary of?
+
+## Scoring
+
+### Essay (15 Points)
+
+#### Length (5 Points)
+
+Your retrospective *must* be *at least* five paragraphs in length. There is no sentence requirement; however, keep in mind a paragraph should convey a clear concept. An essay less than five paragraphs will be awarded *at most* 1 point(s) per paragraph.  
+
+> [!info] Pro Tip - Introductions & Conclusions Count as Paragraphs!
+
+> [!warning] Paragraphs Should Convey a Clear Concept
+> *Your paragraph(s) may lose a Point if they don't get the point across.*
+
+#### Concepts (10 Points)
+
+Your essay *must* include the following -
+- (2 Points) An introduction, explaining the project and outlining each major point
+- (6 Points) At least 3 paragraphs [explaining the process](#explain-the-process) and/or [proposing alternatives](#propose-alternatives).
+- (2 Points) A conclusion, summarizing your essay.
+
+A retrospective missing some or all of the required concepts will receive *at most* 2 points per concept.  
+
+> [!info] Pro Tip - Each Required Concept Can be a Paragraph!
+
+#### Rubric
+
+import Rubric from "@components/learn/Rubric.astro";
+import essay  from "@learn/about/postmortem-essay.json";
+
+<Rubric rubric={essay}/>
+
+
+### Presentation (10 Points)
+
+#### Length (2 Points)
+
+Your presentation must be between two and four minutes. If you are using a slideshow in your presentation, aim for *at least* three slides.
+
+#### Content (8 Points)
+
+Your presentation should include the following -
+
+- (2 Points) A brief overview of the project 
+- (4 Points) At least one major point from your essay 
+- (2 Points) A summary of your presentation 
+
+> [!warning] A Note on Presentations
+> A slideshow is *not required* for your presentation; however, *if* your group is unable to present to the class, you must submit a slideshow to receive credit.
+
+#### Rubric
+
+import slides from "@learn/about/postmortem-slides.json";
+
+<Rubric rubric={slides}/>

@@ -1,0 +1,11 @@
+---
+import S from "@components/theme/SyncClassWithDataTheme";
+
+export interface Props {
+  className?: string;
+  themeName?: string;
+}
+const { className, themeName } = Astro.props;
+---
+
+<S {className} {themeName} client:only />

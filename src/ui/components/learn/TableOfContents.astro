@@ -1,0 +1,13 @@
+---
+import T from "./TableOfContents.tsx";
+export type Props = {
+  headings: Array<{
+    text : string;
+    slug : string;
+    depth: number;
+  }>
+  depth?: number;
+}
+const { headings, depth } = Astro.props;
+---
+<T {headings} {depth} />

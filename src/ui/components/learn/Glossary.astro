@@ -1,0 +1,9 @@
+---
+import G from "@components/learn/Glossary.tsx";
+export type Props = {
+  highlights  ?: boolean
+  definitions ?: Array<string>
+}
+const { highlights, definitions } = Astro.props;
+---
+<G {highlights} {definitions} client:only/>

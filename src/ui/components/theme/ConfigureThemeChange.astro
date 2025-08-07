@@ -1,0 +1,12 @@
+<script is:inline>
+  let theme = localStorage.getItem("theme")
+  if (theme === null)
+    document.documentElement.setAttribute("data-theme",  "light");
+  else
+    document.documentElement.setAttribute("data-theme",  theme  );
+</script>
+
+<script>
+  import { themeChange } from "theme-change";
+  themeChange();
+</script>

@@ -1,0 +1,86 @@
+---
+import "katex/dist/katex.min.css";
+import "rehype-callouts/theme/obsidian";
+
+import { Construction } from "@lucide/astro";
+import Drawer from "@layouts/Drawer.astro";
+import Layout from "@layouts/Layout.astro";
+import Tags   from "@components/learn/Tags.tsx";
+import { getCollection, render } from "astro:content";
+
+import TableOfContents    from "@components/learn/TableOfContents.astro";
+
+export async function getStaticPaths() {
+  const lessons = (await getCollection("lessons"))
+
+  return lessons.map((lesson: any) => {
+    const slug = lesson.filePath
+      ?.replace(/^src\/learn\//, "")
+      ?.replace(/\.mdx?$/, "");
+
+    return {
+      params: { slug },
+      props : { lesson },
+    }
+  });
+}
+
+const { lesson            } =          Astro.props;
+const { Content, headings } = await render(lesson);
+---
+
+<Layout>
+  <Drawer>
+    <!-- Container -->
+    <div class="flex flex-col w-full min-h-dvh items-center">
+      <!-- Spacing -->
+      <div class="h-6"></div>
+
+      <!-- Header -->
+      <div class="flex flex-col w-3xs items-center sm:w-xl">
+        <!-- Author | Date -->
+        <div class="flex flex-row w-full justify-center gap-2 text-sm sm:text-lg">
+          { lesson.data.author  && <span>{lesson.data.author                 }</span> }
+          { (lesson.data.author && lesson.data.pubDate) && "|" }
+          { lesson.data.pubDate && <span>{lesson.data.pubDate?.toDateString()}</span> }
+        </div>
+
+        <!-- Title -->
+        <span class="text-3xl text-center font-bold sm:text-4xl">
+          {lesson.data.title}
+        </span>
+      </div>
+
+      <div class="h-2"></div>
+
+      <!-- Tags -->
+      <Tags tags={lesson.data.tags} client:load/>
+
+      <div class="h-2"></div>
+
+      <!-- Article -->
+      <div class="flex flex-col items-center w-full flex-1 sm:max-w-3xl sm:shadow-lg">
+        { lesson.data.draft && (
+          <div class="flex flex-row items-center caution px-4 py-2 rounded-t-lg">
+            <Construction class="w-10 h-10 shrink-0"/>
+            <div class="divider divider-horizontal"></div>
+            <div class="flex flex-col flex-1">
+              <span class="text-lg sm:text-xl font-bold">This Lesson is Under Construction</span>
+              <span class="text-sm sm:text-base italic">
+                This article is a working draft.
+                Some or all of its content may be unfinished,
+                may be altered,
+                or may even be deleted at a future time.</span>
+            </div>
+          </div>
+        )}
+        <div class="w-full prose prose-base sm:prose-lg break-words sm:break-normal p-4 sm:p-8 prose-h1:text-center prose-h2:text-center">
+          <TableOfContents {headings}/>
+          <Content/>
+        </div>
+
+        <div class="h-96"></div>
+      </div>
+    </div>
+  </Drawer>
+</Layout>
