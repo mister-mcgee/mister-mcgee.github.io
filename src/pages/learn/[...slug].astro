@@ -54,7 +54,9 @@ const { Content, headings } = await render(lesson);
       <div class="h-2"></div>
 
       <!-- Tags -->
-      <Tags tags={lesson.data.tags} client:load/>
+      <div class="max-w-3xl">      
+        <Tags tags={lesson.data.tags} client:load/>
+      </div>
 
       <div class="h-2"></div>
 
