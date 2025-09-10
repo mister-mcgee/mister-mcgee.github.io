@@ -1,0 +1,32 @@
+---
+title: HTML and the Web
+author: Mister McGee
+tags: ["csf", "html", "web"]
+draft: true
+---
+
+import Define    from "@components/learn/Define.astro";
+import Wikipedia from "@components/learn/Wikipedia.astro";
+
+## What is the Internet?
+The internet is a fascinating piece of infrastructure used by billions of people every day and maintained by millions of engineers and developers around the world. The internet itself is a massive network of computing devices that communicate via a shared protocol known as *Internet Protocol* or *IP* for short.
+
+Internet Protocol describes how data should be packaged and transmitted on the network, including how to route *packets* of data from one *address* to another. All devices connected to the internet use *IP* to communicate with each other.
+
+## What is the World Wide Web?
+The internet is *not* the websites you visit every day; or rather, the internet is not *only* the websites you visit every day. The term *World Wide Web* has become somewhat antiquated and is now broadly synonymous with the concept of *the internet*, but from a technical perspective the World Wide Web is only a *part* of the wider internet.
+
+The World Wide Web is a collection of *documents*, *services*, and *applications* that are accessible via the internet, more specifically via a *web browser*. At its inception, the World Wide Web was imagined to be a *hypertext* - a system of documents linked together as part of a sprawling library. The term *hypertext* implied the World Wide Web would revolutionize text in a way that was profoundly different from the standard printed text of the time.
+
+## What is TCP/IP?
+Internet Protocol dictates that all data be broken into chunks called *packets*. Fundamentally, each packet contains a *payload* and some *metadata* describing features such as the size of the payload as well as the *source* and *destination* addresses. One of the quirks of the internet is that each packet can take a different path to its destination, meaning that not all packets arrive intact and in the order they were sent (if they arrive at all). This is problematic for applications that send and receive sensitive data, because some or all of the data may be corrupted or lost.
+
+To solve this problem, engineers developed *Transmission Control Protocol* (TCP). TCP works, by including some of its own metadata in the payload of each packet such as a *sequence number* and a *checksum*. This metadata is used by the receiver to reorder and reassemble incoming packets. If a packet does not arrive intact, or fails to arrive in time, the receiver will request the packet again from the sender. This process is called *retransmission*.
+
+
+
+
+
+
+## What is HTTP?
+Most of the documents, services, and applications that exist on the world Wide Web are *served* via *HTTP*, or *HyperText Transfer Protocol*.

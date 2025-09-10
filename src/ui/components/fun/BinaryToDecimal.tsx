@@ -39,6 +39,7 @@ export default function BinaryConverter() {
         {bits.map((bit, idx) => (
           <div key={idx} className="text-center">
             <div className="text-xs mb-1">{`2^${7 - idx}`}</div>
+            {/* <div className="text-xs mt-1">{Math.pow(2, 7 - idx)}</div> */}
             <div
               onClick={() => toggleBit(idx)}
               className="w-10 h-10 border-2 rounded-lg overflow-hidden cursor-pointer"
