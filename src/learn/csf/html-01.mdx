@@ -23,10 +23,15 @@ Internet Protocol dictates that all data be broken into chunks called *packets*.
 
 To solve this problem, engineers developed *Transmission Control Protocol* (TCP). TCP works, by including some of its own metadata in the payload of each packet such as a *sequence number* and a *checksum*. This metadata is used by the receiver to reorder and reassemble incoming packets. If a packet does not arrive intact, or fails to arrive in time, the receiver will request the packet again from the sender. This process is called *retransmission*.
 
-
-
-
-
+Many protocols exist at the same *network layer* as TCP, but few offer the robust fault tolerance that TCP provides. For most applications, TCP is the goto protocol for transmitting data over the internet.
 
 ## What is HTTP?
-Most of the documents, services, and applications that exist on the world Wide Web are *served* via *HTTP*, or *HyperText Transfer Protocol*.
+The World Wide Web relies heavily on the *HyperText Transfer Protocol* (HTTP). HTTP is a *request-response* protocol, meaning that a client (your web browser) sends an HTTP request to a server (a website) and the server then returns an HTTP response. The HTTP response includes some metadata describing the nature of the response, as well as a *payload* which might contain additional HTTP metadata, a document, a resource, or some other data.
+
+HTTP is a somewhat verbose plaintext protocol, meaning that HTTP exchanges typically involve dozens if not hundreds of packets. HTTP relies on TCP to ensure the integrity of each HTTP request as it is disassembled and reassembled over the network.
+
+## What is HTML?
+
+*HyperText Markup Language* (HTML) is a markup language that describes the structure of a web document. Almost all web documents, services, and applications include some HTML. When you visit a website, your web browser makes an HTTP request to the server and (if the request is successful) the server sends an HTTP response with the HTML document in its payload. The browser then *parses* the HTML and displays it to you as a web page.
+
+HTML is one of a handful of markup languages that are used on the web, but it is by far the most popular and most widely supported. 
