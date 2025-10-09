@@ -1,0 +1,6 @@
+---
+import S from "@components/learn/Swbat.tsx";
+const hasChildren = Astro.slots.default;
+---
+
+<S client:only>{hasChildren && <slot />}</S>
