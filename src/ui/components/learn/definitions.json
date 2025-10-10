@@ -217,6 +217,91 @@
     "also": ["programming language"]
   },
   {
+    "term": "statement",
+    "html": "A statement refers to a single instruction in a program.",
+    "also": ["program"]
+  },  
+  {
+    "term": "control flow",
+    "html": "Control flow describes the order in which a program executes its instructions.",
+    "also": ["program"]
+  },
+  {
+    "term": "expression",
+    "html": "An expression is a <em>statement</em> or part of a <em>statement</em> that can be evaluated to a single <em>value</em>.",
+    "also": ["statement", "evaluate"]
+  },
+  {
+    "term": ["evaluate", "evaluation"],
+    "html": "Evaluation refers to the process of reducing an expression to a single value.",
+    "also": ["expression"]
+  },
+  {
+    "term": "condition",
+    "html": "A condition is an expression that evaluates to either <code>true</code> or <code>false</code>.",
+    "also": ["expression", "evaluate"]
+  },
+  {
+    "term": "function",
+    "html": "A function is a reusable block of code. Think of a function like a recipe that can be defined once and then reused multiple times throughout a program.",
+    "also": ["programming language"]
+  },
+  {
+    "term": "parameter",
+    "html": "A parameter is part of a function definition that describes inputs to the function. Think of a parameter like a <em>placeholder</em> which is replaced with a value when the function is called.",
+    "also": ["function"]
+  },
+  {
+    "term": "argument",
+    "html": "An argument is a value that is passed to a function when it is called. An argument replaces a parameter in the function definition when the function is called.",
+    "also": ["function"]
+  },
+  {
+    "term": "data type",
+    "html": "A data type describes how certain binary data should be interpreted by a program.",
+    "also": ["programming language"]
+  },
+  {
+    "term": "integer",
+    "html": "An integer is a data type that represents a whole number, meaning a number without a fractional part.",
+    "also": ["data type"]
+  },
+  {
+    "term": "float",
+    "html": "A float is a data type that represents a number with a fractional part, usually defined using the IEEE 754 standard for floating point numbers.",
+    "also": ["data type"]
+  },
+  {
+    "term": "boolean",
+    "html": "A boolean is a data type that can be either <code>true</code> or <code>false</code>.",
+    "also": ["data type"]
+  },
+  {
+    "term": "character",
+    "html": "A character is an <em>integer</em> that represents a single letter, number, or symbol.",
+    "also": ["data type", "integer"]
+  },
+  {
+    "term": "string",
+    "html": "A string is a data type that represents a sequence of characters. The default character encoding of a string depends on the implementation of the programming language.",
+    "also": ["data type", "character"]
+  },
+  {
+    "term": "array",
+    "html": "An array is a data type that represents a sequence of values. In many programming languages, arrays are zero-indexed meaning the first element of an array is at index <code>0</code>.",
+    "also": ["data type"]
+  },
+  {
+    "term": "object",
+    "html": "An object is a data type that represents a bundle of both state and behavior.",
+    "also": ["data type"]
+  },
+  {
+    "term": "null",
+    "html": "The keyword <code>null</code> is used by many languages to represent the absence of a value.",
+    "also": ["data type", "programming language"]
+  },
+  {
     "term": "voltage",
     "html": "Water is often used as an analogy for electricity. In this analogy the voltage of a circuit (measured in volts) is compared to water pressure in a pipe where more voltage corresponds to more pressure.",
     "also": ["electricity", "volts"]
@@ -255,8 +340,54 @@
     "term": ["dc", "direct current"],
     "html": "Direct Current, often referred to as simply DC, is a kind of electrical current where the voltage remains (roughly) constant.",
     "also": ["alternating current", "electricity", "current"]
-  }, {
+  },
+  {
     "term": "electromechanical",
     "html": "The word electromechanical comes from the Latin <em>electro-</em> (meaning <em>electricity</em>) and <em>-mechanic</em> (meaning <em>machine</em> <br><br> Electromechanical <em>computers</em> use a combination of electrical and mechanical components to perform computations."
+  },
+  {
+    "term": ["js", "javascript"],
+    "html": "JavaScript is a programming language that is used to develop interactive behavior on the web. JavaScript is a high-level, interpreted language, that is executed by a JavaScript engine (usually the browser).",
+    "also": ["programming language", "interpreted language", "interpreter"]
+  },
+  {
+    "term": ["variable", "variable (javascript)"],
+    "html": "A variable is one way to store and access data in a program. Think of a variable as a box that holds a value. In JavaScript, declaring a variable begins with the keyword <code>let</code>, followed by the name of the variable.",
+    "also": ["javascript", "variable"]
+  },
+  {
+    "term": ["number", "number (javascript)"],
+    "html": "A number is a data type that represents a quantity. In JavaScript, a number is a 64-bit IEEE 754 floating point number.",
+    "also": ["data type"]
+  },
+  {
+    "term": ["string", "string (javascript)"],
+    "html": "A string is a data type that represents a sequence of characters. In JavaScript, a string is a UTF-16 encoded sequence.",
+    "also": ["data type", "javascript", "utf"]
+  },
+  {
+    "term": ["boolean", "boolean (javascript)"],
+    "html": "A boolean is a data type that can be either <code>true</code> or <code>false</code>.",
+    "also": ["data type", "javascript"]
+  },
+  {
+    "term": ["function", "function (javascript)"],
+    "html": "A function is a data type that represents a reusable block of code. In JavaScript, a function is a first-class object, meaning it can be assigned to a variable and passed as an argument to other functions.",
+    "also": ["data type", "javascript"]
+  },
+  {
+    "term": ["array", "array (javascript)"],
+    "html": "An array is a data type that represents a sequence of values. In JavaScript, an array can contain elements of any data type.",
+    "also": ["data type", "javascript"]
+  },
+  {
+    "term": ["object", "object (javascript)"],
+    "html": "An object is a data type that represents a bundle of both state and behavior. In JavaScript, the properties of an object can be of any data type.",
+    "also": ["data type", "javascript"]
+  },
+  {
+    "term": ["undefined", "undefined (javascript)"],
+    "html": "The keyword <code>undefined</code> is used by JavaScript to represent the absence of a value.",
+    "also": ["data type", "javascript"]
   }
 ]
