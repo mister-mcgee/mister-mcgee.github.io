@@ -362,7 +362,7 @@
   },
   {
     "term": ["string", "string (javascript)"],
-    "html": "A string is a data type that represents a sequence of characters. In JavaScript, a string is a UTF-16 encoded sequence.",
+    "html": "A string is a data type that represents a sequence of characters. In JavaScript, a string is a UTF-16 encoded sequence of characters.",
     "also": ["data type", "javascript", "utf"]
   },
   {
@@ -389,5 +389,49 @@
     "term": ["undefined", "undefined (javascript)"],
     "html": "The keyword <code>undefined</code> is used by JavaScript to represent the absence of a value.",
     "also": ["data type", "javascript"]
+  }, {
+    "term": ["integer", "integer (python)"],
+    "html": "An integer is a data type that represents a whole number, meaning a number without a fractional part.",
+    "also": ["data type", "python"]
+  },
+  {
+    "term": ["float", "float (python)"],
+    "html": "A float is a data type that represents a number with a fractional part. In Python, a float is a 64-bit IEEE 754 floating point number.",
+    "also": ["data type", "python"]
+  },
+  {
+    "term": ["boolean", "boolean (python)"],
+    "html": "A boolean is a data type that can be either <code>True</code> or <code>False</code>.",
+    "also": ["data type", "python"]
+  },
+  {
+    "term": ["string", "string (python)"],
+    "html": "A string is a data type that represents a sequence of characters. In Python, a string is a UTF-8 encoded sequence of characters.",
+    "also": ["data type", "python", "utf"]
+  },
+  {
+    "term": ["list", "list (python)"],
+    "html": "A list is a <em>mutable</em> data type that represents a sequence of values. In Python, a list can contain elements of any data type.",
+    "also": ["data type", "python"]
+  }, 
+  {
+    "term": ["tuple", "tuple (python)"],
+    "html": "A tuple is an <em>immutable</em> data type that represents a sequence of values. In Python, a tuple can contain elements of any data type.",
+    "also": ["data type", "python"]
+  },
+  {
+    "term": ["dictionary", "dictionary (python)"],
+    "html": "A dictionary is a <em>mutable</em> data type that represents a collection of key-value pairs. In Python, a dictionary can contain elements of any data type.",
+    "also": ["data type", "python"]
+  },
+  {
+    "term": ["set", "set (python)"],
+    "html": "A set is a <em>mutable</em> data type that represents a collection of unique values. In Python, a set can contain elements of any data type.",
+    "also": ["data type", "python"]
+  },
+  {
+    "term": ["function", "function (python)"],
+    "html": "A function is a reusable block of code. Think of a function like a recipe that can be defined once and then reused multiple times throughout a program. In Python, a function definition starts with the keyword <code>def</code>.",
+    "also": ["programming language", "python"]
   }
 ]
