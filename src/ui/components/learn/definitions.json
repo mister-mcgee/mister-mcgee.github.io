@@ -342,6 +342,96 @@
     "also": ["alternating current", "electricity", "current"]
   },
   {
+    "term": "electricity",
+    "html": "The term <em>electricity</em> from the Greek <em>Elektra</em> refers to the flow of negatively charged <em>electrons</em> through a conductor.",
+    "also": ["electron"]
+  },
+  {
+    "term": "electron",
+    "html": "An electron is a negatively charged subatomic particle. The movement of electrons is what creates the moving electromagnetic field we call electricity.",
+    "also": ["electricity"]
+  },
+  {
+    "term": "magnet",
+    "html": "A magnet is a material that produces a magnetic field. Magnets are commonly used in electric motors and generators.",
+    "also": ["electricity", "electrical", "magnetism"]
+  },
+  {
+    "term": "electromagnetism",
+    "html": "Electromagnetism describes the relationship between electric and magnetic fields. Every electric field has a corresponding magnetic field, and vice versa. This relationship is why magnets can induce electric currents in conductors, and why electric currents can produce magnetic fields.",
+    "also": ["electricity", "magnetism"]
+  },
+  {
+    "term": "charge",
+    "html": "Charge refers to the amount of electricity stored in a material. Electric charge is measured in Coulombs (C).",
+    "also": ["electricity", "coulomb"]
+  },
+  {
+    "term": "capacitance",
+    "html": "Capacitance refers to the ability of a material to store electric charge. Materials with high capacitance require more electric charge to reflect a meaningful change in their voltage. Electric capacitance is measured in Farads (F).",
+    "also": ["electricity", "capacitor", "farad"]
+  },
+  {
+    "term": "coulomb",
+    "html": "A Coulomb is a unit of electric charge. One Coulomb is equal to the electric charge delivered by one Ampere of current in one second.",
+    "also": ["charge", "electron"]
+  },
+  {
+    "term": "farad",
+    "html": "A Farad is a unit of electric capacitance. One Farad is equal to one Coulomb of charge per Volt of voltage.",
+    "also": ["capacitance", "coulomb", "volt"]
+  },
+  {
+    "term": "motor",
+    "html": "A motor is a device that converts electrical energy into mechanical energy. A motor typically consists of a stationary <em>stator</em> and a rotating <em>rotor</em>.",
+    "also": ["electricity", "electrical", "generator", "stator", "rotor"]
+  },
+  {
+    "term": "generator",
+    "html": "A generator is a device that converts mechanical energy into electrical energy. A generator typically consists of a stationary <em>stator</em> and a rotating <em>rotor</em>.",
+    "also": ["electricity", "electrical", "motor", "stator", "rotor"]
+  },
+  {
+    "term": "stator",
+    "html": "A stator is the stationary part of a <em>motor</em> or <em>generator</em>. A stator typically contains a series of evenly spaced <em>windings</em>, made from a conductor like copper. In a motor, the stator windings are used to generate a moving magnetic field, which then moves the rotor. In a generator, the stator windings are used to transform the rotating magnetic field of the rotor into electrical energy.",
+    "also": ["electricity", "electrical", "motor", "generator"]
+  },
+  {
+    "term": "rotor",
+    "html": "A rotor is the rotating part of a <em>motor</em> or <em>generator</em>. A rotor typically contains a series of evenly spaced permanent magnets. In a motor, the rotor magnets are motivated by the moving magnetic field of the stator. In a generator, the rotation of the rotor magnets induces an electrical current in the stator windings.",
+    "also": ["electricity", "electrical", "motor", "generator"]
+  },
+  {
+    "term": "led",
+    "html": "An LED or <em>light-emitting diode</em> is a type of <em>diode</em> that emits light when current flows through it. LEDs are commonly used in electronic displays, lighting, and indicators.",
+    "also": ["diode", "light", "electricity", "electrical"]
+  },
+  {
+    "term": "diode",
+    "html": "A diode is a type of <em>electronic component</em> that allows current to flow in one direction only. Diodes are commonly used in electronic circuits to prevent current from flowing in the wrong direction.",
+    "also": ["electricity", "electrical"]
+  },
+  {
+    "term": "circuit",
+    "html": "A circuit is a closed path of conductive material that allows electricity to flow. A circuit is composed of <em>components</em> that are connected together.",
+    "also": ["electricity", "electrical"]
+  },
+  {
+    "term": "open circuit",
+    "html": "An open circuit occurs when a gap in the circuit prevents current from flowing. An open circuit can be the result of faulty wiring or a broken component.",
+    "also": ["electricity", "electrical"]
+  },
+  {
+    "term": "short circuit",
+    "html": "A short circuit occurs when part of a circuit is closed prematurely, preventing current from flowing along the intended path. A short circuit can be the result of faulty wiring or a broken component.",
+    "also": ["electricity", "electrical"]
+  },
+  {
+    "term": "closed circuit",
+    "html": "A closed circuit occurs when all components in a circuit are connected and electricity flows through the circuit.",
+    "also": ["electricity", "electrical"]
+  },  
+  {
     "term": "electromechanical",
     "html": "The word electromechanical comes from the Latin <em>electro-</em> (meaning <em>electricity</em>) and <em>-mechanic</em> (meaning <em>machine</em> <br><br> Electromechanical <em>computers</em> use a combination of electrical and mechanical components to perform computations."
   },
