@@ -1,0 +1,222 @@
+[
+  {
+    "question": "What is Python?",
+    "choices": [
+      "A type of snake",
+      "A programming language",
+      "A hardware device",
+      "A web browser"
+    ],
+    "answer": 1,
+    "explain": "Python is a popular high-level programming language known for readability and simplicity."
+  },
+  {
+    "question": "What symbol is used to start a comment in Python?",
+    "choices": ["//", "/*", "#", "<!--"],
+    "answer": 2,
+    "explain": "In Python, comments start with the # symbol."
+  },
+  {
+    "question": "Which of these is a correct variable name in Python?",
+    "choices": ["1value", "value_1", "value-1", "value 1"],
+    "answer": 1,
+    "explain": "Variable names can include letters, digits, and underscores but cannot start with a digit."
+  },
+  {
+    "question": "What keyword is used to define a function in Python?",
+    "choices": ["func", "define", "function", "def"],
+    "answer": 3,
+    "explain": "Functions are defined using the 'def' keyword."
+  },
+  {
+    "question": "How do you output text to the screen?",
+    "choices": [
+      "print(text)",
+      "echo text",
+      "write(text)",
+      "display text"
+    ],
+    "answer": 0,
+    "explain": "Python uses the built-in print() function to display output."
+  },
+  {
+    "question": "Which data type represents whole numbers?",
+    "choices": ["float", "int", "str", "bool"],
+    "answer": 1,
+    "explain": "The int type stores whole numbers without decimals."
+  },
+  {
+    "question": "What will this print: print(2 + 3 * 4)?",
+    "choices": ["20", "14", "24", "18"],
+    "answer": 1,
+    "explain": "Multiplication has higher precedence than addition, so 3*4=12, then 2+12=14."
+  },
+  {
+    "question": "Which of these is NOT a Python data type?",
+    "choices": ["string", "boolean", "integer", "character"],
+    "answer": 3,
+    "explain": "Python does not have a separate 'char' type; single characters are strings."
+  },
+  {
+    "question": "Which operator is used for exponentiation?",
+    "choices": ["^", "**", "exp", "^^"],
+    "answer": 1,
+    "explain": "Python uses ** for exponents, e.g., 2**3 = 8."
+  },
+  {
+    "question": "What will print(len('Python')) output?",
+    "choices": ["5", "6", "7", "Error"],
+    "answer": 1,
+    "explain": "The string 'Python' has 6 characters."
+  },
+  {
+    "question": "Which of these is a list in Python?",
+    "choices": [
+      "(1, 2, 3)",
+      "[1, 2, 3]",
+      "{1, 2, 3}",
+      "<1, 2, 3>"
+    ],
+    "answer": 1,
+    "explain": "Lists use square brackets, e.g., [1, 2, 3]."
+  },
+  {
+    "question": "How do you check the data type of a variable?",
+    "choices": ["typeof(x)", "check(x)", "type(x)", "datatype(x)"],
+    "answer": 2,
+    "explain": "The built-in type() function returns the type of an object."
+  },
+  {
+    "question": "What keyword is used for conditional statements?",
+    "choices": ["when", "if", "case", "for"],
+    "answer": 1,
+    "explain": "The 'if' keyword is used to test conditions."
+  },
+  {
+    "question": "Which of these loops repeats a set number of times?",
+    "choices": ["if", "for", "while", "loop"],
+    "answer": 1,
+    "explain": "A 'for' loop iterates over a sequence or range."
+  },
+  {
+    "question": "What is the result of 10 // 3?",
+    "choices": ["3.33", "3", "4", "Error"],
+    "answer": 1,
+    "explain": "// performs floor division, which returns the integer quotient (3)."
+  },
+  {
+    "question": "Which keyword is used to stop a loop early?",
+    "choices": ["stop", "end", "break", "exit"],
+    "answer": 2,
+    "explain": "The 'break' statement ends the loop immediately."
+  },
+  {
+    "question": "What will print(bool(0)) output?",
+    "choices": ["True", "False", "None", "0"],
+    "answer": 1,
+    "explain": "In Python, 0 is considered False."
+  },
+  {
+    "question": "What does indentation indicate in Python?",
+    "choices": [
+      "New section of code",
+      "Ignored whitespace",
+      "Optional formatting",
+      "Compiler directive"
+    ],
+    "answer": 0,
+    "explain": "Indentation defines code blocks in Python; it is mandatory."
+  },
+  {
+    "question": "Which of these is a valid string in Python?",
+    "choices": [
+      "\"Hello\"",
+      "'Hello'",
+      "'Hello\"",
+      "Both 'A' and 'B'"
+    ],
+    "answer": 3,
+    "explain": "Strings can use either single or double quotes as long as they match."
+  },
+  {
+    "question": "What is the output of: print('2' + '3')?",
+    "choices": ["5", "23", "Error", "None"],
+    "answer": 1,
+    "explain": "The + operator concatenates strings, so '2' + '3' becomes '23'."
+  },
+  {
+    "question": "Which collection type does not allow duplicates?",
+    "choices": ["list", "tuple", "set", "dictionary"],
+    "answer": 2,
+    "explain": "Sets automatically remove duplicate elements."
+  },
+  {
+    "question": "What will this return: len([])?",
+    "choices": ["0", "1", "None", "Error"],
+    "answer": 0,
+    "explain": "An empty list has length 0."
+  },
+  {
+    "question": "How do you start a loop that runs while a condition is true?",
+    "choices": ["repeat", "while", "loop", "until"],
+    "answer": 1,
+    "explain": "The 'while' keyword repeats code as long as the condition is true."
+  },
+  {
+    "question": "What will this output: print(3 == 3.0)?",
+    "choices": ["True", "False", "Error", "None"],
+    "answer": 0,
+    "explain": "3 and 3.0 are considered equal in Python because their values match."
+  },
+  {
+    "question": "What keyword is used to handle exceptions?",
+    "choices": ["handle", "except", "catch", "try"],
+    "answer": 3,
+    "explain": "Exceptions are managed using 'try' and 'except' blocks."
+  },
+  {
+    "question": "How do you import a module in Python?",
+    "choices": [
+      "use module math",
+      "include math",
+      "import math",
+      "require math"
+    ],
+    "answer": 2,
+    "explain": "Modules are brought into a program using the 'import' statement."
+  },
+  {
+    "question": "What is returned by input('Enter something: ')?",
+    "choices": ["A string", "An integer", "A boolean", "None"],
+    "answer": 0,
+    "explain": "The input() function always returns a string."
+  },
+  {
+    "question": "Which of these converts a string to an integer?",
+    "choices": ["toInt()", "int()", "cast()", "convert()"],
+    "answer": 1,
+    "explain": "The int() function converts strings to integers when possible."
+  },
+  {
+    "question": "What will this print: print(type([]))?",
+    "choices": [
+      "<class 'tuple'>",
+      "<class 'list'>",
+      "<class 'set'>",
+      "<class 'dict'>"
+    ],
+    "answer": 1,
+    "explain": "Square brackets define a list, so type([]) is <class 'list'>."
+  },
+  {
+    "question": "How are code blocks defined in Python?",
+    "choices": [
+      "By braces {}",
+      "By indentation",
+      "By semicolons",
+      "By parentheses"
+    ],
+    "answer": 1,
+    "explain": "Python uses indentation instead of braces to define blocks."
+  }
+]
