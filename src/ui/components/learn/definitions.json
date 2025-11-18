@@ -393,12 +393,12 @@
   },
   {
     "term": "stator",
-    "html": "A stator is the stationary part of a <em>motor</em> or <em>generator</em>. A stator typically contains a series of evenly spaced <em>windings</em>, made from a conductor like copper. In a motor, the stator windings are used to generate a moving magnetic field, which then moves the rotor. In a generator, the stator windings are used to transform the rotating magnetic field of the rotor into electrical energy.",
+    "html": "A stator is the stationary part of a <em>motor</em> or <em>generator</em>. A stator typically contains a series of evenly spaced <em>windings</em> (made from a conductor like copper) or <em>permanent magnets</em>. In a motor, the stator's magnetic field is used to motivate the rotot. In a generator, the stator windings are used to transform the rotating magnetic field of the rotor into electrical energy.",
     "also": ["electricity", "electrical", "motor", "generator"]
   },
   {
     "term": "rotor",
-    "html": "A rotor is the rotating part of a <em>motor</em> or <em>generator</em>. A rotor typically contains a series of evenly spaced permanent magnets. In a motor, the rotor magnets are motivated by the moving magnetic field of the stator. In a generator, the rotation of the rotor magnets induces an electrical current in the stator windings.",
+    "html": "A rotor is the rotating part of a <em>motor</em> or <em>generator</em>. A rotor typically contains a series of evenly spaced <em>windings</em> (made from a conductor like copper) or <em>permanent magnets</em>. In a motor, the rotor is motivated by the magnetic field of the stator. In a generator, the rotation of the rotor magnets induces an electrical current in the stator windings.",
     "also": ["electricity", "electrical", "motor", "generator"]
   },
   {
