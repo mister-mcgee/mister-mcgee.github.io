@@ -523,5 +523,130 @@
     "term": ["function", "function (python)"],
     "html": "A function is a reusable block of code. Think of a function like a recipe that can be defined once and then reused multiple times throughout a program. In Python, a function definition starts with the keyword <code>def</code>.",
     "also": ["programming language", "python"]
+  },
+  {
+    "term": ["lever"],
+    "html": "A lever is a simple machine made of a rigid bar that pivots around a point called the fulcrum. It allows a small input force to move a heavier load by increasing mechanical advantage.",
+    "also": ["simple machine", "mechanical advantage", "fulcrum"]
+  },
+  {
+    "term": ["wheel and axle", "wheel & axle"],
+    "html": "A wheel and axle is a simple machine consisting of a larger wheel attached to a smaller axle so they rotate together. Applying force to the wheel turns the axle, reducing the effort needed to move or lift a load.",
+    "also": ["simple machine", "mechanical advantage"]
+  },
+  {
+    "term": ["pulley"],
+    "html": "A pulley is a simple machine that uses a grooved wheel and a rope or cable. It changes the direction of force, and when multiple pulleys are combined, they can also reduce the effort needed to lift a load.",
+    "also": ["simple machine", "mechanical advantage", "rope"]
+  },
+  {
+    "term": ["inclined plane"],
+    "html": "An inclined plane is a flat surface set at an angle. It allows a load to be raised with less force by spreading the work over a longer distance.",
+    "also": ["simple machine", "ramp", "mechanical advantage"]
+  },
+  {
+    "term": ["wedge"],
+    "html": "A wedge is a simple machine shaped like a triangular block. It converts a force applied to its blunt end into forces that push outward, making it effective for splitting, cutting, or separating materials.",
+    "also": ["simple machine", "inclined plane"]
+  },
+  {
+    "term": ["screw"],
+    "html": "A screw is a simple machine made of an inclined plane wrapped around a central shaft. Turning the screw converts rotational force into linear force, making it useful for fastening or lifting.",
+    "also": ["simple machine", "inclined plane", "thread"]
+  },
+  {
+    "term": ["chain drive"],
+    "html": "A chain drive uses a metal chain that meshes with toothed sprockets to transmit power between rotating shafts. It provides a positive, slip-free connection and is suited for high-torque applications.",
+    "also": ["power transmission", "sprocket", "rotation"]
+  },
+  {
+    "term": ["belt drive"],
+    "html": "A belt drive uses a flexible belt wrapped around pulleys to transfer motion and power. It operates smoothly and quietly, and it can slip under overload, which helps protect the system.",
+    "also": ["power transmission", "pulley", "rotation"]
+  },
+  {
+    "term": ["gear drive"],
+    "html": "A gear drive uses interlocking gears to transmit motion and force directly from one shaft to another. It offers precise speed and torque control with no slippage, making it effective for high-accuracy systems.",
+    "also": ["power transmission", "gears", "torque"]
+  },
+  {
+    "term": ["direct drive"],
+    "html": "A direct drive system connects the motor's output shaft directly to the driven component with no belts, chains, or gears in between. This minimizes power loss and mechanical complexity, providing smooth, efficient rotation.",
+    "also": ["power transmission", "motor", "rotation"]
+  },
+  {
+    "term": ["hinge joint", "pin joint"],
+    "html": "A hinge joint allows rotation around a single axis, like the hinge on a door. It permits angular motion in one plane while restricting other movements.",
+    "also": ["mechanical joint", "rotation", "single axis"]
+  },
+  {
+    "term": ["ball and socket joint"],
+    "html": "A ball and socket joint consists of a spherical end fitting into a rounded cavity, allowing rotation in multiple directions and a wide range of motion.",
+    "also": ["mechanical joint", "rotation", "multi-axis"]
+  },
+  {
+    "term": ["sliding joint", "prismatic joint"],
+    "html": "A sliding joint allows linear motion along a single axis, with no rotation. It is commonly used in drawer slides and linear actuators.",
+    "also": ["mechanical joint", "linear motion"]
+  },
+  {
+    "term": ["pivot joint"],
+    "html": "A pivot joint allows rotation around a single axis, similar to a hinge, but usually for smaller angular movement, like a seesaw pivot.",
+    "also": ["mechanical joint", "rotation", "single axis"]
+  },
+  {
+    "term": ["screw joint", "helical joint"],
+    "html": "A screw joint converts rotational motion into linear motion through the threads of a screw. It combines rotation and translation along the screw axis.",
+    "also": ["mechanical joint", "rotation", "linear motion"]
+  },
+  {
+    "term": ["fixed joint", "rigid joint"],
+    "html": "A fixed joint rigidly connects two components so that no relative motion occurs. It is used when parts must move together as a single unit.",
+    "also": ["mechanical joint", "rigid connection"]
+  },
+  {
+    "term": ["universal joint", "u-joint"],
+    "html": "A universal joint connects two rotating shafts at an angle, allowing torque transmission while accommodating misalignment between shafts.",
+    "also": ["mechanical joint", "rotation", "misalignment"]
+  },
+  {
+    "term": ["wheeled locomotion", "wheels"],
+    "html": "Wheeled locomotion uses circular wheels that rotate around an axle to move a vehicle or device. It is efficient on flat or gently sloped surfaces and reduces friction compared to sliding.",
+    "also": ["rotation", "axle", "terrestrial movement"]
+  },
+  {
+    "term": ["tracked locomotion", "caterpillar tracks"],
+    "html": "Tracked locomotion uses continuous tracks, like tank treads, to distribute weight over a larger surface area. This improves traction and allows movement over soft or uneven terrain.",
+    "also": ["traction", "terrain adaptation", "terrestrial movement"]
+  },
+  {
+    "term": ["legged locomotion", "walking robots", "quadrupedal robots"],
+    "html": "Legged locomotion uses mechanical limbs to move, mimicking walking, running, or hopping. It allows navigation over rough terrain and obstacles that wheeled systems cannot handle.",
+    "also": ["bipedal", "quadrupedal", "gait", "terrain adaptation"]
+  },
+  {
+    "term": ["crawling locomotion", "sliding"],
+    "html": "Crawling locomotion uses the body of a machine to move by pushing or sliding along a surface, often useful in tight or confined spaces.",
+    "also": ["terrestrial movement", "low clearance", "friction"]
+  },
+  {
+    "term": ["rolling locomotion", "rolling robots"],
+    "html": "Rolling locomotion moves a machine by rotating its body or part of its body along a surface, reducing energy loss and allowing fast movement on flat surfaces.",
+    "also": ["rotation", "terrestrial movement", "circular motion"]
+  },
+  {
+    "term": ["flying locomotion", "aerial robotics", "drones"],
+    "html": "Flying locomotion uses lift generated by wings or rotors to move through the air. It allows rapid travel over obstacles and uneven terrain but requires energy to counteract gravity.",
+    "also": ["aerial", "lift", "thrust"]
+  },
+  {
+    "term": ["swimming locomotion", "underwater robotics", "propulsion"],
+    "html": "Swimming locomotion uses fins, propellers, or body undulation to move through water. It is optimized to overcome drag and achieve efficient propulsion in a fluid environment.",
+    "also": ["aquatic", "propulsion", "buoyancy"]
+  },
+  {
+    "term": ["hybrid locomotion", "amphibious vehicles"],
+    "html": "Hybrid locomotion combines multiple methods, such as wheels and tracks or wheels and propellers, allowing a machine to move efficiently in different environments.",
+    "also": ["multi-terrain", "adaptability", "versatile movement"]
   }
 ]
