@@ -100,19 +100,19 @@ const lessons = (await getCollection("lessons"))
         <span class="text-4xl font-bold">{ tag }</span>
       </div>      
       <div class="h-4"></div>
-      <div class="w-fit grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 p-8">
+      <div class="w-fit grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
         { <Cards client:load lessons={lessons}/> }
       </div>
 
-      <div class="flex flex-row gap-4">
-        <a href="/learn/tag" class="grow-on-hover grow flex gap-2 items-center justify-center border border-base-300 rounded-lg shadow-lg overflow-hidden cursor-pointer w-sm p-8">
-          <Hash/>
-          <span>More Tags</span>
-        </a>
-
-        <a href="/learn" class="grow-on-hover grow flex gap-2 items-center justify-center border border-base-300 rounded-lg shadow-lg overflow-hidden cursor-pointer w-sm p-8">
+      <div class="w-full flex flex-row items-center justify-center flex-wrap gap-4 p-4">
+        <a href="/learn" class="btn btn-wide btn-ghost p-4 flex flex-row justify-center items-center">
           <LibraryBig/>
           <span>More Lessons</span>
+        </a>
+
+        <a href="/learn/tag" class="btn btn-wide btn-ghost p-4 flex flex-row justify-center items-center">
+          <Hash/>
+          <span>More Tags</span>
         </a>
       </div>
       
