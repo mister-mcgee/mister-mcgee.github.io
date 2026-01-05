@@ -1,6 +1,6 @@
-import { BookMarked, Construction, Info, Newspaper, Scroll } from "lucide-react";
-import Tags from "./Tags";
 import clsx from "clsx";
+import { BookMarked, Construction } from "lucide-react";
+import Tags from "./Tags";
 
 
 export default function Card({ 
