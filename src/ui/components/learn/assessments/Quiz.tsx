@@ -23,7 +23,7 @@ function Question({ qi, ci, question, choices, answer, explain, onSelect }: Ques
   const isAnswered = (ci !== -1);
   
   return (    
-    <div className="p-4 rounded-md shadow-sm border border-base-200 flex flex-col gap-1 grow-on-hover">
+    <div className="p-4 rounded-md shadow-sm border border-base-200 flex flex-col gap-1 grow-on-hover break-inside-avoid">
       <span className="text-base-content font-medium">{qi + 1}. {question}</span>
       { choices.map((choice, i) => {
         const isRight    = (i  === answer);
@@ -107,7 +107,7 @@ function Sticky({ title, questions, responses }: StickyProps) {
   const completeProgress = Math.round(complete / questions.length * 100);
   const accurateProgress = Math.round(accurate / questions.length * 100);
 
-  return <div className="grow-on-hover sticky top-0 z-10 flex flex-col items-center gap-2 bg-base-100 rounded-md border border-base-200 shadow-sm p-4">
+  return <div className="grow-on-hover sticky top-0 z-10 flex flex-col items-center gap-2 bg-base-100 rounded-md border border-base-200 shadow-sm p-4 break-inside-avoid">
     {!!title && <span className="font-semibold text-xl">{title}</span>}
     
     <div className="w-full h-4 relative bg-base-200 rounded-full overflow-hidden border-2 border-base-200">
@@ -130,11 +130,11 @@ function Sticky({ title, questions, responses }: StickyProps) {
   </div>
 }
 
-function Submit({ questions, responses, gId, qId, submission, setSubmission }: { 
+function Submit({ questions, responses, groupId, taskId, submission, setSubmission }: { 
   questions    : Question[], 
   responses    : number  [],
-  gId         ?: string    , 
-  qId         ?: string    ,
+  groupId     ?: string    , 
+  taskId      ?: string    ,
   submission   : Submission,
   setSubmission: (a: Submission) => void,
 
@@ -161,8 +161,8 @@ function Submit({ questions, responses, gId, qId, submission, setSubmission }: {
     const data  = new URLSearchParams()
     data.append("data", JSON.stringify({
       accessToken,
-      gId: gId ?? "0",
-      qId: qId ?? "0",
+      groupId: groupId ?? "[group]",
+      taskId : taskId  ?? "[task]",
       score    ,
       responses,
     }));
@@ -228,11 +228,11 @@ const Submission = {
 
 type Submission = typeof Submission[keyof typeof Submission];
 
-export default function Quiz({ title, questions, gId, qId }: {
+export default function Quiz({ title, questions, groupId, taskId }: {
   title     ?: string
   questions  : Question[]
-  gId       ?: string
-  qId       ?: string
+  groupId   ?: string
+  taskId    ?: string
   shuffle   ?: boolean
 }) {
   const [submission, setSubmission] = useState<Submission>(      Submission.INCOMPLETE      );
@@ -258,8 +258,8 @@ export default function Quiz({ title, questions, gId, qId }: {
           
           return <Question {...question} key={i} qi={qi} ci={ci} onSelect={onSelect} />
         })}
-        <div className="w-full flex items-center gap-2">
-          <Submit {...{ questions, responses, gId, qId, submission, setSubmission }} />
+        <div className="w-full flex items-center gap-2 print:hidden">
+          <Submit {...{ questions, responses, groupId, taskId, submission, setSubmission }} />
           <button className="btn btn-ghost" onClick={onReset} disabled={submission !== Submission.INCOMPLETE}>
             <Trash/>
           </button>

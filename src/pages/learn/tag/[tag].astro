@@ -1,8 +1,10 @@
 ---
+import Card from "@components/learn/lesson/Card";
 import Drawer from "@layouts/Drawer.astro";
 import Layout from "@layouts/Layout.astro";
+import { Hash, Ellipsis } from "@lucide/astro";
 import { getCollection } from "astro:content";
-import { Construction, Lightbulb, Hash } from "@lucide/astro";
+import { LibraryBig, Newspaper } from "lucide-react";
 
 export async function getStaticPaths() {
   return (await getCollection("lessons")).reduce((tags, idea) => {
@@ -29,33 +31,30 @@ function slug(lesson: any) {
 
 <Layout>
   <Drawer>
-    <div class="flex flex-col w-full items-center">
-      <div class="h-6"></div>
-      <div class="w-full flex flex-row justify-center items-center gap-1">
-        <!-- <span class="text-4xl">Ideas About</span> -->
-        <span class="tooltip tooltip-bottom" data-tip="More Tags">
-          <a href="/learn/tag/" class="btn btn-circle btn-ghost btn-xl">
-            <Hash class="w-10 h-10"/>
-          </a>
-        </span>        
-        <span class="text-4xl font-bold"> 
-          {tag}
-        </span> 
+    <div class="flex flex-col w-full h-full items-center">
+      <div class="h-4"></div>
+      <div class="flex flex-row gap-1">
+        <Hash class="w-10 h-10"/>
+        <span class="text-4xl font-bold">{ tag }</span>
+      </div>      
+      <div class="h-4"></div>
+      <div class="w-fit grid grid-cols-3 gap-4 p-8">
+        { lessons.map(lesson => <Card lesson={lesson}/>) }
+
+      </div>
+
+      <div class="flex flex-row gap-4">
+        <a href="/learn/tag" class="grow-on-hover grow flex gap-2 items-center justify-center border border-base-300 rounded-lg shadow-lg overflow-hidden cursor-pointer w-md p-8">
+          <Hash/>
+          <span>More Tags</span>
+        </a>
+
+        <a href="/learn" class="grow-on-hover grow flex gap-2 items-center justify-center border border-base-300 rounded-lg shadow-lg overflow-hidden cursor-pointer w-md p-8">
+          <LibraryBig/>
+          <span>More Lessons</span>
+        </a>
       </div>
       
-      <div class="h-4"></div>
-      <div class="w-full flex flex-row flex-wrap max-w-xs justify-center sm:max-w-2xl lg:max-w-5xl">
-        { lessons.map(lesson => (
-          <a href={`/learn/${slug(lesson)}`} class="flex flex-row flex-1 max-w-xs items-center p-4 rounded-lg hover:bg-base-200">
-            { !lesson.data.draft && <Lightbulb    class="w-10 h-10"/> }
-            {  lesson.data.draft && <Construction class="w-10 h-10"/> }
-            <div class="divider divider-horizontal"></div>
-            <div class="flex flex-col flex-1 items-start">
-              <span class="text-lg sm:text-xl font-bold">{ lesson.data.title }</span>
-            </div>
-          </a>
-        ))}
-      </div>
     </div>
   </Drawer>
 </Layout>

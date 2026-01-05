@@ -1,0 +1,7 @@
+---
+import Q from "@components/learn/assessments/Quiz";
+
+const { questions, title, groupId, taskId } = Astro.props; 
+---
+
+<Q {title} {questions} {groupId} {taskId} client:only/>

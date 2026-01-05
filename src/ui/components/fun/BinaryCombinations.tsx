@@ -141,7 +141,7 @@ export default function BinaryCombinations() {
 
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 break-inside-avoid">
       <GraphControls  bits={bits} setBits={setBits} />
       <div className="rounded-lg bg-base-200">
         <GraphViewport graphData={graphData} />

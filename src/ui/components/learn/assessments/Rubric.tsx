@@ -38,7 +38,7 @@ function Sticky({ rubric, title, toggles, ratings }: { rubric: Array<Criteria>, 
                     { emoji: "😢", label: "Needs Improvement", style: "border-error   text-error-content   dark:text-error   bg-error/10"   }
   )
   
-  return <div className="grow-on-hover sticky top-0 z-10 flex flex-col items-center gap-2 bg-base-100 rounded-md border border-base-200 shadow-sm p-4">
+  return <div className="grow-on-hover sticky top-0 z-10 flex flex-col items-center gap-2 bg-base-100 rounded-md border border-base-200 shadow-sm p-4 break-inside-avoid">
     {!!title && <span className="font-semibold text-xl">{title}</span>}
 
     <div className="w-full h-4 relative bg-base-200 rounded-full overflow-hidden border-2 border-base-200">
@@ -67,7 +67,7 @@ function Toggle({ index, label, points, suggest, toggle, setToggle }: Criteria &
     setToggle(index, !toggle);
   }
   
-  return <div className="grow-on-hover p-4 flex flex-col rounded-md border border-base-200 shadow-sm cursor-pointer" onClick={onClick}>
+  return <div className="grow-on-hover p-4 flex flex-col rounded-md border border-base-200 shadow-sm cursor-pointer break-inside-avoid" onClick={onClick}>
     <div className="text-lg flex gap-2 items-center justify-between">
       <span className="font-medium">{label}</span>
       <input type="checkbox" checked={toggle} className="checkbox checkbox-primary bg-primary/20 border-none" onChange={() => { }}/>
@@ -84,7 +84,7 @@ function Toggle({ index, label, points, suggest, toggle, setToggle }: Criteria &
 function Rating({ index, label, points, suggest, rating, setRating }: Criteria & { index: number, rating: number , setRating: (i: number, value: number) => void }) {
   const id = useId();
   return (
-    <div className="grow-on-hover p-4 flex flex-col rounded-md border border-base-200 shadow-sm">
+    <div className="grow-on-hover p-4 flex flex-col rounded-md border border-base-200 shadow-sm break-inside-avoid">
       <div className="flex flex-row items-center justify-between gap-2">
         <span className="font-medium">{label}</span>
         <div className="rating rating-lg">
@@ -126,7 +126,7 @@ export default function Rubric({ rubric, title }: { rubric: Array<Criteria>, tit
   }
 
   return (
-    <div className="relative flex flex-col gap-2">
+    <div className="relative flex flex-col gap-2 break-inside-avoid break-after-page">
       <Sticky rubric={rubric} title={title} toggles={toggles} ratings={ratings}/>
       {rubric.map((criteria, i) => {
         switch(criteria.type) {
@@ -134,7 +134,7 @@ export default function Rubric({ rubric, title }: { rubric: Array<Criteria>, tit
           case "rating": return <Rating key={i} index={i} {...criteria} rating={ratings[i]} setRating={setRating}/>
         }
       })}
-      <div className="flex flex-row justify-end">
+      <div className="flex flex-row justify-end print:hidden">
         <a className="btn btn-ghost" onClick={reset}>
           <Trash/>
         </a>

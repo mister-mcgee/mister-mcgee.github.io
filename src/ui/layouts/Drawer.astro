@@ -1,18 +1,18 @@
 ---
 import { CircleHelp, Github, House, LibraryBig, Menu, Moon, Sun } from "@lucide/astro"
 ---
-<div class="drawer w-full h-full">
+<div class="drawer w-full">
   <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content w-full h-full overflow-y-auto scroll-smooth">
+  <div class="drawer-content w-full scroll-smooth">
     <!-- Page content here -->
      
     <slot/>
 
-    <label for="nav-drawer" class="bg-base-100 hover:bg-base-200 absolute top-4 left-4 btn btn-xl btn-circle btn-ghost">
+    <label for="nav-drawer" class="bg-base-100 hover:bg-base-200 fixed top-4 left-4 btn btn-xl btn-circle btn-ghost print:hidden">
       <Menu class="w-10 h-10"/>
     </label>
 
-    <a data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" class="bg-base-100 hover:bg-base-200 absolute top-4 right-4 btn btn-xl btn-circle btn-ghost">
+    <a data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" class="bg-base-100 hover:bg-base-200 fixed top-4 right-4 btn btn-xl btn-circle btn-ghost print:hidden">
       <Sun  class="w-10 h-10 block dark:hidden"/>
       <Moon class="w-10 h-10 hidden dark:block"/>
     </a>

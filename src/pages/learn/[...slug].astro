@@ -1,14 +1,15 @@
 ---
 import "katex/dist/katex.min.css";
 import "rehype-callouts/theme/obsidian";
+import "@components/learn/lesson/index.css";
 
 import { Construction } from "@lucide/astro";
 import Drawer from "@layouts/Drawer.astro";
 import Layout from "@layouts/Layout.astro";
-import Tags   from "@components/learn/Tags.tsx";
+import Tags   from "@components/learn/lesson/Tags.tsx";
 import { getCollection, render } from "astro:content";
 
-import TableOfContents    from "@components/learn/TableOfContents.astro";
+import TableOfContents    from "@components/learn/lesson/TableOfContents.astro";
 
 export async function getStaticPaths() {
   const lessons = (await getCollection("lessons"))
@@ -38,12 +39,15 @@ const { Content, headings } = await render(lesson);
 
       <!-- Header -->
       <div class="flex flex-col w-3xs items-center sm:w-xl">
+        
         <!-- Author | Date -->
         <div class="flex flex-row w-full justify-center gap-2 text-sm sm:text-lg">
-          { lesson.data.author  && <span>{lesson.data.author                 }</span> }
-          { (lesson.data.author && lesson.data.pubDate) && "|" }
-          { lesson.data.pubDate && <span>{lesson.data.pubDate?.toDateString()}</span> }
+          { lesson.data.author  && <span>{lesson.data.author}</span> }
+          { (lesson.data.author && lesson.data.date) && "|" }
+          { lesson.data.date    && <span>{lesson.data.date?.toDateString()}</span> }
         </div>
+
+
 
         <!-- Title -->
         <span class="text-3xl text-center font-bold sm:text-4xl">
@@ -51,19 +55,15 @@ const { Content, headings } = await render(lesson);
         </span>
       </div>
 
-      <div class="h-2"></div>
-
       <!-- Tags -->
-      <div class="max-w-3xl">      
+      <div class="max-w-3xl mt-2">      
         <Tags tags={lesson.data.tags} client:load/>
       </div>
 
-      <div class="h-2"></div>
-
       <!-- Article -->
-      <div class="flex flex-col items-center w-full flex-1 sm:max-w-3xl sm:shadow-lg">
+      <div class="flex flex-col items-center w-full flex-1 sm:max-w-3xl sm:shadow-lg print:shadow-none">
         { lesson.data.draft && (
-          <div class="flex flex-row items-center caution px-4 py-2 rounded-t-lg">
+          <div class="flex flex-row items-center caution py-2 px-4 mt-2 rounded-t-lg">
             <Construction class="w-10 h-10 shrink-0"/>
             <div class="divider divider-horizontal"></div>
             <div class="flex flex-col flex-1">
@@ -76,12 +76,12 @@ const { Content, headings } = await render(lesson);
             </div>
           </div>
         )}
-        <div class="w-full prose prose-base sm:prose-lg break-words sm:break-normal p-4 sm:p-8 prose-h1:text-center prose-h2:text-center">
+        <div class="w-full prose prose-base sm:prose-lg break-words sm:break-normal px-4 sm:px-8 prose-h1:text-center prose-h2:text-center">
           <TableOfContents {headings}/>
           <Content/>
         </div>
 
-        <div class="h-96"></div>
+        <div class="h-96 print:hidden"></div>
       </div>
     </div>
   </Drawer>

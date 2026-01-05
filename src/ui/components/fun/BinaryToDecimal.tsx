@@ -31,7 +31,7 @@ export default function BinaryConverter() {
   };
 
   return (
-    <div className="text-center">
+    <div className="text-center break-inside-avoid">
       <p className="font-bold text-lg mb-4">Binary to Decimal</p>
 
       {/* Binary Buttons */}

@@ -22,10 +22,10 @@ export async function GET(context) {
     // Array of `<item>`s in output xml
     // See "Generating items" section for examples using content collections and glob imports
     items: lessons
-      .filter(lesson => lesson.data.pubDate)
+      .filter(lesson => lesson.data.date)
       .map(lesson => ({
         title      : lesson.data.title,
-        pubDate    : lesson.data.pubDate,
+        date       : lesson.data.date,
         description: lesson.data.description,
         link: `/learn/${slug(lesson)}`,
       })),

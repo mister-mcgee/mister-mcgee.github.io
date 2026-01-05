@@ -1,4 +1,4 @@
-import "./definitions.css";
+import "./glossary.css";
 import { $highlights as $highlights, lookup, nameOf, htmlOf, fitb, type Definition} from "./definitions";
 import { useStore } from "@nanostores/react";
 import clsx from "clsx";
@@ -169,7 +169,7 @@ function Definition({
     setChecked((checked) => !checked)
   }
 
-  return <div className="grow-on-hover">
+  return <div className="grow-on-hover break-inside-avoid">
     <div className="collapse collapse-arrow bg-base-100 rounded-md shadow-sm border border-base-200">
       <input type="checkbox" checked={checked} onChange={onChange} />
       <div className="collapse-title font-semibold">{nameOf(definition)}</div>
@@ -223,7 +223,7 @@ export default function Glossary({
   };
 
   return <div className="flex flex-col items-center gap-4">
-    <div className="w-full flex flex-row items-center justify-center gap-2">
+    <div className="w-full flex flex-row items-center justify-center gap-2 print:hidden">
       <span className={clsx(
          flashcards && "opacity-50"
       )}>Definitions</span>

@@ -111,7 +111,7 @@ function render(node: NodeOfContents) {
 
 export default function TableOfContents({ headings, depth = 3 }: { headings: Headings, depth?: number }) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col print:hidden">
       <h2>Table of Contents</h2>
       <div className="rounded-lg border border-base-200 shadow-sm">
         {render(toc(headings, depth).root)}
