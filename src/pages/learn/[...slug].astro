@@ -75,7 +75,7 @@ const { Content, headings } = await render(lesson);
             </div>
           </div>
         )}
-        <div class="w-full prose prose-base sm:prose-lg break-words sm:break-normal px-4 sm:px-8 prose-h1:text-center prose-h2:text-center">
+        <div class="w-full prose prose-base sm:prose-lg wrap-break-word sm:break-normal px-4 sm:px-8 prose-h1:text-center prose-h2:text-center">
           <TableOfContents {headings}/>
           <Content/>
         </div>
