@@ -58,7 +58,7 @@ const { Content, headings } = await render(lesson);
       </div>
 
       <!-- Article -->
-      <div class="flex flex-col items-center flex-1 sm:max-w-3xl sm:shadow-lg print:shadow-none">
+      <div class="flex flex-col items-center flex-1 sm:max-w-3xl sm:shadow-lg print:shadow-none mt-2">
         { lesson.data.draft && (
           <div class="flex flex-row items-center caution py-2 px-4 mt-2 rounded-t-lg">
             <Construction class="w-10 h-10 shrink-0"/>
@@ -74,7 +74,7 @@ const { Content, headings } = await render(lesson);
           </div>
         )}
         <div class="max-w-dvw prose prose-base px-2 sm:px-8 sm:prose-lg break-words sm:break-normal prose-h1:text-center prose-h2:text-center">
-          <!-- <TableOfContents {headings}/> -->
+          <TableOfContents {headings}/>
           <Content/>
         </div>
 
