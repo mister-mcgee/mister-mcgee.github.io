@@ -87,3 +87,12 @@ blockquote, table, pre, code, p, ul, ol, .callout {
   break-inside: avoid;
 }
 
+/* Optional: make sure tooltips stay within edges on small screens */
+@media (max-width: 640px) {
+  .tooltip::before {
+    left: 1rem;             /* shift slightly from left edge */
+    right: 1rem;            /* prevent overflow on right */
+    transform: none;        /* cancel centering transform */
+  }
+}
+
