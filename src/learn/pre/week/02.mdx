@@ -1,0 +1,104 @@
+---
+title: Getting Started with EV3 and Python
+course: Pre-Introduction to Robotics
+tags: ["pre", "ev3", "python", "vscode"]
+---
+
+import Swbat      from "@components/learn/objectives/Swbat.astro";
+
+## Constructing the EV3 Driving Base
+<Swbat>Follow directions to construct the EV3 driving base.</Swbat>
+
+In your assigned groups use the following instructions to construct the EV3 driving base. Do your best to distribute work fairly by taking turns when fetching parts and completing each step.
+
+*Click <a href="/pdf/ev3-rem-driving-base.pdf" target="_blank">here</a> to view building instructions.*
+
+## Managing a Project
+
+### Creating a New Project
+<Swbat>Understand how to create a new EV3 project using VSCode.</Swbat>
+
+The *LEGO MINDSTORMS EV3 Micropython* plugin for VSCode provides a simple interface for creating a new project. Select the *LEGO MINDSTORMS EV3 Micropython* plugin from the left sidebar and then select *Create a new project* from the menu. Give your project a name, select where you would like to save your project and then click *Select Folder*.
+
+The project will be created in the selected folder and then opened in VSCode. The project will contain a handful of default files and folders.
+
+`.vscode/` - A directory containing project-specific settings for VSCode. You may delete this folder if you wish.
+
+`.gitignore` - A file containing a list of files and folders that should be ignored by Git. You may delete this file if you wish.
+
+`main.py` - The main Python file for your project. **Do not delete this file.**
+
+> [!warning]
+> The default `main.py` file starts with a specific `#!` directive. Each script in your project **must** start with `#!/usr/bin/env pybricks-micropython` in order for EV3Dev to recognize the file as a valid micropython executable.
+
+### Saving a Project
+<Swbat>Understand how to save an EV3 project in VSCode.</Swbat>
+
+Save your project by selecting *File > Save* from the menu. You may also save your project by pressing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
+
+> [!tip]
+> Saving your project is free. Do it often!
+
+### Opening a Project
+<Swbat>Understand how to open an EV3 project in VSCode.</Swbat>
+
+The default behavior of VSCode is to open the last project you were working on. If you want to open a different project, try one of the following methods.
+
+- Open your project by selecting *File > Open Folder* from the menu. Select your project folder and then click *Open*.
+
+- Alternatively, open your project by selecting *File > Open Recent* from the menu and then selecting your project folder from the list.
+
+### Connecting to the EV3 Brick
+<Swbat>Understand how to connect to and interact with the EV3 brick using VSCode.</Swbat>
+
+Connect the EV3 Brick to your workstation using the provided USB to Mini-USB connector. Select the Explorer tab from the left sidebar and then find the *EV3 DEVICE BROWSER* view. 
+
+Select *Click here to connect to a device* and then select your device from the dropdown menu that appears. Once connected you will see your device appear in the *EV3 DEVICE BROWSER* view.
+
+The status of the connection will be displayed as a colored dot next to the device name.
+
+| Status | Description |
+| --- | --- |
+| 🟢 Green | Device is connected and ready. |
+| 🟡 Yellow | Device connection is pending. |
+| 🔴 Red | Device is not connected. |
+
+> [!tip]
+> If the EV3 Brick is plugged in, but the device status is red, try right-clicking on the device in the *EV3 DEVICE BROWSER* view and selecting *Retry connection*.
+
+### Uploading a Project
+<Swbat>Understand how to upload an EV3 project to the EV3 brick using VSCode.</Swbat>
+
+## Assessment
+
+### Constructing the EV3 Driving Base
+
+import Rubric from "@components/learn/assessments/Rubric.astro";
+
+<Rubric rubric={[
+  {
+    "type": "rating",
+    "points": 5,
+    "label": "Participation",
+    "suggest": "All members of the group participated in the project, distributing the work fairly."
+  },
+  { 
+    "type": "rating", 
+    "points": 5, 
+    "label": "Completion", 
+    "suggest": "The EV3 driving base is constructed completely according to the instructions provided." 
+  }
+]}/>
+
+### Managing a Project
+
+<Rubric rubric={[
+  {"type": "toggle", "points": 1, "label": "Create a New Project", "suggest": "Upon request, student is able to create a new project in VSCode."},
+  {"type": "toggle", "points": 1, "label": "Save a Project", "suggest": "Upon request, student is able to save a project in VSCode."},
+  {"type": "toggle", "points": 1, "label": "Open a Project", "suggest": "Upon request, student is able to open a project in VSCode."},
+  {"type": "toggle", "points": 1, "label": "Connect to the EV3 Brick", "suggest": "Upon request, student is able to connect to the EV3 brick."},
+  {"type": "toggle", "points": 1, "label": "Upload a Project", "suggest": "Upon request, student is able to upload a project to the EV3 brick."}
+]}/>
+
+
+
