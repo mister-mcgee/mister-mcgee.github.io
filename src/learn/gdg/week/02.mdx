@@ -1,6 +1,159 @@
 ---
-title: Game Design in Godot
+title: Getting Started with Godot
 course: Game Design in Godot
-author: Mister McGee
-tags: ["gdg", "game", "design", "godot"]
+tags: ["gdg", "godot"]
 ---
+
+import Swbat  from "@components/learn/objectives/Swbat.astro";
+import Rubric from "@components/learn/assessments/Rubric.astro";
+
+## Managing Godot Projects
+<Swbat>Create, edit, and delete projects using the Godot Projects view.</Swbat>
+
+When you first launch Godot, you will see the **Projects** view. This is the hub for all of your games. Every game you make in Godot lives inside a *project*, which is just a folder containing scenes, scripts, and assets.
+
+### Creating a New Project
+<Swbat>Create a new Godot project from the Projects view.</Swbat>
+
+1. Launch Godot.
+2. In the **Projects** view, click **New Project**.
+3. Enter a **Project Name**.
+4. Choose or create an empty folder where the project will live.
+5. Select the **Renderer** (use the default unless instructed otherwise).
+6. Click **Create & Edit**.
+
+Godot will create the project folder and immediately open the editor.
+
+> [!tip]
+> Keep your projects organized in a single “Godot Projects” folder so you can always find them later.
+
+### Opening an Existing Project
+<Swbat>Open an existing Godot project.</Swbat>
+
+If a project already exists on your computer:
+
+1. Open Godot to the **Projects** view.
+2. Select the project from the list.
+3. Click **Edit**, or double-click the project name.
+
+Godot remembers recently opened projects and will show them automatically.
+
+### Renaming or Editing a Project
+<Swbat>Understand how to manage existing projects.</Swbat>
+
+From the **Projects** view:
+
+- Select a project and click **Rename** to change its display name.
+- Select a project and click **Edit** to open it in the editor.
+
+> [!note]
+> Renaming a project here does **not** rename the folder on your computer—only how it appears in Godot.
+
+### Deleting a Project
+<Swbat>Delete a Godot project safely.</Swbat>
+
+1. Select the project in the **Projects** view.
+2. Click **Remove**.
+3. Choose whether to:
+   - **Remove** (forgets the project but keeps files), or
+   - **Remove & Delete** (permanently deletes the project folder).
+
+> [!warning]
+> **Remove & Delete cannot be undone.** Make sure you no longer need the project before choosing this option.
+
+---
+
+## The Godot Editor Interface
+<Swbat>Identify and describe the main parts of the Godot Editor.</Swbat>
+
+Once inside a project, you will see the **Godot Editor**. This is where all game creation happens. While it may look overwhelming at first, it is built from a few key panels that work together.
+
+### The Main Editor Screens
+
+At the top of the editor are tabs that switch between different workflows:
+
+- **2D** – For 2D games and interfaces.
+- **3D** – For 3D games and environments.
+- **Script** – For writing and editing code.
+- **AssetLib** – For browsing community-made assets and tools.
+
+Most of your time early on will be spent in **2D** or **3D** mode.
+
+### The Viewport
+<Swbat>Use the Viewport to view and manipulate scenes.</Swbat>
+
+The **Viewport** is the large central area of the editor. This is where you:
+
+- See your game world.
+- Move, rotate, and scale objects.
+- Arrange characters, backgrounds, and UI elements.
+
+Think of the Viewport as the “stage” where your game exists.
+
+### The Scene Dock
+<Swbat>Understand how scenes and nodes are organized.</Swbat>
+
+Typically on the left side, the **Scene Dock** shows a tree of **nodes**.
+
+- A **Scene** is a collection of nodes saved together.
+- A **Node** is a single game object (sprite, character, camera, etc.).
+
+Scenes form the building blocks of your game.
+
+> [!tip]
+> Godot games are built by combining many small scenes together, rather than one giant scene.
+
+### The Inspector
+<Swbat>Use the Inspector to edit node properties.</Swbat>
+
+On the right side is the **Inspector**.
+
+- Shows properties of the currently selected node.
+- Allows you to change values like position, size, color, and scripts.
+- Updates immediately as you make changes.
+
+If you want to *edit how something behaves or looks*, the Inspector is usually where you go.
+
+### The FileSystem Dock
+<Swbat>Navigate and manage project files.</Swbat>
+
+Usually at the bottom-left, the **FileSystem** dock shows:
+
+- Scenes (`.tscn`)
+- Scripts (`.gd`)
+- Images, sounds, and other assets
+
+This mirrors your project folder on disk.
+
+> [!note]
+> Deleting files here deletes them from the project folder as well.
+
+### The Output and Debug Panels
+<Swbat>Recognize where errors and messages appear.</Swbat>
+
+At the bottom of the editor you may see panels such as:
+
+- **Output** – Messages from the engine and your code.
+- **Debugger** – Errors and runtime information when the game is running.
+
+When something goes wrong, **check here first**.
+
+---
+
+## Assessment
+
+### Managing Godot Projects
+
+<Rubric rubric={[
+  { "type": "toggle", "points": 1, "label": "Create Project", "suggest": "Student can create a new Godot project from the Projects view." },
+  { "type": "toggle", "points": 1, "label": "Open Project", "suggest": "Student can open an existing Godot project." },
+  { "type": "toggle", "points": 1, "label": "Rename Project", "suggest": "Student can rename a project from the Projects view." },
+  { "type": "toggle", "points": 1, "label": "Delete Project", "suggest": "Student can safely remove or delete a project." }
+]}/>
+
+### Godot Editor Fundamentals
+
+<Rubric rubric={[
+  { "type": "rating", "points": 5, "label": "Editor Navigation", "suggest": "Student can correctly identify the Viewport, Scene Dock, Inspector, and FileSystem." },
+  { "type": "rating", "points": 5, "label": "Conceptual Understanding", "suggest": "Student demonstrates understanding of scenes, nodes, and how they fit together." }
+]}/>
