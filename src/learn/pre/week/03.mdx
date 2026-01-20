@@ -1,0 +1,215 @@
+---
+title: Hello Python
+course: Pre-Introduction to Robotics
+tags: ["pre", "python"]
+draft: true
+---
+
+import Swbat  from "@components/learn/objectives/Swbat.astro";
+import Rubric from "@components/learn/assessments/Rubric.astro";
+import Define from "@components/learn/terms/Define.astro";
+
+## Introduction to Programming
+<Swbat>Understand the purpose of programming languages.</Swbat>
+
+Computers speak only one language — and it isn't English. It's also not JavaScript, Python, or any other programming language you might recognize. Fundamentally, computers “think” in binary. Every program — whether it's a simple calculator, a web app, or a AAA video game — is ultimately a sequence of binary instructions executed by the computer's hardware.
+
+Although computers "think" in <Define term="binary"/>, writing programs in binary is both tedious and error-prone for humans. This is where programming languages fit into the picture.
+
+A <Define term="programming language"/> is a human-friendly way of writing instructions for a computer. Languages like Python or Javascript allow us to describe what we want a computer to do using words, symbols, and abstractions humans can understand. These languages are tools made *by humans for humans* — designed to make it easier to reason about and build complex software systems.
+
+You may wonder why programmers don't write software using plain English. The problem is that natural languages are inherently ambiguous — words can have multiple meanings, and sentences can be interpreted in different ways depending on context. An author's favorite cliche is double-entendre, which happens to be a programmer's worst nightmare. Computers require precise and unambiguous instructions. Thinking and writing in "computer speak" might feel awkward to a beginner, but it's important to realize that a programming language is designed to *eliminate ambiguity*, not necessarily to mirror natural language.
+
+import Wikipedia from "@components/learn/terms/Wikipedia.astro";
+
+> [!info]
+> Humans love to read and write stories about characters who willfully misinterpret instructions by leveraging the ambiguity of natural language. This is often referred to as <Wikipedia term="Malicious_compliance">Malicious compliance</Wikipedia>.
+
+After a developer has written a program in a programming language it must then be translated into binary instructions by special tools. Broadly speaking, these tools fall into a few categories including but not limited to - <Define term="compiler">*compilers*</Define>, <Define term="interpreter">*interpreters*</Define>, and <Define term="virtual machine">*virtual machines*</Define>, all of which translate human-readable code into machine-readable instructions.
+
+Programming languages exist to bridge the gap between human thought and machine execution. They allow engineers and programmers to focus on solving problems, building systems, and creating experiences — without needing to think in zeros and ones.
+
+## Hello Python
+<Swbat>Use the `print()` function to display text and values.</Swbat>
+
+The first program any programmer writes is known as *Hello, World!*. It is a touchstone on the journey of learning any programming language. In python, *Hello, World!* looks something like this-
+
+```python
+print("Hello, Python!") # prints "Hello, Python!"
+```
+
+When this program runs, the text inside the quotation marks will be displayed in your terminal.
+
+The `print()` function can also be used to print numbers-
+
+```python
+print(42) # prints "42"
+```
+
+And even multiple items at once-
+
+```python
+print("The answer is", 42) # prints "The answer is 42"
+```
+
+## Data Types
+<Swbat>Identify and use common Python data types.</Swbat>
+
+<Define term="data type">Data types</Define> describe how Python should interpret a value. Python automatically *infers* the data type of a value or variable based on what is written.
+
+Common Python data types include -
+- <Define term="integer (python)">`int`</Define>
+- <Define term="float (python)">`float`</Define>
+- <Define term="string (python)">`str`</Define>
+- <Define term="boolean (python)">`bool`</Define>
+
+### Examples
+
+```python
+print(10)          # int
+print(3.5)         # float
+print("EV3")       # str
+print(True)        # bool
+```
+
+> [!tip]
+> Strings must always be enclosed in a pair of matching quotation marks.
+> e.g. `'Hello, Python!'` or `"Hello, Python!"`
+
+## Variables
+<Swbat>Create and use variables to store data.</Swbat>
+
+A <Define term="variable"/> is a name that refers to a value. I like to think of a variable as *a box that holds a value*.
+
+### Declaration and Assignment
+
+Broadly speaking there are two primary ways to interact with variables in any programming language.
+
+<Define term="declaration">Declaring</Define> a variable is like reserving a box. In some programming language the box is allowed to remain empty until you fill it later, but Python expects a value at the time of declaration.
+
+<Define term="assignment">Assigning</Define> a value to a variable is like putting a value in a box. When a variable is *assigned* a value, it completely replaces or *overwrites* what was previously in the box.
+
+In Python, declaring a variable and assigning a value to it use the same syntax. This means that the *first* time a variable is *assigned* a value it is also *declared*. This is important for reasons that will become clear later.
+
+### Naming Variables
+In Python there are a few rules that govern how, when, and where variable names can be used.
+
+1. Variable names may contain only lowercase letters (a-z), uppercase letters ( A-Z), numbers (0-9), and underscores (`_`).
+2. Variable names must start with a letter or an underscore.
+3. Variable names may not be the same as any Python <Define term="reserved word (python)">reserved word</Define>.
+
+> [!warning]
+> Variable names are case-sensitive. `Speed` and `speed` are different variables.
+
+### Typing Variables
+Python will *infer* the data type of a variable based on the value assigned to it. 
+
+In the following example -
+
+```python
+speed = 100
+```
+
+The variable `speed` is *assigned* the value `100`. The Python interpreter now knows that `speed` is a variable (if it wasn't already) that holds the value `100` of type `int`.
+
+### Using Variables
+*After* a variable is declared, it can be used in other parts of a program.
+
+In the following example - 
+
+```python
+name = "RoboBot"
+print("My name is", name) # prints "My name is RoboBot"
+```
+
+The variable `name` is assigned the value `RoboBot` of type `str`. The Python interpreter now knows that `name` is a variable (if it wasn't already) that holds the value `RoboBot` of type `str`.
+
+Then the values `"My name is"` and `name` are printed, resulting in the output `My name is RoboBot`.
+
+
+
+## Sequences of Instructions
+<Swbat>Explain that a program is a sequence of instructions executed in-order.</Swbat>
+
+A <Define term="program"/> is a sequence of instructions that are executed <Define term="synchronous">synchronously</Define> or *in-order*.
+
+In Python, this means that the instructions are executed top-to-bottom. This is important to consider when writing a program as the order of instructions can affect the outcome.
+
+### Using a Variable Before It's Declared
+
+A common programming pitfall for beginners is using a variable before it is declared. Consider the following example -
+
+```python
+print("My speed is", speed) # raises an error
+speed = 100
+```
+
+Python will raise an error because `speed` is used before it is declared. A common <Define term="convention"/> that helps programmers avoid this error is to declare most variables at the beginning or *top* of the program.
+
+```python
+speed = 100
+
+# ...
+
+print("My speed is", speed) # prints "My speed is 100"
+```
+
+
+### Variables Store Values, Not Relationships
+
+Another common programming pitfall arises from a programmer's nascent understanding (or rather misunderstanding) of variables. Consider the following example -
+
+```python
+x = 10
+y = 20
+z = x + y
+
+x = 25
+y = 35
+print(z)
+```
+
+What is the value of `z` when it is printed?
+
+If you said that `z` is `30` then you would be correct. If you said that `z` is `60` then you have fallen into a common beginner's pitfall.
+
+Consider the line `z = x + y`. When the Python interpreter reaches this line it first evaluates or *computes* `x + y`, before assigning the *result* to `z`.
+
+
+### A Rule to Remember
+
+Python does exactly what you tell it to do, in the order you tell it to do it.
+
+If something feels “wrong,” ask-
+- What line runs first?
+- What values exist at that moment?
+- When was this variable last assigned?
+
+
+## Glossary
+import Glossary from "@components/learn/terms/Glossary.astro";
+
+<Glossary/>
+
+## Assessment
+### Python Fundamentals
+<Rubric rubric={[
+  {
+    "type": "rating",
+    "points": 5,
+    "label": "Understanding Print",
+    "suggest": "Student is able to use the print() function to display text and values."
+  },
+  {
+    "type": "rating",
+    "points": 5,
+    "label": "Data Types",
+    "suggest": "Student correctly identifies and uses basic Python data types."
+  },
+  {
+    "type": "rating",
+    "points": 5,
+    "label": "Variables",
+    "suggest": "Student correctly declares, assigns, and reassigns variables."
+  }
+]}/>

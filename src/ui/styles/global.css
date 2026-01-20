@@ -96,3 +96,10 @@ blockquote, table, pre, code, p, ul, ol, .callout {
   }
 }
 
+.callout[data-collapsible="false"] {
+  overflow: visible;
+}
+
+.callout[data-collapsible="false"] .callout-content {
+  overflow: visible;
+}
