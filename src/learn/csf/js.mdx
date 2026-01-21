@@ -1,0 +1,107 @@
+
+## Variables
+A variable is a *named reference*. Think of a variable like *a box that stores a value*.
+
+### Declaration
+Declaring a variable reserves the variable name. A variable can be declared *only once* during the lifetime of a program. 
+
+In JavaScript a variable can be declared with the following keywords -
+
+| Keyword | Description |
+| --- | --- |
+| `let`   | Declares a *mutable* scoped variable    |
+| `const` | Declares an *immutable* scoped variable |
+| `var`   | Declares a global variable              |
+
+### Assignment / Write
+In our box analogy, assigning a variable is like putting a *value* into the box. Each assignment overwrites or replaces what is in the box.
+
+In JavaScript a variable can be assigned using the *assignment* (`=`) operator
+
+### Use / Read
+In our box analogy, reading a variable is like unpacking the box to get to the value inside.
+
+In JavaScript a variable can be *used* simply by including the variable name in an expression.
+
+
+## Control Flow
+Control flow is the term we use to describe the flow of execution in a program. Many languages support the following categories of control flow statements -
+
+### If / Branch
+Sometimes referred to as a *conditional branch*, an if statement will execute a block of code when a condition is met.
+
+In JavaScript a branch begins with the `if` keyword, followed by a condition, followed by the statement body
+
+```js
+let age = 100
+if (age > 99) {
+	console.log("You are too old for LEGO")
+}
+```
+
+### While / Loop
+Sometimes referred to as a *conditional loop*, a while statement will repeat a block of code while a condition is met.
+
+In JavaScript a loop begins with the `while` keyword, followed by a condition, followed by the loop body
+
+```js
+let countdown = 10
+while (countdown > 0) {
+  console.log(countdown)
+  countdown = countdown - 1
+}
+console.log("Blast Off")
+```
+
+## Functions
+
+> Mister McGee's favorite "f" word
+
+A function is a reusable block of code. In Programming there are two operations that we do with functions.
+
+### Definition
+A function definition is like a recipe. Defining a function reserves the function name and stores the "recipe". A function definition includes *inputs* known as *parameters*. Think of *parameters* as *placeholders*. 
+
+In JavaScript a function definition begins with the `function` keyword, followed by the function name, followed by the function *parameters*, followed by the function body.
+
+```js
+function add(a, b) {
+  console.log(a + b)
+}
+```
+
+### Call / Invoke
+
+Calling a function executes each instruction in the "recipe". A function call accepts inputs known as *arguments*. Arguments are *values* that replace the parameters in the function definition.
+
+```js
+add(1, 2) // prints 3 to the console
+```
+
+## Callbacks / Listeners
+
+In JavaScript, functions are *first-class*, which means they are treated like any other data. For exampe, a function can be assigned to a variable -
+
+```js
+function example() {
+  console.log("This is an example")
+}
+
+let myFunction = example
+
+myFunction()
+```
+
+In JavaScript, interactivity is a collaboration with the browser. Responding to user input is often done via *callbacks*. A callback is not a language feature, instead it refers to a programming pattern. In JavaScript a callback is a function that has been handed to the browser to be invoked later (by the browser).
+
+```js
+let clicks = 0
+
+function onClick() {
+	clicks = clicks + 1
+  console.log("Mouse was clicked", clicks, "times!")
+}
+
+document.body.onclick = onClick
+```
+
