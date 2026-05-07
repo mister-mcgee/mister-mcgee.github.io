@@ -1,0 +1,10 @@
+---
+import P from "@components/learn/assessments/PythonExercise";
+
+const {   title,
+  instructions,
+  starterCode,
+  tests, } = Astro.props; 
+---
+
+<P {title} {instructions} {starterCode} {tests} client:only/>

@@ -112,3 +112,52 @@ function onClick() {
 document.body.onclick = onClick
 ```
 
+
+import JavaScriptExercise from "@components/learn/assessments/JavaScriptExercise.astro"
+
+<JavaScriptExercise
+  title="JavaScript Exercise"
+  instructions="Write a function that accepts two numbers and returns the sum of the two numbers."
+  starterCode={`function add(a, b) {
+    return a + b
+} 
+`}
+  tests={[
+    {
+      name: "add(1, 2) should return 3",
+      code: "add(1, 2) === 3"
+    },
+    {
+      name: "add(2, 3) should return 5",
+      code: "add(2, 3) === 5"
+    },
+    {
+      name: "add(3, 4) should return 7",
+      code: "add(3, 4) === 7"
+    }
+  ]}
+/>
+
+import PythonExercise from "@components/learn/assessments/PythonExercise.astro"
+
+<PythonExercise
+  title="Python Exercise"
+  instructions="Write a function that accepts two numbers and returns the sum of the two numbers."
+  starterCode={`def add(a, b):
+    return a + b
+`}
+  tests={[
+    {
+      name: "add(1, 2) should return 3",
+      code: "add(1, 2) == 3"
+    },
+    {
+      name: "add(2, 3) should return 5",
+      code: "add(2, 3) == 5"
+    },
+    {
+      name: "add(3, 4) should return 7",
+      code: "add(3, 4) == 7"
+    }
+  ]}
+/>
