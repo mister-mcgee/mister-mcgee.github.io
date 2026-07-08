@@ -1,0 +1,20 @@
+---
+import H from "@components/learn/assessments/HtmlCssExercise"
+
+const {
+  title,
+  instructions,
+  starterHtml = "",
+  starterCss = "",
+  targetHtml,
+  targetCss,
+  editable = "both",
+  width = 800,
+  height = 500,
+  groupId,
+  taskId,
+  doSubmit,
+} = Astro.props
+---
+
+<H {title} {instructions} {starterHtml} {starterCss} {targetHtml} {targetCss} {editable} {width} {height} {groupId} {taskId} {doSubmit} client:only/>

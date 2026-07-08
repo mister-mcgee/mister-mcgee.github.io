@@ -165,3 +165,31 @@ import PythonExercise from "@components/learn/assessments/PythonExercise.astro"
     }
   ]}
 />
+
+import HtmlCssExercise from "@components/learn/assessments/HtmlCssExercise.astro"
+
+<HtmlCssExercise
+  title="Center the Card"
+  instructions={`Make the .card element centered horizontally and vertically inside .wrapper.
+Give .wrapper a background color of #f2f2f2 and give .card rounded corners (8px) with a white background and a subtle box-shadow.`}
+  editable="css"
+  starterHtml={`<div class="wrapper">
+  <div class="card">Hello!</div>
+</div>`}
+  starterCss={`.wrapper {
+  height: 300px;
+}
+.card {
+  padding: 24px;
+}`}
+  targetCss={`.wrapper {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}`}
+  width={600}
+  height={320}
+  passingScore={95}
+  doSubmit={true}
+/>
