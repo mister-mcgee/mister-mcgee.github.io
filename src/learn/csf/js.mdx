@@ -116,24 +116,25 @@ document.body.onclick = onClick
 import JavaScriptExercise from "@components/learn/assessments/JavaScriptExercise.astro"
 
 <JavaScriptExercise
-  title="JavaScript Exercise"
-  instructions="Write a function that accepts two numbers and returns the sum of the two numbers."
-  starterCode={`function add(a, b) {
-    return a + b
-} 
-`}
+
+  title="Variables and Constants"
+  instructions="Declare a constant named 'pi' and give it the value '3.14'"
+  starterCode={ '' }
+  groupId="csf"
+  taskId="js-01"
+  doSubmit={true}
   tests={[
     {
-      name: "add(1, 2) should return 3",
-      code: "add(1, 2) === 3"
+      name: "pi should be a number",
+      code: "typeof pi === 'number'"
     },
     {
-      name: "add(2, 3) should return 5",
-      code: "add(2, 3) === 5"
+      name: "pi should be approximately 3.14",
+      code: "pi === 3.14"
     },
     {
-      name: "add(3, 4) should return 7",
-      code: "add(3, 4) === 7"
+      name: "pi should be a constant",
+      code: "(() => {try { if (typeof pi === 'undefined') return false; pi = 0; return false; } catch { return true; }})()"
     }
   ]}
 />
@@ -142,6 +143,9 @@ import PythonExercise from "@components/learn/assessments/PythonExercise.astro"
 
 <PythonExercise
   title="Python Exercise"
+  groupId="pre"
+  taskId="python-01"
+  doSubmit={true}
   instructions="Write a function that accepts two numbers and returns the sum of the two numbers."
   starterCode={`def add(a, b):
     return a + b

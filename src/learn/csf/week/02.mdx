@@ -127,14 +127,15 @@ Programs written in human-friendly languages are translated into binary instruct
 
 ## Review
 
-import Quiz from "@components/learn/assessments/Quiz.astro";
+import MCQ from "@components/learn/assessments/MultipleChoiceQuiz.astro";
 import questions from "@learn/csf/quiz/01.json";
 
-<Quiz 
+<MCQ 
   title={frontmatter.title} 
   questions={questions}
   groupId={ "csf" }
   taskId ={ "q01" }
+  doSubmit={true}
 />
 
 ## Glossary

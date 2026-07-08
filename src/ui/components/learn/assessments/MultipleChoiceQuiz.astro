@@ -1,0 +1,7 @@
+---
+import M from "@components/learn/assessments/MultipleChoiceQuiz";
+
+const { questions, title, groupId, taskId, doSubmit } = Astro.props; 
+---
+
+<M {title} {questions} {groupId} {taskId} {doSubmit} client:only/>

@@ -4,7 +4,10 @@ import J from "@components/learn/assessments/JavaScriptExercise";
 const {   title,
   instructions,
   starterCode,
-  tests, } = Astro.props; 
+  tests, 
+  groupId,
+  taskId,
+  doSubmit } = Astro.props; 
 ---
 
-<J {title} {instructions} {starterCode} {tests} client:only/>
+<J {title} {instructions} {starterCode} {tests} {groupId} {taskId} {doSubmit} client:only/>

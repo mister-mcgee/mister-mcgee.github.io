@@ -228,12 +228,13 @@ const Submission = {
 
 type Submission = typeof Submission[keyof typeof Submission];
 
-export default function Quiz({ title, questions, groupId, taskId }: {
+export default function MultipleChoiceQuiz({ title, questions, groupId, taskId, doSubmit }: {
   title     ?: string
   questions  : Question[]
   groupId   ?: string
   taskId    ?: string
   shuffle   ?: boolean
+  doSubmit  ?: boolean
 }) {
   const [submission, setSubmission] = useState<Submission>(      Submission.INCOMPLETE      );
   const [responses , setResponses ] = useState< number[] >(Array(questions.length).fill(-1));  
@@ -258,10 +259,10 @@ export default function Quiz({ title, questions, groupId, taskId }: {
           
           return <Question {...question} key={i} qi={qi} ci={ci} onSelect={onSelect} />
         })}
-        <div className="w-full flex items-center gap-2 print:hidden">
-          <Submit {...{ questions, responses, groupId, taskId, submission, setSubmission }} />
+        <div className="w-full flex items-center gap-2 print:hidden justify-end">
+          {doSubmit && <Submit {...{ questions, responses, groupId, taskId, submission, setSubmission }} />}
           <button className="btn btn-ghost" onClick={onReset} disabled={submission !== Submission.INCOMPLETE}>
-            <Trash/>
+            <span>Reset</span>
           </button>
         </div>
       </div>
